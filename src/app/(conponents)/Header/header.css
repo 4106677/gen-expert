@@ -21,9 +21,9 @@
     align-items: center;
 }
 
-/*.logo {*/
-/*    height: 50px;*/
-/*}*/
+.logo {
+    height: 50px;
+}
 
 .nav-list {
     list-style: none;

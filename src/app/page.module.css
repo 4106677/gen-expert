@@ -52,7 +52,7 @@
   grid-template-columns: repeat(4, 1fr);
   padding: 30px 0;
 
-  .list_item {
+  li {
     /*border: 1px solid #a0a2a2;*/
     border-radius: 10px;
     padding: 10px;
@@ -62,7 +62,8 @@
     flex-direction: column;
     cursor: pointer;
 
-    .list_item_img {
+    img {
+      width: 300px;
       border-radius: 8px;
     }
   }
