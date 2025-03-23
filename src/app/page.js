@@ -14,38 +14,38 @@ export default function Home() {
           priority
         />
 
-        <h2>Потужність незламна</h2>
+        <h2 className={styles.headLine}>Потужність незламність в твоїй уяві</h2>
 
         <ul className={styles.list}>
           <li>
-            <div><img src="/images/card1.jpg" alt="GPU"/></div>
-            <h3>Генеруюче курво</h3>
+            <div><img src="/images/card1.jpg" alt="GPUa"/></div>
+            <h3 className={styles.list_item_h}>Генеруюче курво</h3>
             <div className={styles.description}>
-              <h4>Потужність</h4>
+              <h4 className={styles.list_item_h4}>Потужність</h4>
               <span>300 попугаїв</span>
             </div>
           </li>
           <li>
-            <div><img src="/images/card2.jpg" alt="GPU"/></div>
-            <h3>Генеруючий бобр</h3>
+            <div><img src="/images/card2.jpg" alt="GPUb"/></div>
+            <h3 className={styles.list_item_h}>Генеруючий бобр</h3>
             <div className={styles.description}>
-              <h4>Потужність</h4>
+              <h4 className={styles.list_item_h4}>Потужність</h4>
               <span>300 попугаїв</span>
             </div>
           </li>
           <li>
-            <div><img src="/images/card3.jpg" alt="GPU"/></div>
-            <h3>Генеруюче сяйво</h3>
+            <div><img src="/images/card3.jpg" alt="GPUc"/></div>
+            <h3 className={styles.list_item_h}>Генеруюче сяйво</h3>
             <div className={styles.description}>
-              <h4>Потужність</h4>
+              <h4 className={styles.list_item_h4}>Потужність</h4>
               <span>300 попугаїв</span>
             </div>
           </li>
           <li>
-            <div><img src="/images/card4.jpg" alt="GPU"/></div>
-            <h3>Генеруюча тьма</h3>
+            <div><img src="/images/card4.jpg" alt="GPUd"/></div>
+            <h3 className={styles.list_item_h}>Генеруюча тьма</h3>
             <div className={styles.description}>
-              <h4>Потужність</h4>
+              <h4 className={styles.list_item_h4}>Потужність</h4>
               <span>300 попугаїв</span>
             </div>
           </li>
