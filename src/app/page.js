@@ -7,44 +7,52 @@ export default function Home() {
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="/next.svg"
+          src="/images/gpu.png"
           alt="Next.js logo"
-          width={180}
-          height={38}
+          width={480}
+          height={438}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <h2>Потужність незламна</h2>
+
+        <ul className={styles.list}>
+          <li>
+            <div><img src="/images/card1.jpg" alt="GPU"/></div>
+            <h3>Генеруюче курво</h3>
+            <div className={styles.description}>
+              <h4>Потужність</h4>
+              <span>300 попугаїв</span>
+            </div>
+          </li>
+          <li>
+            <div><img src="/images/card2.jpg" alt="GPU"/></div>
+            <h3>Генеруючий бобр</h3>
+            <div className={styles.description}>
+              <h4>Потужність</h4>
+              <span>300 попугаїв</span>
+            </div>
+          </li>
+          <li>
+            <div><img src="/images/card3.jpg" alt="GPU"/></div>
+            <h3>Генеруюче сяйво</h3>
+            <div className={styles.description}>
+              <h4>Потужність</h4>
+              <span>300 попугаїв</span>
+            </div>
+          </li>
+          <li>
+            <div><img src="/images/card4.jpg" alt="GPU"/></div>
+            <h3>Генеруюча тьма</h3>
+            <div className={styles.description}>
+              <h4>Потужність</h4>
+              <span>300 попугаїв</span>
+            </div>
+          </li>
+        </ul>
+
+
+
       </main>
       <footer className={styles.footer}>
         <a
