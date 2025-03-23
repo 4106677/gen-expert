@@ -5,7 +5,7 @@ export default function Contacts() {
 	return (
 		<div className="contacts">
 			<h1>Контакти</h1>
-			<p>Зв'яжіться з нами:</p>
+			<p>Контактуй з нами:</p>
 			<ul className="contacts-list">
 				<li>Телефон: <a href="tel:+380123456789">+380 123 456 789</a></li>
 				<li>Email: <a href="mailto:info@example.com">info@example.com</a></li>
