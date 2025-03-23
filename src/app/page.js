@@ -18,7 +18,7 @@ export default function Home() {
 
         <ul className={styles.list}>
           <li className={styles.list_item}>
-            <div><Image width={300} height={225} className={styles.list_item_img} src="/images/card1.jpg" alt="GPUa"/></div>
+            <div><img className={styles.list_item_img} src="/images/card1.jpg" alt="GPUa"/></div>
             <h3 className={styles.list_item_h}>Генеруюче курво</h3>
             <div className={styles.description}>
               <h4 className={styles.list_item_h4}>Потужність</h4>
@@ -26,7 +26,7 @@ export default function Home() {
             </div>
           </li>
           <li className={styles.list_item}>
-            <div><Image width={300} height={225} className={styles.list_item_img} src="/images/card2.jpg" alt="GPUb"/></div>
+            <div><img className={styles.list_item_img} src="/images/card2.jpg" alt="GPUb"/></div>
             <h3 className={styles.list_item_h}>Генеруючий бобр</h3>
             <div className={styles.description}>
               <h4 className={styles.list_item_h4}>Потужність</h4>
@@ -34,7 +34,7 @@ export default function Home() {
             </div>
           </li>
           <li className={styles.list_item}>
-            <div><Image width={300} height={225} className={styles.list_item_img} src="/images/card3.jpg" alt="GPUc"/></div>
+            <div><img className={styles.list_item_img} src="/images/card3.jpg" alt="GPUc"/></div>
             <h3 className={styles.list_item_h}>Генеруюче сяйво</h3>
             <div className={styles.description}>
               <h4 className={styles.list_item_h4}>Потужність</h4>
@@ -42,7 +42,7 @@ export default function Home() {
             </div>
           </li>
           <li className={styles.list_item}>
-            <div><Image width={300} height={225} className={styles.list_item_img} src="/images/card4.jpg" alt="GPUd"/></div>
+            <div><img className={styles.list_item_img} src="/images/card4.jpg" alt="GPUd"/></div>
             <h3 className={styles.list_item_h}>Генеруюча тьма</h3>
             <div className={styles.description}>
               <h4 className={styles.list_item_h4}>Потужність</h4>

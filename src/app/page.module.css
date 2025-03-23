@@ -63,6 +63,7 @@
     cursor: pointer;
 
     .list_item_img {
+      width: 300px;
       border-radius: 8px;
     }
   }
