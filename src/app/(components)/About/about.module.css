@@ -1,0 +1,28 @@
+.main {
+    padding: 50px 0;
+    /*max-width: 900px;*/
+    /*width: 100vw;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /*background-color: #eaeceb;*/
+}
+
+.description {
+    text-align: left;
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+.button {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #85e28f;
+    color: white;
+    width: max-content;
+    font-size: 20px;
+    line-height: 1;
+}

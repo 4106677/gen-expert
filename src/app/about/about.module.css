@@ -1,0 +1,19 @@
+.backgroundWrapper {
+    /*background-image: url('../../../public/images/backimage_about.png');*/
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.blurOverlay {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*background-color: rgba(255, 255, 255, 0.6); !* білий з прозорістю *!*/
+    /*backdrop-filter: blur(3px); !* розмиття *!*/
+    /*z-index: 1;*/
+}

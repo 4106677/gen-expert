@@ -1,14 +1,18 @@
 :root {
-  --background: #d6d8d7;
-  --foreground: #171717;
+  --background: #fff;
+  --foreground: #000;;
+  --font-caviar-dreams: var(--font-caviar-dreams);
+  --font-roboto: var(--font-roboto);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /*--background: #0a0a0a;*/
     /*--foreground: #ededed;*/
-    --background: linear-gradient(to right top, #e4e6e7, #acafac);
-    --foreground: #171717;
+    /*--background: linear-gradient(to right top, #e4e6e7, #acafac);*/
+    --background: #fff;
+    --foreground: #000;
+    /*--foreground: #171717;*/
   }
 }
 
@@ -21,9 +25,10 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 * {

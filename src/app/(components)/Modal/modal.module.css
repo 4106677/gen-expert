@@ -1,0 +1,151 @@
+/* src/app/(components)/Modal/modal.module.css */
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 1200px;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 500px;
+
+    .thumbs {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+.carousel :global(.slide img) {
+    max-height: 400px;
+    height: 400px;
+    width: 500px;
+    /*width: auto;*/
+    object-fit: cover;
+    /*object-position: ;*/
+}
+
+.preview {
+    box-sizing: border-box;
+    height: 80px;
+    width: 90px;
+    object-fit: cover;
+}
+
+
+.description {
+    margin-left: 40px;
+    overflow: hidden;
+
+    p {
+        margin-top: 20px;
+        overflow: auto;
+        height: 430px;
+
+
+        scrollbar-width: thin;
+        scrollbar-color: #888 #fff;
+    }
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+        width: 28px;
+        font-size: 20px;
+        background-color: white;
+        border: none;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+/* Для Webkit-браузерів (Chrome, Safari) */
+.description p::-webkit-scrollbar {
+    width: 8px; /* Ширина скролу */
+}
+
+.description p::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.description p::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+.productDescription {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 30px;
+
+
+}
+
+/*.description h2 {*/
+/*    margin-top: 0;*/
+/*    font-size: 24px;*/
+/*    color: #333;*/
+/*}*/
+
+/*.productDetails {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*.productDetails li {*/
+/*    margin-bottom: 10px;*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*.productDetails li strong {*/
+/*    display: inline-block;*/
+/*    width: 120px;*/
+/*    font-weight: 600;*/
+/*}*/
+
+/*.productDescription {*/
+/*    font-size: 16px;*/
+/*    color: #555;*/
+/*    line-height: 1.5;*/
+/*}*/

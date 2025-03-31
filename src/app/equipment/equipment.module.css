@@ -1,0 +1,113 @@
+.main {
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.left {
+    width: 20%;
+
+    li {
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-weight: normal;
+    }
+}
+
+.manufacturer {
+    input {
+        margin-right: 8px;
+    }
+}
+
+.right {
+    width: 80%;
+    max-width: 80%;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+
+    &:hover {
+        background-color: #eaeceb;
+        outline: 1px solid #eaeceb;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-top: 25px solid white; /* колір трикутника */
+            rotate: 90deg;
+        }
+
+        button {
+            display: block;
+        }
+    }
+
+    .img {
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    h3 {
+        margin-top: 10px;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-bottom: 5px;
+        margin-top: auto;
+        width: max-content;
+        background-color: #85e28f;
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: none;
+    }
+}
+
+.productsSection {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+
+    p {
+        margin-top: 10px;
+        max-height: 189px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7; /* приблизно кількість рядків */
+        -webkit-box-orient: vertical;
+    }
+}
+
+.productDescription {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 30px;
+}

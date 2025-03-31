@@ -1,0 +1,160 @@
+/* src/app/components/Header/header.css */
+.header {
+    background-color: #eaeceb;
+    /*position: absolute;*/
+    width: 100%;
+    position: relative;
+    /*left: 50%;*/
+    /*top: 0;*/
+    /*top: 40px;*/
+    /*transform: translateX(-50%);*/
+    &:before {
+        content: "";
+        height: 40px;
+        background-color: white;
+        width: 100%;
+        display: block;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: calc(50% + 470px);
+        /*left: calc(50% + 370px);*/
+        margin-top: 40px;
+        width: 100vw;
+        height: 80px;
+        background-color: #85e28f;
+        clip-path: polygon(23px 0, 0 100%, 100% 100%, 100% 0);
+    }
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: var(--font-caviar-dreams), sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    .logoGen {
+        background-color: #85e28f;
+        color: #fff;
+        /*padding: 0 10px;*/
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 140px;
+        clip-path: polygon(23px 0, 100% 0, calc(100% - 23px) 100%, 0 100%);
+        z-index: 2;
+    }
+
+    .logoExpert {
+        color: #dedede;
+        /*color: #eaeceb;*/
+        background-color: white;
+        transform: translateX(-23px);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 200px; /* Задаємо ширину для "EXPERT" */
+        clip-path: polygon(23px 0, 100% 0, calc(100% - 23px) 100%, 0 100%);
+        /*-webkit-text-stroke: 1px #eaeceb; !* Темно-сіра обводка товщиною 1px *!*/
+        /*text-stroke: 1px #333; !* Для сумісності *!*/
+    }
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    /*margin-left: auto;*/
+    margin-right: auto;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+.language {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    position: relative;
+
+    .rounder {
+        text-transform: uppercase;
+    }
+
+    .selector {
+        height: 60px;
+        background-color: #85e28f;
+        position: absolute;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+        li {
+
+            &:hover{
+                color: #eaeceb;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 50px;
+    z-index: 2;
+    color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}

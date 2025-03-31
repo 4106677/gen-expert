@@ -1,0 +1,26 @@
+.why {
+    padding: 50px 0;
+    /*max-width: 900px;*/
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #eaeceb;
+    /*margin-top: 25px;*/
+}
+
+.list {
+    max-width: 900px;
+}
+
+.listItem {
+    display: flex;
+    text-align: left;
+    margin-top: 8px;
+    font-size: 18px;
+
+    span {
+        font-weight: bold;
+    }
+}
