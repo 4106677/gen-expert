@@ -121,19 +121,6 @@ export default function Home() {
             </Carousel>
             <Why/>
             <About/>
-
-            {/*<Image*/}
-            {/*  className={styles.logo}*/}
-            {/*  src="/images/innio_jenbacher_j616-1-scaled.jpg"*/}
-            {/*  alt="Next.js logo"*/}
-            {/*  width={1200}*/}
-            {/*  height={663.75}*/}
-            {/*  priority*/}
-            {/*/>*/}
-
-            {/*<h2 className={styles.headLine}>Потужність незламність в твоїй уяві</h2>*/}
-
-
         </div>
     );
 }

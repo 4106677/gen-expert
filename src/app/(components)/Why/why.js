@@ -1,18 +1,31 @@
-import data from '../../../../public/data'
-import styles from './why.module.css'
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import styles from "./why.module.css";
 
 export const Why = () => {
+	const { t } = useTranslation("common");
+	const [isClient, setIsClient] = useState(false);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
 	return (
 		<div className={styles.why}>
-			<h2>{data.ru.why_main_page.title}</h2>
+			<h2>{isClient ? t("why_main_page.title") : "..."}</h2>
 			<ul className={styles.list}>
-				{data.ru.why_main_page.list.map(({id, title, text}) =>
-					<li key={id} className={styles.listItem}>
-						<div></div>
-						<p><span>{title}</span> {text}</p>
-					</li>
-				)}
+				{isClient &&
+					Object.values(t("why_main_page.list", { returnObjects: true }) || []).map(
+						({ id, title, text }) => (
+							<li key={id} className={styles.listItem}>
+								<div></div>
+								<p>
+									<span>{title}</span> {text}
+								</p>
+							</li>
+						)
+					)}
 			</ul>
 		</div>
-	)
-}
+	);
+};

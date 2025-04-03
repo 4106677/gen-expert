@@ -1,4 +1,4 @@
-const SHEET_RANGE = "!A1:AC";
+const SHEET_RANGE = "!A1:AI";
 
 const API_KEY = "AIzaSyCh28SfuEdWGBg1S2ZdjBiX0j4PzAlcr3c";
 const SHEET_ID = "1NzNqQsCbNPYqT6IyxrwDabslauegh_QQg8TSLJY7Ydo";
@@ -37,6 +37,9 @@ const processSheetData = (data) => {
 				photo8: item[23],
 				photo9: item[24],
 				photo10: item[25],
+				dataSheet1: item[30],
+				dataSheet2: item[31],
+				dataSheet3: item[32],
 			})) || []
 	);
 };

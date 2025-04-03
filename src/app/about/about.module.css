@@ -1,19 +1,231 @@
-.backgroundWrapper {
-    /*background-image: url('../../../public/images/backimage_about.png');*/
-    height: 400px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+.aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
 }
-.blurOverlay {
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*background-color: rgba(255, 255, 255, 0.6); !* білий з прозорістю *!*/
-    /*backdrop-filter: blur(3px); !* розмиття *!*/
-    /*z-index: 1;*/
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.mainTitle {
+    font-size: 42px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.mainTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #85e28f;
+    border-radius: 2px;
+}
+
+.description {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.sectionTitle {
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sectionTitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 30px;
+    background-color: #85e28f;
+    border-radius: 3px;
+}
+
+.whyChooseUs {
+    margin-bottom: 60px;
+}
+
+.advantagesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.advantageCard {
+    background-color: #eaeceb;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advantageCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.advantageIcon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.advantageTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.advantageTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #85e28f;
+    border-radius: 1.5px;
+}
+
+.advantageList {
+    padding-left: 20px;
+}
+
+.advantageList li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.advantageList li::before {
+    content: '✓';
+    color: #85e28f;
+    position: absolute;
+    left: -20px;
+    font-weight: bold;
+}
+
+.mission {
+    margin-bottom: 60px;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.missionText {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.goalTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.goalsList {
+    list-style: none;
+    padding: 0;
+}
+
+.goalsList li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.goalIcon {
+    font-size: 24px;
+    margin-right: 15px;
+    display: inline-block;
+    background-color: #eaeceb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.results {
+    margin-bottom: 40px;
+}
+
+.resultsList {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.resultsList li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.resultsList li::before {
+    content: '-';
+    position: absolute;
+    left: -10px;
+    color: #85e28f;
+    font-weight: bold;
+}
+
+.slogan {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #85e28f;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .advantagesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .advantageCard {
+        padding: 20px;
+    }
+
+    .mission {
+        padding: 25px;
+    }
+
+    .goalsList li {
+        font-size: 16px;
+    }
+
+    .slogan {
+        font-size: 20px;
+    }
 }

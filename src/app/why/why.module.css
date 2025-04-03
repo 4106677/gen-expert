@@ -1,0 +1,212 @@
+.container {
+    margin: 40px auto 0 auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.benefitsList {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: flex-start;
+}
+
+.icon {
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.bestForSection {
+    margin-bottom: 1.5rem;
+}
+
+.bestForTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.bestForList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bestForItem {
+    display: flex;
+    align-items: center;
+}
+
+.accordionContainer {
+    border: 1px solid #eaeceb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.accordionButton {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background-color: #eaeceb;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordionButton:hover {
+    background-color: #dcdede;
+}
+
+.accordionTitle {
+    font-weight: bold;
+    color: #000;
+}
+
+.arrowIcon {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.arrowIconOpen {
+    transform: rotate(180deg);
+}
+
+.accordionContent {
+    padding: 1rem;
+    background-color: white;
+}
+
+.paragraph {
+    margin-bottom: 1rem;
+}
+
+.comparisonTitle {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.table {
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    background-color: #eaeceb;
+}
+
+.tableHeaderCell {
+    padding: 0.5rem;
+    border: 1px solid #dcdede;
+    text-align: left;
+}
+
+.tableCell {
+    padding: 0.5rem;
+    border: 1px solid #dcdede;
+}
+
+.tableCellRight {
+    text-align: right;
+}
+
+.tableCellCenter {
+    text-align: center;
+}
+
+.conclusion {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.paybackTitle {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.paybackList {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.paybackItem {
+    display: flex;
+    align-items: flex-start;
+}
+
+.noBlackoutsBox {
+    background-color: #eaeceb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.noBlackoutsTitle {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.noBlackoutsQuestion {
+    font-weight: bold;
+}
+
+.ctaContainer {
+    text-align: center;
+}
+
+.ctaButton {
+    background-color: #85e28f;
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.ctaButton:hover {
+    background-color: #6dca76;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .comparisonTitle, .paybackTitle {
+        font-size: 1rem;
+    }
+}

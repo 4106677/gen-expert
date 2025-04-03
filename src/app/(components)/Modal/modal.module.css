@@ -18,10 +18,61 @@
     padding: 20px;
     border-radius: 8px;
     width: 1200px;
-    height: 600px;
+    height: 800px;
     overflow: hidden;
     display: flex;
     flex-direction: row;
+}
+
+.carouselWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.purpose {
+    display: flex;
+    justify-content: center;
+
+    button {
+        width: max-content;
+        padding: 10px 20px;
+        font-size: 16px;
+        /*background: #007bff;*/
+        background-color: #85e28f;
+        color: white;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+
+        &:hover {
+            clip-path: none;
+        }
+    }
+}
+
+.filesWrapper {
+    h2 {
+        border-bottom: 1px solid #dedede;
+        font-size: 20px;
+        font-weight: normal;
+        width: max-content;
+        /*text-decoration: underline;*/
+        /*color: #dedede;*/
+    }
+}
+
+.file {
+    margin-top: 8px;
+    a {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 8px;
+        }
+    }
 }
 
 .content {
@@ -48,6 +99,11 @@
     }
 }
 
+.sliderWrapper {
+    outline: 1px solid #eaeceb !important;
+    border: 1px solid #eaeceb !important;
+}
+
 .carousel :global(.slide img) {
     max-height: 400px;
     height: 400px;
@@ -68,12 +124,12 @@
 .description {
     margin-left: 40px;
     overflow: hidden;
+    width: 100%;
 
     p {
         margin-top: 20px;
         overflow: auto;
-        height: 430px;
-
+        height: 492px;
 
         scrollbar-width: thin;
         scrollbar-color: #888 #fff;
@@ -85,6 +141,11 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+
+    h2 {
+        border-bottom: 1px solid black;
+        font-size: 32px;
+    }
 
     button {
         width: 28px;
@@ -98,7 +159,7 @@
 
 /* Для Webkit-браузерів (Chrome, Safari) */
 .description p::-webkit-scrollbar {
-    width: 8px; /* Ширина скролу */
+    width: 8px;
 }
 
 .description p::-webkit-scrollbar-thumb {
@@ -113,12 +174,21 @@
 
 
 .productDescription {
-    margin-top: 14px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px 30px;
+    /*margin-top: 14px;*/
+    /*display: grid;*/
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /*gap: 3px 30px;*/
+    margin-top: 10px;
 
-
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+            border-bottom: 1px solid #eaeceb;
+        }
+    }
 }
 
 /*.description h2 {*/

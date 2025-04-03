@@ -38,8 +38,9 @@ export default function Header() {
 					<ul className="nav-list">
 						<li><Link href="/equipment">Loading...</Link></li>
 						<li><Link href="/why">Loading...</Link></li>
-						<li><Link href="/about">Loading...</Link></li>
+						<li><Link href="/useful">Loading...</Link></li>
 						<li><Link href="/calculator">Loading...</Link></li>
+						<li><Link href="/cooperation">Loading...</Link></li>
 					</ul>
 					<div className="language">
 						<span className="rounder">'EN'</span>
@@ -63,8 +64,9 @@ export default function Header() {
 				<ul className="nav-list">
 					<li><Link href="/equipment">{t("menu.equipment")}</Link></li>
 					<li><Link href="/why">{t("menu.why")}</Link></li>
-					<li><Link href="/about">{t("menu.about")}</Link></li>
+					<li><Link href="/useful">{t("menu.useful")}</Link></li>
 					<li><Link href="/calculator">{t("menu.calculator")}</Link></li>
+					<li><Link href="/cooperation">{t("menu.cooperation")}</Link></li>
 				</ul>
 				<div className="language" onClick={() => setLangBox(true)}>
 					<span className="rounder">{lang.toUpperCase()}</span>

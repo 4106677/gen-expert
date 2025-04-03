@@ -11,6 +11,7 @@ const nextConfig = {
 			"eneraque.com"
 		],
 	},
+	devIndicators: false
 };
 
 

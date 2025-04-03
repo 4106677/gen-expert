@@ -11,7 +11,7 @@
     &:before {
         content: "";
         height: 40px;
-        background-color: white;
+        background-color: var(--background);
         width: 100%;
         display: block;
     }

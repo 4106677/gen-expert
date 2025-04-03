@@ -5,16 +5,16 @@
   --font-roboto: var(--font-roboto);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /*--background: #0a0a0a;*/
-    /*--foreground: #ededed;*/
-    /*--background: linear-gradient(to right top, #e4e6e7, #acafac);*/
-    --background: #fff;
-    --foreground: #000;
-    /*--foreground: #171717;*/
-  }
-}
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    !*--background: #0a0a0a;*!*/
+/*    !*--foreground: #ededed;*!*/
+/*    !*--background: linear-gradient(to right top, #e4e6e7, #acafac);*!*/
+/*    --background: #fff;*/
+/*    --foreground: #000;*/
+/*    !*--foreground: #171717;*!*/
+/*  }*/
+/*}*/
 
 html,
 body {
@@ -46,8 +46,28 @@ ul {
   list-style: none;
 }
 
+button {
+  outline: none;
+  border: 1px solid #6b6b6b;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
+.no-select {
+  -webkit-user-select: none; /* для Safari */
+  -moz-user-select: none;    /* для Firefox */
+  -ms-user-select: none;     /* для IE/Edge */
+  user-select: none;         /* для современных браузеров */
+}
+
+
