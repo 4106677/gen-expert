@@ -295,31 +295,33 @@ export default function Equipment() {
 						</option>
 					))}
 				</select>
-				<button type='button' disabled={selectedSorting === '' && search === ''} onClick={handleResetSorting}>{t("equipment.filters.items.sorting.reset")}</button>
+				<button className={styles.sortWrapper_button} type='button' disabled={selectedSorting === '' && search === ''} onClick={handleResetSorting}>{t("equipment.filters.items.sorting.reset")}</button>
 			</div>
 			<div className={styles.container}>
 				<ul className={styles.left}>
-					<li>
-						<h3>{t("equipment.filters.items.power")}</h3>
+					<li className={styles.left_li}>
+						<h3 className={styles.left_h3}>{t("equipment.filters.items.power")}</h3>
 						<div className={styles.inputFilters}>
 							<form onSubmit={applyPowerFilter}>
 								<div className={styles.inputs}>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="minPower"
 										defaultValue={powerRange.min}
 										key={`min-${powerRange.min}`}
 										placeholder="Min power"
 									/>
-									<span>-</span>
+									<span className={styles.inputFilters_span}>-</span>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="maxPower"
 										defaultValue={powerRange.max}
 										key={`max-${powerRange.max}`}
 										placeholder="Max power"
 									/>
-									<button type="submit">OK</button>
+									<button type="submit" className={styles.inputFilters_button}>OK</button>
 								</div>
 							</form>
 							<div className={styles.sliderContainer}>
@@ -338,7 +340,7 @@ export default function Equipment() {
 							</div>
 						</div>
 					</li>
-					<li className={styles.manufacturer}><h3>{t("equipment.filters.items.manufacturer")}</h3>
+					<li className={styles.manufacturer}><h3 className={styles.left_h3}>{t("equipment.filters.items.manufacturer")}</h3>
 						{manufacturers?.map((item, index) =>
 							<div key={index}>
 								<input type="checkbox" onChange={() => onManufacturerInputClick(item)}
@@ -347,26 +349,28 @@ export default function Equipment() {
 							</div>
 						)}
 					</li>
-					<li><h3>{t("equipment.filters.items.voltage")}</h3>
+					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.voltage")}</h3>
 						<div className={styles.inputFilters}>
 							<form onSubmit={applyVoltageFilter}>
 								<div className={styles.inputs}>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="minVoltage"
 										defaultValue={voltageRange.min}
 										key={`min-${voltageRange.min}`}
 										placeholder="Min voltage"
 									/>
-									<span>-</span>
+									<span className={styles.inputFilters_span}>-</span>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="maxVoltage"
 										defaultValue={voltageRange.max}
 										key={`max-${voltageRange.max}`}
 										placeholder="Max voltage"
 									/>
-									<button type="submit">OK</button>
+									<button type="submit" className={styles.inputFilters_button}>OK</button>
 								</div>
 							</form>
 							<div className={styles.sliderContainer}>
@@ -385,7 +389,7 @@ export default function Equipment() {
 							</div>
 						</div>
 					</li>
-					<li className={styles.condition}><h3>{t("equipment.filters.items.condition")}</h3>
+					<li className={styles.condition}><h3 className={styles.left_h3}>{t("equipment.filters.items.condition")}</h3>
 						{conditions?.map((item, index) =>
 							<div key={index}>
 								<input type="checkbox" onChange={() => onConditionInputClick(item)}
@@ -394,26 +398,28 @@ export default function Equipment() {
 							</div>
 						)}
 					</li>
-					<li><h3>{t("equipment.filters.items.release")}</h3>
+					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.release")}</h3>
 						<div className={styles.inputFilters}>
 							<form onSubmit={applyYearFilter}>
 								<div className={styles.inputs}>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="minYear"
 										defaultValue={yearRange.min}
 										key={`min-${yearRange.min}`}
 										placeholder="Min year"
 									/>
-									<span>-</span>
+									<span className={styles.inputFilters_span}>-</span>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="maxYear"
 										defaultValue={yearRange.max}
 										key={`max-${yearRange.max}`}
 										placeholder="Max year"
 									/>
-									<button type="submit">OK</button>
+									<button type="submit" className={styles.inputFilters_button}>OK</button>
 								</div>
 							</form>
 							<div className={styles.sliderContainer}>
@@ -432,26 +438,28 @@ export default function Equipment() {
 							</div>
 						</div>
 					</li>
-					<li><h3>{t("equipment.filters.items.price")}</h3>
+					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.price")}</h3>
 						<div className={styles.inputFilters}>
 							<form onSubmit={applyPriceFilter}>
 								<div className={styles.inputs}>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="minPrice"
 										defaultValue={priceRange.min}
 										key={`min-${priceRange.min}`}
 										placeholder="Min price"
 									/>
-									<span>-</span>
+									<span className={styles.inputFilters_span}>-</span>
 									<input
+										className={styles.inputFilters_input}
 										type="number"
 										name="maxPrice"
 										defaultValue={priceRange.max}
 										key={`max-${priceRange.max}`}
 										placeholder="Max price"
 									/>
-									<button type="submit">OK</button>
+									<button type="submit" className={styles.inputFilters_button}>OK</button>
 								</div>
 							</form>
 							<div className={styles.sliderContainer}>

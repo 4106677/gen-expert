@@ -77,12 +77,14 @@ export default function Modal() {
 						{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
 						{files?.map((file, index) => (
 							<div key={index} className={styles.file}>
-								<a href={gdLink(file)} target='_blank'>								<Image
+								<a href={gdLink(file)} target='_blank' className={styles.file_a}>
+									<Image
 									aria-hidden
 									src="/doc.svg"
 									alt="Document icon"
 									width={30}
 									height={30}
+									className={styles.file_img}
 								/>Datasheet {index+1}</a>
 							</div>
 						))}
@@ -90,41 +92,34 @@ export default function Modal() {
 				</div>
 				<div className={styles.description}>
 					<div className={styles.heading}>
-						<h2>{showModal.manufacturer} {showModal.model}</h2>
-						{/*<Image*/}
-						{/*	aria-hidden*/}
-						{/*	src="/doc.svg"*/}
-						{/*	alt="Document icon"*/}
-						{/*	width={30}*/}
-						{/*	height={30}*/}
-						{/*/>*/}
-					<button onClick={modalClose}>x</button>
+						<h2 className={styles.heading_h2}>{showModal.manufacturer} {showModal.model}</h2>
+					<button onClick={modalClose} className={styles.heading_button}>x</button>
 					</div>
 					<ul className={styles.productDescription}>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.power")}</h3>
 							<span>{showModal.power} {showModal.powerUnit}</span>
 						</li>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.manufacturer")}</h3>
 							<span>{showModal.manufacturer}</span>
 						</li>
-						<li><h3>{t("equipment.filters.items.voltage")}</h3>
+						<li className={styles.productDescription_li}><h3>{t("equipment.filters.items.voltage")}</h3>
 							<span>{showModal.voltage} {showModal.voltageUnit}</span>
 						</li>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.condition")}</h3>
 							<span>{showModal.condition}</span>
 						</li>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.release")}</h3>
 							<span>{showModal.year}</span>
 						</li>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.price")}</h3>
 							<span>{showModal.price} {showModal.priceUnit}</span>
 						</li>
-						<li>
+						<li className={styles.productDescription_li}>
 							<h3>{t("equipment.filters.items.working")}</h3>
 							<span><span>{showModal.hours} {showModal.hoursUnit}</span></span>
 						</li>

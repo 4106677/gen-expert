@@ -79,6 +79,7 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4>{t("calculator.params.elecProd")}</h4>
 							<input
+								className={styles.sliderList_input}
 								style={{ width: "130px" }}
 								type="number"
 								name="elecProd"
@@ -105,6 +106,7 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4>{t("calculator.params.elecPrice")}</h4>
 							<input
+								className={styles.sliderList_input}
 								type="number"
 								name="elecPrice"
 								// ref={inputRef}
@@ -131,6 +133,7 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4>{t("calculator.params.gasPrice")}</h4>
 							<input
+								className={styles.sliderList_input}
 								type="number"
 								name="gasPrice"
 								// ref={inputRef}
@@ -161,7 +164,7 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4 className={styles.sliderList_item_h4}>{t("calculator.params.hourlyHeat")}</h4>
 							<input
-								className={styles.sliderList_item_input}
+								className={`${styles.sliderList_item_input} ${styles.sliderList_input}`}
 								style={{ width: "130px" }}
 								type="number"
 								name="hourlyHeat"
@@ -193,7 +196,7 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4 className={styles.sliderList_item_h4}>{t("calculator.params.yearlyHeat")}</h4>
 							<input
-								className={styles.sliderList_item_input}
+								className={`${styles.sliderList_item_input} ${styles.sliderList_input}`}
 								type="number"
 								name="yearlyHeat"
 								// ref={inputRef}
@@ -227,36 +230,36 @@ export default function Calculator () {
 						<h2 className={styles.calculator_title}>{t("calculator.estimate.subtitle")}</h2>
 						<ul>
 							<li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.gas_gen_price")}</h4>
+								<h4 className={styles.calculator_list_item_h4}>{t("calculator.estimate.params.gas_gen_price")}</h4>
 								<span>{gas_gen_price.toFixed(3)} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>
+								<h4 className={styles.calculator_list_item_h4}>
 									<div className={`${styles.rounder} `} style={{backgroundColor: "#8884d8"}}></div>
 									{t("calculator.estimate.params.selfGeneration")}
 								</h4>
 								<span>{Math.round(yearly_gen_price).toLocaleString("ru-RU")} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>
+								<h4 className={styles.calculator_list_item_h4}>
 									<div className={`${styles.rounder} `} style={{backgroundColor: "#ffc658"}}></div>
 									{t("calculator.estimate.params.supplierPurchase")}
 								</h4>
 								<span>{yearly_elec_price.toLocaleString("ru-RU")} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>
+								<h4 className={styles.calculator_list_item_h4}>
 									<div className={`${styles.rounder} `} style={{backgroundColor: "#82ca9d"}}></div>
 									{t("calculator.estimate.params.annualSavings")}
 								</h4>
 								<span>{Math.round(chp ? yearly_econom_chp : yearly_econom).toLocaleString('ru-RU')} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.gpuPaybackPeriod")}</h4>
+								<h4 className={styles.calculator_list_item_h4}>{t("calculator.estimate.params.gpuPaybackPeriod")}</h4>
 								<span>{Math.round(gpuPaybackPeriod)} {t("calculator.unit.month")}</span>
 							</li>
 							{chp && <li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.chpPaybackPeriod")}</h4>
+								<h4 className={styles.calculator_list_item_h4}>{t("calculator.estimate.params.chpPaybackPeriod")}</h4>
 								<span>{Math.round(chpPaybackPeriod)} {t("calculator.unit.month")}</span>
 							</li>}
 						</ul>
