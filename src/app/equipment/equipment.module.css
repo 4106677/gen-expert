@@ -160,7 +160,7 @@
             rotate: 90deg;
         }
 
-        button {
+        .product_button {
             display: block;
         }
     }
@@ -172,11 +172,11 @@
         min-width: 400px;
     }
 
-    h3 {
+    .product_h3 {
         margin-top: 10px;
     }
 
-    button {
+    .product_button {
         cursor: pointer;
         padding: 10px 20px;
         margin-bottom: 5px;
@@ -203,7 +203,7 @@
     padding-right: 10px;
     width: 100%;
 
-    p {
+    .productsSection_p {
         margin-top: 10px;
         max-height: 189px;
         overflow: hidden;

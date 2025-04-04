@@ -488,7 +488,7 @@ export default function Equipment() {
 								       className={styles.img} src={bbExtractor(item.photo1)}
 								       alt={item.model}></Image>
 								<div className={styles.productsSection}>
-									<h3>{item.manufacturer} {item.model}</h3>
+									<h3 className={styles.product_h3}>{item.manufacturer} {item.model}</h3>
 									<ul className={styles.productDescription}>
 										<li>{item.power} {item.powerUnit}</li>
 										<li>{item.price} {item.priceUnit}</li>
@@ -497,8 +497,8 @@ export default function Equipment() {
 										<li>{item.year}</li>
 										<li>{item.hours} {item.hoursUnit}</li>
 									</ul>
-									<p dangerouslySetInnerHTML={{__html: item.description}}/>
-									<button type="button"
+									<p dangerouslySetInnerHTML={{__html: item.description}} className={styles.productsSection_p}/>
+									<button type="button" className={styles.product_button}
 									        onClick={() => setShowModal(item)}>{t("equipment.button")}</button>
 								</div>
 							</li>

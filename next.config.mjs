@@ -11,7 +11,11 @@ const nextConfig = {
 			"eneraque.com"
 		],
 	},
-	devIndicators: false
+	devIndicators: false,
+	rules: {
+		"@next/next/no-img-element": "off",
+		'react/no-unescaped-entities': 'off'
+	}
 };
 
 
