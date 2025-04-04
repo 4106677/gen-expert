@@ -1,87 +1,400 @@
 {
   "menu": {
     "equipment": "Equipment",
-    "why": "Почему ГПУ",
-    "about": "About us",
-    "calculator": "Calculate",
-    "contacts": "Contacts"
+    "why": "Why GPU",
+    "about": "About Us",
+    "calculator": "Calculator",
+    "contacts": "Contacts",
+    "useful": "Useful",
+    "cooperation": "Cooperation"
   },
   "about_main_page": {
-    "header": "О нас",
-    "title": "Мы предлагаем бизнесу в Украине доступ к новым и проверенным газопоршневым установкам от ведущих мировых производителей.",
-    "subtitle": "Наш подход — это глубокая аналитика, международные связи и комплексный подбор под ваши параметры и задачи."
+    "header": "About Us",
+    "title": "We offer businesses in Ukraine access to new and proven gas piston units from leading global manufacturers.",
+    "subtitle": "Analytics, international expertise, and attention to detail - this is how we select solutions for your needs."
   },
   "why_main_page": {
-    "title": "Почему ГПУ – это лучший выбор для Вашего бизнеса?",
+    "title": "Why is a gas piston unit the best solution for your business?",
     "list": [
       {
         "id": 1,
-        "title": "Экономия на электроэнергии до 50% -",
-        "text": "сниженные тарифы, отсутствие платежей за передачу и распределение.",
+        "title": "\uD83D\uDCB0 Savings up to 50%",
+        "text": "on electricity — tariff up to 4.5 UAH/kWh, no transmission or distribution fees",
         "icon": ""
       },
       {
         "id": 2,
-        "title": "Никаких блэкаутов = независимость от сети -",
-        "text": "стабильная работа даже при авариях в сети.",
+        "title": "\uD83D\uDCA1 100% energy independence",
+        "text": "— uninterrupted operation even during blackouts",
         "icon": ""
       },
       {
         "id": 3,
-        "title": "Ваш бизнес всегда работает -",
-        "text": "автономное электроснабжение без сбоев.",
+        "title": "\uD83D\uDD0B Low cost",
+        "text": "of electricity — a strong competitive advantage",
         "icon": ""
       },
       {
         "id": 4,
-        "title": "Эффективность = конкурентное преимущество -",
-        "text": "низкая себестоимость электроэнергии дает вам сильное преимущество на рынке.",
+        "title": "\uD83D\uDD27 Minimal operating costs",
+        "text": "— smooth operation, less wear",
         "icon": ""
       },
       {
         "id": 5,
-        "title": "Рентабельность выше, чем у дизельных генераторов за счет более дешевого топлива",
-        "text": "(газ дешевле дизеля в 3-4 раза), а выбросов NOₓ и CO₂ на 80% меньше",
+        "title": "\uD83D\uDD25 Cogeneration",
+        "text": "— simultaneous production of heat and electricity with efficiency up to 90%",
         "icon": ""
       },
       {
         "id": 6,
-        "title": "Низкие эксплуатационные расходы –",
-        "text": "газовое топливо обеспечивает более плавную работу двигателя и снижает износ.",
-        "icon": ""
-      },
-      {
-        "id": 7,
-        "title": "Стабильная стоимость топлива –",
-        "text": "природный газ имеет меньшую волатильность цен по сравнению с электроэнергией и дизельным топливом.",
-        "icon": ""
-      },
-      {
-        "id": 8,
-        "title": "Комбинированное производство электро- и тепловой энергии –",
-        "text": "когенерация позволяет производить одновременно и электричество и тепло, увеличивая КПД установки до 90%!",
-        "icon": ""
-      },
-      {
-        "id": 9,
-        "title": "Оптимальное решение под ваши задачи и бюджет –",
-        "text": "новые и Б/У ГПУ в отличном состоянии с гарантией.",
+        "title": "\uD83D\uDE80 Turnkey solutions",
+        "text": "— new and used units with a warranty, fully equipped to meet your needs",
         "icon": ""
       }
     ]
   },
   "equipment": {
-    "title": "Лучшие предложения на рынке газопоршневого оборудования",
+    "title": "The best offers on the gas piston equipment market",
+    "button": "Details",
+    "modal": {
+      "purpose": "Get an offer",
+      "files": "Documentation"
+    },
     "filters": {
       "title": "",
       "items": {
-        "power": "Мощность",
-        "manufacturer": "Производитель",
-        "voltage": "Напряжение",
-        "condition": "Состояние",
-        "release": "Год выпуска",
-        "price": "Цена"
+        "power": "Power",
+        "manufacturer": "Manufacturer",
+        "voltage": "Voltage",
+        "condition": "Condition",
+        "release": "Year of manufacture",
+        "price": "Price",
+        "working": "Operating hours",
+        "sorting": {
+          "title": "Sorting",
+          "reset": "Reset",
+          "search": "Search",
+          "values": {
+            "priceToLow": "Cheapest first",
+            "priceToHigh": "Most expensive first",
+            "powerToLow": "By power ↑",
+            "powerToHigh": "By power ↓",
+            "latest": "Recently added"
+          }
+        }
       }
+    }
+  },
+  "why": {
+    "title": "Why is a GPU the best choice for your business?",
+    "benefits": {
+      "economy": "💰 Savings on electricity up to 50% – reduced tariffs, no transmission or distribution fees.",
+      "blackouts": "💡 No blackouts = grid independence – stable operation even during network failures.",
+      "stability": "⚙ Your business always runs – autonomous power supply without interruptions.",
+      "efficiency": "🔋 Efficiency = competitive advantage – low electricity costs give you a strong market edge.",
+      "profitability": "🌍 Higher profitability than diesel generators due to cheaper fuel (gas is 3-4 times cheaper than diesel), with 80% fewer NOₓ and CO₂ emissions.",
+      "lowCost": "\uD83D\uDD27 Low operating costs – gas fuel ensures smoother engine operation and reduces wear.",
+      "stableCost": "✅ Stable fuel costs – natural gas has lower price volatility compared to electricity and diesel.",
+      "cogeneration": "🔥 Combined electricity and heat production – cogeneration allows simultaneous generation of electricity and heat, boosting unit efficiency up to 90%!",
+      "solution": "🚀 Optimal solution for your tasks and budget – new and used GPUs in excellent condition."
+    },
+    "bestFor": {
+      "title": "GPU is the best solution for these facilities:",
+      "industrial": "🏭 Manufacturing plants",
+      "business": "🏢 Business centers",
+      "trade": "🏪 Trade and logistics centers",
+      "medical": "\uD83C\uDFE2 Data processing centers",
+      "greenhouse": "🏡 Greenhouse complexes"
+    },
+    "savings": {
+      "title": "💡 How to save $1,000,000 a year on electricity? 💡",
+      "intro": "If your business consumes 1 MW of electricity per hour around the clock, you spend nearly 80 million UAH annually on bills. But there’s a solution that cuts these costs almost in half!",
+      "solution": "🚀 A gas piston unit (GPU) allows you to generate electricity at 4.63 UAH/kWh instead of 9 UAH/kWh – without overpaying for transmission and distribution.",
+      "comparison": "What’s more profitable: paying a supplier or generating electricity yourself?",
+      "table": {
+        "parameter": "Parameter",
+        "grid": "Grid electricity",
+        "gpu": "Gas piston unit (GPU)",
+        "pricePerKWh": "Price per 1 kWh",
+        "monthlyExpenses": "Monthly expenses",
+        "yearlyExpenses": "Yearly expenses",
+        "monthlySavings": "Monthly savings",
+        "yearlySavings": "Yearly savings"
+      },
+      "conclusion": "📉 GPU reduces costs by almost half!",
+      "payback": {
+        "title": "Payback and benefits",
+        "price": "💰 Price of a 1 MW GPU ≈ $200,000 - $450,000 (8 - 17.55 million UAH)",
+        "period": "✅ Payback – just 3 - 6 months!",
+        "afterPayback": "✅ After that – pure savings of millions of UAH annually!"
+      },
+      "noBlackouts": {
+        "title": "Now imagine no blackouts",
+        "description": "🔋 Production doesn’t stop, equipment doesn’t idle, employees keep working – you’re no longer dependent on grid outages.",
+        "question": "💡 One question: are you ready to keep paying double for electricity, or do you want to start saving now?"
+      },
+      "cta": "📞 Leave a request – we’ll calculate the benefits for your business"
+    }
+  },
+  "calculator": {
+    "title": "Calculate the benefits of self-generation",
+    "subtitle": "Assess savings, profitability, and payback period for GPU investments.",
+    "params": {
+      "elecProd": "Electricity consumption (kWh)",
+      "elecPrice": "Electricity purchase price (per 1 kWh, UAH)",
+      "gasPrice": "Gas purchase price (per 1 m³, UAH)",
+      "hourlyHeat": "Heat energy consumption (kWh)",
+      "yearlyHeat": "Heat energy consumption in months",
+      "chp": "Cogeneration"
+    },
+    "estimate": {
+      "title": "Annual expenses",
+      "subtitle": "Advantages of self-generation over a year",
+      "params": {
+        "gas_gen_price": "Cost of 1 kW of generation",
+        "selfGeneration": "Costs with self-generation",
+        "supplierPurchase": "Costs when buying from a supplier",
+        "annualSavings": "Annual savings",
+        "avgAnnualCost": "Average annual cost of electricity production",
+        "gpuPaybackPeriod": "GPU payback period",
+        "chpPaybackPeriod": "CHP payback period"
+      },
+      "button": "Contact us"
+    },
+    "unit": {
+      "kw": "kW",
+      "mw": "MW",
+      "uah": "UAH",
+      "month": "months",
+      "years_1": "year",
+      "years_2": "years (2-4)",
+      "years_3": "years (5+)"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "",
+    "description": "We offer businesses in Ukraine access to new and proven used gas piston units from leading global manufacturers. Analytics, international expertise, and attention to detail – this is how we select solutions for your needs.",
+
+    "whyChooseUs": {
+      "title": "Why choose us",
+
+      "advantage1": {
+        "title": "Precise selection for your facility",
+        "point1": "We analyze load, goals, and site parameters",
+        "point2": "We consider operating modes, heat recovery, and grid limitations"
+      },
+
+      "advantage2": {
+        "title": "Access to the world’s best offers",
+        "point1": "We work directly with factories, traders, and platforms",
+        "point2": "New and used units: Jenbacher, MWM, CAT, MTU, and more"
+      },
+
+      "advantage3": {
+        "title": "Verified equipment and documentation",
+        "point1": "We check resource, technical condition, and operational history",
+        "point2": "We provide full documentation and expertise"
+      },
+
+      "advantage4": {
+        "title": "Comprehensive support",
+        "point1": "On-site inspection (Europe, Asia, USA)",
+        "point2": "Selection, logistics, customs, commissioning",
+        "point3": "Post-warranty support and service"
+      },
+
+      "advantage5": {
+        "title": "Savings up to 50% and reduced risks",
+        "point1": "You get only verified and cost-effective offers",
+        "point2": "You reduce electricity costs and increase profitability"
+      },
+
+      "advantage6": {
+        "title": "Solutions for all scales",
+        "point1": "From small businesses to industrial holdings",
+        "point2": "Individual approach and flexible terms"
+      }
+    },
+
+    "mission": {
+      "title": "Our mission",
+      "description": "Promoting distributed generation in Ukraine – a path to energy independence and sustainable growth.",
+      "goalTitle": "Our goal is to give Ukrainian businesses a powerful tool for growth:",
+      "goal1": "Generation of their own electricity and heat.",
+      "goal2": "Reduction of production costs and expenses.",
+      "goal3": "Independence from high tariffs and unstable grids.",
+      "goal4": "Cleaner energy with low emissions.",
+      "goal5": "Flexible solutions tailored to real business needs."
+    },
+
+    "results": {
+      "title": "Results for the client:",
+      "point1": "reliable equipment with a verified history and the best price",
+      "point2": "cost minimization",
+      "point3": "expense control",
+      "point4": "full energy independence"
+    },
+
+    "slogan": "With us, generation becomes a business tool⚡"
+  },
+  "useful": {
+    "title": "Useful Information about Gas Piston Units",
+    "keyQuestions": "Key questions:",
+    "tip": "Tip:",
+    "whatToConsider": "What to consider?",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "good": "Good",
+    "excellent": "Excellent",
+    "economical": "Economical",
+    "complexLogistics": "Complex logistics",
+    "limited": "Limited",
+    "consultationCTA": "Get a consultation",
+
+    "howToChooseGPU": {
+      "title": "How to choose the right gas piston unit (GPU)",
+      "intro1": "Gas piston units (GPUs) are an effective solution for autonomous power supply, reducing electricity costs, and increasing business energy independence.",
+      "intro2": "However, to select the optimal GPU, it’s important to consider many technical parameters and the characteristics of the site where it will be installed. In this article, we’ll break down what to focus on when choosing a gas piston unit to ensure maximum efficiency and reliability.",
+      "parameter1": {
+        "title": "1. Determining power and operating mode",
+        "description": "Before purchasing a GPU, it’s essential to accurately calculate the facility’s power consumption and select a unit with matching specifications.",
+        "point1": "What is the peak and average daily load at the facility?",
+        "point2": "Will the GPU be used as the primary or backup energy source?",
+        "point3": "Is it necessary to consider the possibility of parallel operation with multiple units?",
+        "tip": "If the unit will be the primary energy source, choose a GPU with a 10-15% power reserve to account for load. If it will work in parallel with the grid or as a backup, you can calculate power more precisely based on critical loads."
+      },
+      "parameter2": {
+        "title": "2. Fuel efficiency and gas consumption",
+        "description": "GPU efficiency is measured by electrical efficiency, thermal efficiency, and total efficiency (cogeneration). Higher efficiency means lower operating costs.",
+        "point1": "Electrical efficiency (%) – shows how much gas energy is converted into electricity. Good models achieve 38-46%.",
+        "point2": "Thermal efficiency (%) – if heat utilization is planned, thermal efficiency matters (typically 40-48%).",
+        "point3": "Total efficiency (%) – with combined electricity and heat production (cogeneration), efficiency can reach 90% or more.",
+        "point4": "Gas consumption – measured in m³/MW of electricity and affects the cost of electricity.",
+        "tip": "Choose a unit with maximum total efficiency (e.g., Jenbacher, MWM, Bergen, Wärtsilä) for cogeneration solutions. If heat isn’t used, focus on electrical efficiency."
+      },
+      "summary": {
+        "title": "Summary: How to choose the optimal gas piston unit?",
+        "point1": "Calculate the required power and determine the operating mode (primary/backup).",
+        "point2": "Assess operating conditions and site specifics for GPU placement: availability of electrical and gas infrastructure, as well as required space.",
+        "point3": "Compare efficiency and fuel consumption across different models.",
+        "point4": "Consider operating life and maintenance intervals.",
+        "point5": "Determine budget and payback calculation.",
+        "point6": "Check availability of service support in your region.",
+        "point7": "Choose between GPU or CHP if cogeneration is needed.",
+        "conclusion": "The right choice of a gas piston unit ensures reliable power supply, minimizes fuel and maintenance costs, and accelerates investment payback."
+      }
+    },
+
+    "serviceLife": {
+      "title": "Generator service life by brand until major overhaul, average maintenance interval, and types of maintenance",
+      "table": {
+        "manufacturer": "Manufacturer",
+        "electricalEfficiency": "Electrical efficiency (%)",
+        "thermalEfficiency": "Thermal efficiency (%)",
+        "totalEfficiency": "Total efficiency (%)",
+        "reliability": "Reliability",
+        "fuelConsumption": "Fuel consumption",
+        "partsAvailability": "Parts availability",
+        "serviceLifeHours": "Service life until major overhaul (hours)",
+        "maintenanceInterval": "Maintenance interval (hours)",
+        "gasConsumption": "Gas consumption per 1 MW of electricity"
+      }
+    },
+
+    "brands": {
+      "title": "Popular manufacturers",
+      "jenbacher": "Austrian manufacturer, a market leader. Jenbacher is renowned for high reliability and adaptability to various gas types (natural gas, biogas, landfill gas, mine gas, and even hydrogen blends). The units offer one of the highest efficiencies on the market – up to 90% in cogeneration, making them an excellent choice for industry and utilities. However, the high equipment cost requires careful payback calculation.",
+      "mwm": "German brand with a 150-year history. MWM offers units with optimized fuel consumption, reducing operating costs. High automation and remote monitoring. Premium segment with a high price.",
+      "mtu": "German manufacturer of premium solutions (Rolls-Royce). Modular units for hybrid systems. Ideal for facilities with high reliability demands. Downsides – frequent maintenance and expensive parts.",
+      "cat": "American industrial giant. CAT GPU advantages include a wide service network, parts availability, and high power. However, efficiency and performance lag behind European counterparts, with above-average fuel consumption.",
+      "bergen": "Norwegian brand of large units. Known for enhanced reliability and long engine life (up to 100,000 hours). Downsides: high cost and complex service.",
+      "wartsila": "Finnish manufacturer for large-scale generation. Flexible with various fuel types. High efficiency and durability. Downsides: high price and service complexity.",
+      "cummins": "American manufacturer of affordable and reliable GPUs. Simple design and parts availability. Lags behind European brands in efficiency and service life, with higher fuel consumption.",
+      "doosan": "South Korean corporation, popular in Asia and Eastern Europe. Affordable price and good performance. Shorter service life until overhaul and lower efficiency than premium brands.",
+      "himoinsa": "Spanish brand of compact and mobile GPUs. Suitable for small facilities and backup power. Relatively short service life and lower efficiency.",
+      "gentec": "Manufacturer of mid-range GPUs with flexible customization. Service support is limited compared to major brands.",
+      "mitsubishi": "Japanese manufacturer with innovative solutions. Enhanced reliability, long service life, and efficiency. Downsides: high cost and service complexity."
+    },
+
+    "programs": {
+      "title": "Distributed generation strategy in Ukraine",
+      "paragraph1": "Ukraine is rapidly developing a distributed generation program, which involves installing independent energy sources directly at enterprises and communities. Gas piston units (GPUs) play a key role as an efficient and reliable solution for producing electricity and heat.",
+      "paragraph2": "GPUs reduce reliance on centralized grids, cut energy costs, and ensure energy independence during peak loads or crises. The government supports this direction through regulatory mechanisms and incentives for businesses to adopt local generation sources, especially relevant amid energy system instability.",
+      "currentPrograms": "Current programs and tariffs:",
+      "psoDescription": "Currently, Resolution No. 222 of the Cabinet of Ministers of Ukraine (PSO agreement) applies to electricity producers using gas piston units:",
+      "psoPoint1": "* under the PSO agreement for electricity producers on GPUs – price of 14 UAH per 1 m³ until 31.10.2025",
+      "psoPoint2": "* under the PSO agreement for electricity and heat producers on GPUs – price of 18 UAH per 1 m³ until 31.10.2025",
+      "loansDescription": "Preferential loan rates of 5-7-9% per annum, approved by the Cabinet of Ministers of Ukraine, are currently available for purchasing energy equipment (including gas piston units):",
+      "link1": "Ministry of Energy: Development of distributed generation",
+      "link2": "Entrepreneurship Development Fund (5-7-9% Program)",
+      "link3": "ZMINYE: Energy awareness for business",
+      "link4": "Documentation and specifics of GPU and CHP connection"
+    }
+  },
+  "cooperation": {
+    "title": "Cooperation",
+    "intro": {
+      "p1": "If you’ve decided to switch to self-generation, become energy-independent, and significantly cut costs – we’re ready to be your partner on this journey.",
+      "p2": "Gen Expert offers not only equipment selection and supply but also project support, implementation assistance, and the possibility of co-financing.",
+      "p3": "We’re open to partnership, where our expertise, equipment, and market knowledge complement your initiative and readiness to implement effective solutions."
+    },
+    "start": {
+      "title": "Where to start?",
+      "intro": "To evaluate the project and prepare an offer, we ask you to provide basic information:",
+      "requestForm": {
+        "title": "The request form on the website includes:",
+        "companyName": "Company name",
+        "businessDescription": "Brief description of the business and industry",
+        "location": "Facility location (city, region)",
+        "sitePlan": "Site plan of the industrial area.",
+        "landBoundaries": "Land boundaries.",
+        "ecologyPermits": "Ecology, emission permits.",
+        "availableSpace": "Available space for equipment placement – approximate area, access conditions",
+        "chosenGPU": "Selected GPU model (optional) – from our catalog",
+        "contactInfo": "Contact information – name, position, phone, email"
+      },
+      "electrical": {
+        "title": "Electrical infrastructure:",
+        "point1": "Single-line electrical diagram;",
+        "point2": "Contracted electrical power, kW;",
+        "point3": "Electrical power for the facility’s own needs, kW;",
+        "point4": "Electricity consumption schedule by month for the last year and the last 3 months, kW;",
+        "point5": "Daily consumption schedule for the last 3 months, kW;",
+        "point6": "Technical conditions for connecting the facility to the grid;",
+        "point7": "Specify the maximum possible power generation into the grid with existing energy networks connected to the facility, kW;",
+        "point8": "Grid operator conditions for increasing power generation into the grid."
+      },
+      "gas": {
+        "title": "Availability of gas infrastructure:",
+        "point1": "Technical conditions for connecting the facility to the gas network (if available);",
+        "point2": "Gas distribution network operator;",
+        "point3": "Gas pipeline (main/distribution, gas pressure provision, MPa, throughput m³/h, operating mode (active, reserve, mothballed));",
+        "point4": "Maximum possible gas order volume at the connection point, m³/h."
+      },
+      "heat": {
+        "title": "Heat demand:",
+        "point1": "Heat consumption schedule by month for the last year and the last 3 months, kW;",
+        "point2": "Availability of existing heat-generating units;",
+        "point3": "Current deficit (surplus) in heat supply."
+      },
+      "submitInfo": "You can fill out the form online on this page or download a Word template, fill it out, and send it to us via email."
+    },
+    "submit": {
+      "downloadLink": "Download the form to fill out (.docx)",
+      "onlineLink": "Submit data online"
+    },
+    "benefits": {
+      "title": "What you’ll get",
+      "point1": "Personalized equipment selection",
+      "point2": "Energy and economic project model",
+      "point3": "Detailed commercial offer and launch plan",
+      "point4": "Opportunity to implement the project in partnership with us"
+    },
+    "cta": {
+      "text": "Your path to energy independence starts with one step – fill out the form, and we’ll prepare the best offer for you."
     }
   }
 }

@@ -2,9 +2,11 @@
 import styles from './about.module.css';
 import { useTranslation } from 'next-i18next';
 import {useEffect, useState} from "react";
+import { getTranslations } from 'next-intl/server';
 
-export default function About() {
+export default  function About() {
 	const { t } = useTranslation('common');
+	// const t = await getTranslations('common');
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
@@ -116,3 +118,4 @@ export default function About() {
 		</div>
 	);
 }
+

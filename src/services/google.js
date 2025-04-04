@@ -9,7 +9,7 @@ const processSheetData = (data) => {
 	return (
 		data.values
 			?.slice(1)
-			.filter((item) => item[1]?.trim() !== '') // item[1] — це model
+			.filter((item) => item[1]?.trim() !== '')
 			.map((item) => ({
 				manufacturer: item[0],
 				model: item[1],

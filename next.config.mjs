@@ -11,7 +11,10 @@ const nextConfig = {
 			"eneraque.com"
 		],
 	},
-	devIndicators: false
+	devIndicators: false,
+	experimental: {
+		disableOptimizedLoading: true,
+	},
 };
 
 

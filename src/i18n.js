@@ -1,44 +1,35 @@
-// src/i18n.js
+import i18n from 'i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
-import Backend from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
 
-// Кастомний детектор для URL
-const pathDetector = {
-	name: "path",
-	lookup() {
-		if (typeof window !== "undefined") {
-			const path = window.location.pathname;
-			const match = path.match(/^\/(en|ru|ua)/);
-			return match ? match[1] : undefined;
-		}
-		return undefined;
-	},
-};
 
 i18next
 	.use(Backend)
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		fallbackLng: "en",
+		fallbackLng: 'en',
 		supportedLngs: ["en", "ru", "ua"],
 		ns: ["common"],
 		defaultNS: "common",
+		debug: true,
+		interpolation: {
+			escapeValue: false, // not needed for React
+		},
 		backend: {
-			loadPath: (lng, ns) => {
-				// console.log("i18next: loading translation for", lng, ns);
-				return `/locales/${lng}/${ns}.json`;
-			},
+			loadPath: '/locales/{{lng}}/{{ns}}.json',
 		},
 		detection: {
-			order: ["path", "localStorage", "cookie", "navigator"], // Додаємо path першим
+			order: ["path", "localStorage", "cookie", "navigator"],
 			caches: ["localStorage"],
-			lookupFromPathIndex: 0, // Шукаємо мову в першій частині шляху (/ru/...)
 		},
-		customDetectors: [pathDetector], // Додаємо кастомний детектор
-		debug: true,
+		// Optional React settings
+		react: {
+			useSuspense: false, // Set to false if you're having issues with SSR
+		}
 	});
 
-export default i18next;
+
+export default i18n;

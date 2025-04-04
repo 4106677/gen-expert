@@ -9,16 +9,19 @@ import "../i18n";
 import {bbExtractor} from "@/helpers/bbExtractor";
 import {fetchGoogleSheetData} from "@/services/google";
 import {useEffect, useState} from "react";
+import {useLanguage} from "@/app/context";
 
 export default function Home() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false)
+    const { lang } = useLanguage();
+    console.log(data)
 
     useEffect(() => {
         async function loadSheetData() {
             setLoading(true)
             try {
-                const sheetData = await fetchGoogleSheetData("TOP5RU");
+                const sheetData = await fetchGoogleSheetData(`TOP5${lang.toUpperCase()}`);
                 setData(sheetData);
             } catch (error) {
                 console.error("Failed to fetch sheet data:", error.message);
@@ -27,7 +30,8 @@ export default function Home() {
         }
 
         loadSheetData().then(r => setLoading(false));
-    }, []);
+    }, [lang]);
+
     const slides = data?.map((item) => ({
         image: bbExtractor(item.photo1),
         description: item,

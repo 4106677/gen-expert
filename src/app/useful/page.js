@@ -25,13 +25,14 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 };
 
 export default function Useful() {
-	const { t } = useTranslation('common');
+
 	const [openSection, setOpenSection] = useState('howToChoose');
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
+	const { t } = useTranslation('common');
 
 	const toggleSection = (section) => {
 		setOpenSection(openSection === section ? '' : section);
@@ -43,6 +44,8 @@ export default function Useful() {
 			</div>
 		);
 	}
+
+
 
 	return (
 		<>
@@ -293,3 +296,4 @@ export default function Useful() {
 		</>
 	);
 }
+

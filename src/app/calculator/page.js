@@ -2,9 +2,10 @@
 import styles from './calculator.module.css'
 import {useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
-import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import {BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle} from "recharts";
+import dynamic from "next/dynamic";
+const Slider = dynamic(() => import('rc-slider'), { ssr: false });
 
 export default function Calculator () {
 	const [elecProd, setElecProd] = useState(1000)
@@ -25,9 +26,6 @@ export default function Calculator () {
 	const gpuPaybackPeriod = elecProd *300 * 44 / yearly_econom * 12
 	const chpPaybackPeriod = elecProd * 320 * 44 / yearly_econom_chp * 12
 
-	const chart_data = [
-			{ name: t("calculator.estimate.title"), pv: yearly_gen_price, uv: yearly_elec_price, amt: chp ? yearly_econom_chp : yearly_econom }
-		];
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -58,6 +56,7 @@ export default function Calculator () {
 		}
 	};
 
+
 	if (!isMounted) {
 		return (
 			<div className={styles.main}>
@@ -66,6 +65,10 @@ export default function Calculator () {
 		);
 	}
 
+
+	const chart_data = [
+		{ name: t("calculator.estimate.title"), pv: yearly_gen_price, uv: yearly_elec_price, amt: chp ? yearly_econom_chp : yearly_econom }
+	];
 
 	return <div className={styles.main}>
 		<div className={styles.title}>
@@ -289,3 +292,4 @@ export default function Calculator () {
 		</div>
 	</div>
 }
+
