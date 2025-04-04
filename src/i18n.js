@@ -3,7 +3,9 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import i18next from "i18next";
+import {useRouter} from "next/router";
 
+const { basePath } = useRouter();
 
 i18next
 	.use(Backend)
@@ -19,7 +21,7 @@ i18next
 			escapeValue: false, // not needed for React
 		},
 		backend: {
-			loadPath: '/locales/{{lng}}/{{ns}}.json',
+			loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`,
 		},
 		detection: {
 			order: ["path", "localStorage", "cookie", "navigator"],
