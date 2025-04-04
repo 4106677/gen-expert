@@ -27,7 +27,7 @@
         margin-left: 300px;
     }
 
-    input, select {
+    .sortWrapper_input, .sortWrapper_select {
         background-color: white;
         border: 1px solid #eaeceb;
         border-radius: 3px;

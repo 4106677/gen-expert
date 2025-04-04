@@ -284,8 +284,8 @@ export default function Equipment() {
 		<div className={styles.main}>
 			<h1 className={styles.title}>{t("equipment.title")}</h1>
 			<div className={styles.sortWrapper}>
-				<input type="text" value={search} onChange={handleSearch} placeholder={t("equipment.filters.items.sorting.search")} className={styles.search}/>
-				<select name="sorting" id="sorting" value={selectedSorting} onChange={handleSortingChange}>
+				<input type="text" value={search} onChange={handleSearch} placeholder={t("equipment.filters.items.sorting.search")} className={`${styles.search} ${styles.sortWrapper_input}`}/>
+				<select name="sorting" id="sorting" value={selectedSorting} onChange={handleSortingChange} className={styles.sortWrapper_select}>
 					<option value="" disabled>
 						{t("equipment.filters.items.sorting.title")}
 					</option>

@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
 
-    button {
+    .purpose_button {
         width: max-content;
         padding: 10px 20px;
         font-size: 16px;

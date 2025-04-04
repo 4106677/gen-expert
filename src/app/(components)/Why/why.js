@@ -20,7 +20,7 @@ export const Why = () => {
 							<li key={id} className={styles.listItem}>
 								<div></div>
 								<p>
-									<span>{title}</span> {text}
+									<span className={styles.listItem_span}>{title}</span> {text}
 								</p>
 							</li>
 						)

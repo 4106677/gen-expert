@@ -33,7 +33,7 @@
     }
 
     .sliderList_item_disable {
-        h4, span, input {
+        .sliderList_item_h4, .sliderList_item_span, .sliderList_item_input {
             color: #ffffff40;
         }
 

@@ -159,8 +159,9 @@ export default function Calculator () {
 					</li>
 					<li className={`${styles.sliderList_item} ${chp ? '' : styles.sliderList_item_disable}`}>
 						<div className={styles.categoryTop}>
-							<h4>{t("calculator.params.hourlyHeat")}</h4>
+							<h4 className={styles.sliderList_item_h4}>{t("calculator.params.hourlyHeat")}</h4>
 							<input
+								className={styles.sliderList_item_input}
 								style={{ width: "130px" }}
 								type="number"
 								name="hourlyHeat"
@@ -183,15 +184,16 @@ export default function Calculator () {
 								}}
 							/>
 							<div className={styles.slider_stint}>
-								<span>300</span>
-								<span>20000</span>
+								<span className={styles.sliderList_item_span}>300</span>
+								<span className={styles.sliderList_item_span}>20000</span>
 							</div>
 						</div>
 					</li>
 					<li className={`${styles.sliderList_item} ${chp ? "" : styles.sliderList_item_disable}`}>
 						<div className={styles.categoryTop}>
-							<h4>{t("calculator.params.yearlyHeat")}</h4>
+							<h4 className={styles.sliderList_item_h4}>{t("calculator.params.yearlyHeat")}</h4>
 							<input
+								className={styles.sliderList_item_input}
 								type="number"
 								name="yearlyHeat"
 								// ref={inputRef}
@@ -214,8 +216,8 @@ export default function Calculator () {
 								}}
 							/>
 							<div className={styles.slider_stint}>
-								<span>1</span>
-								<span>12</span>
+								<span className={styles.sliderList_item_span}>1</span>
+								<span className={styles.sliderList_item_span}>12</span>
 							</div>
 						</div>
 					</li>

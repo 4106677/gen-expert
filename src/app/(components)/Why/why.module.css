@@ -22,7 +22,7 @@
     margin-top: 8px;
     font-size: 18px;
 
-    span {
+    .listItem_span {
         font-weight: bold;
     }
 }

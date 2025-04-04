@@ -71,7 +71,7 @@ export default function Modal() {
 						))}
 					</Carousel>
 					<div className={styles.purpose}>
-						<button type="button">{t("equipment.modal.purpose")}</button>
+						<button className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
 					</div>
 					<div className={styles.filesWrapper}>
 						{files?.length > 0 && <h2>{t("equipment.modal.files")}</h2> }

@@ -23,7 +23,7 @@ export const About = () => {
 		<div className={styles.main}>
 			<Image alt='About us image' src='/images/about_us.jpeg' width={500} height={375}/>
 			<div className={styles.description}>
-				<h3>{t('about_main_page.title')}</h3>
+				<h3 className={styles.h3}>{t('about_main_page.title')}</h3>
 				<h4>{t('about_main_page.subtitle')}
 				</h4>
 				<Link href='/about' className={styles.button}>О нас
