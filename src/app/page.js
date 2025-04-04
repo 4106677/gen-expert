@@ -88,7 +88,6 @@ export default function Home() {
                         />
                         <div className={styles.description}>
                             <div className={styles.details}>
-                                {/*<Image src="/repair.svg" alt="manufacturer" width={20} height={20} className={styles.svg}/>*/}
                                 <p>{description?.manufacturer} {description?.model}</p>
                             </div>
                             <div className={styles.details}>
@@ -96,20 +95,21 @@ export default function Home() {
                                 <p>{description?.power} {description?.powerUnit}</p>
                             </div>
                             <div className={styles.details}>
-                                <Image src="/clock.svg" alt="clock" width={20} height={20} className={styles.svg}/>
-                                <p>{description?.hours} {description?.hoursUnit}</p>
+                                <Image src="/calendar.svg" alt="year" width={20} height={20} className={styles.svg}/>
+                                <p>{description?.year}</p>
                             </div>
+
                             <div className={styles.details}>
                                 <Image src="/volt.svg" alt="voltage" width={20} height={20} className={styles.svg}/>
                                 <p>{description?.voltage} {description?.voltageUnit}</p>
                             </div>
                             <div className={styles.details}>
-                                <Image src="/ruler.svg" alt="condition" width={20} height={20} className={styles.svg}/>
-                                <p>{description?.condition}</p>
+                                <Image src="/clock.svg" alt="clock" width={20} height={20} className={styles.svg}/>
+                                <p>{description?.hours} {description?.hoursUnit}</p>
                             </div>
                             <div className={styles.details}>
-                                <Image src="/calendar.svg" alt="year" width={20} height={20} className={styles.svg}/>
-                                <p>{description?.year}</p>
+                                <Image src="/ruler.svg" alt="condition" width={20} height={20} className={styles.svg}/>
+                                <p>{description?.condition}</p>
                             </div>
                             <div className={styles.details}>
                                 <Image src="/price.svg" alt="price" width={20} height={20} className={styles.svg}/>

@@ -16,7 +16,7 @@ export default function Calculator () {
 	const [isMounted, setIsMounted] = useState(false);
 	const { t } = useTranslation("common");
 	const avg = 0.233
-	const gas_gen_price = gasPrice * 1000 * avg / elecProd
+	const gas_gen_price = gasPrice * elecProd * avg / elecProd
 	const yearly_elec_price = elecProd * elecPrice * 30 * 12 * 18
 	const yearly_gen_price = elecProd * gas_gen_price * 30 * 12 * 18
 	const gpu_costs = gas_gen_price * 1000 * 18 *30 * 12
@@ -26,7 +26,7 @@ export default function Calculator () {
 	const chpPaybackPeriod = elecProd * 320 * 44 / yearly_econom_chp * 12
 
 	const chart_data = [
-			{ name: t("calculator.estimate.title"), 1: yearly_gen_price, 2: yearly_elec_price }
+			{ name: t("calculator.estimate.title"), pv: yearly_gen_price, uv: yearly_elec_price, amt: chp ? yearly_econom_chp : yearly_econom }
 		];
 
 	useEffect(() => {
@@ -82,7 +82,6 @@ export default function Calculator () {
 								style={{ width: "130px" }}
 								type="number"
 								name="elecProd"
-								// ref={inputRef}
 								value={elecProd}
 								onChange={handleInputChange("elecProd")}
 							/>
@@ -162,10 +161,11 @@ export default function Calculator () {
 						<div className={styles.categoryTop}>
 							<h4>{t("calculator.params.hourlyHeat")}</h4>
 							<input
+								style={{ width: "130px" }}
 								type="number"
 								name="hourlyHeat"
 								value={elecProd}
-								// onChange={handleInputChange('elecProd')}
+								onChange={handleInputChange('elecProd')}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
@@ -173,7 +173,7 @@ export default function Calculator () {
 								min={300}
 								max={20000}
 								value={elecProd}
-								// onChange={handleInputChange('hourlyHeat')}
+								onChange={handleInputChange('elecProd')}
 								step={1}
 								allowCross={false}
 								styles={{
@@ -205,7 +205,7 @@ export default function Calculator () {
 								max={12}
 								value={yearlyHeat}
 								onChange={handleInputChange("yearlyHeat")}
-								step={0.5}
+								step={1}
 								allowCross={false}
 								styles={{
 									rail: { backgroundColor: chp ? '' : '#ffffff40' },
@@ -229,16 +229,25 @@ export default function Calculator () {
 								<span>{gas_gen_price.toFixed(3)} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.selfGeneration")}</h4>
-								<span>{Math.round(yearly_gen_price).toLocaleString('ru-RU')} {t("calculator.unit.uah")}</span>
+								<h4>
+									<div className={`${styles.rounder} `} style={{backgroundColor: "#8884d8"}}></div>
+									{t("calculator.estimate.params.selfGeneration")}
+								</h4>
+								<span>{Math.round(yearly_gen_price).toLocaleString("ru-RU")} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.supplierPurchase")}</h4>
-								<span>{yearly_elec_price.toLocaleString('ru-RU')} {t("calculator.unit.uah")}</span>
+								<h4>
+									<div className={`${styles.rounder} `} style={{backgroundColor: "#ffc658"}}></div>
+									{t("calculator.estimate.params.supplierPurchase")}
+								</h4>
+								<span>{yearly_elec_price.toLocaleString("ru-RU")} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
-								<h4>{t("calculator.estimate.params.annualSavings")}</h4>
-								<span>{yearly_econom.toLocaleString('ru-RU')} {t("calculator.unit.uah")}</span>
+								<h4>
+									<div className={`${styles.rounder} `} style={{backgroundColor: "#82ca9d"}}></div>
+									{t("calculator.estimate.params.annualSavings")}
+								</h4>
+								<span>{Math.round(chp ? yearly_econom_chp : yearly_econom).toLocaleString('ru-RU')} {t("calculator.unit.uah")}</span>
 							</li>
 							<li className={styles.calculator_list_item}>
 								<h4>{t("calculator.estimate.params.gpuPaybackPeriod")}</h4>
@@ -262,8 +271,11 @@ export default function Calculator () {
 							<XAxis dataKey="name" />
 							<YAxis />
 							<Tooltip />
-							<Bar dataKey="1" fill="#82E58F" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-							<Bar dataKey="2" fill="#8884d8" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+							{/*<Bar dataKey="1" fill="#82E58F" activeBar={<Rectangle fill="pink" stroke="blue" />} />*/}
+							{/*<Bar dataKey="2" fill="#8884d8" activeBar={<Rectangle fill="gold" stroke="purple" />} />*/}
+							<Bar dataKey="pv" stackId="a" fill="#8884d8" />
+							<Bar dataKey="amt" stackId="a" fill="#82ca9d" />
+							<Bar dataKey="uv" fill="#ffc658" />
 						</BarChart>
 					</ResponsiveContainer>
 					<button className={styles.contact_us}>{t("calculator.estimate.button")}</button>

@@ -161,6 +161,17 @@
     &:not(:last-child) {
         border-bottom: 1px solid #eaeceb;
     }
+
+    h4 {
+        display: flex;
+    }
+
+    .rounder {
+        margin-right: 10px;
+         width: 20px;
+        height: 20px;
+        border-radius: 3px;
+    }
 }
 
 .contact_us {

@@ -1,4 +1,10 @@
 /* ./src/app/cooperation/cooperation.module.css */
+.hero_image{
+    object-fit: cover;
+    margin-top: 40px;
+    opacity: 0.8;
+    object-position: 50% 20%;
+}
 
 .container {
     /*max-width: 900px;*/
@@ -35,6 +41,7 @@
 .mainTitle {
     font-size: 1.8em;
     text-align: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
     color: #000000;
 }
@@ -53,6 +60,7 @@
     line-height: 1.7;
     margin-bottom: 1rem;
     color: #333;
+    font-size: 18px;
 }
 
 .infoBlock {
@@ -74,6 +82,7 @@
 
 .infoList,
 .subList {
+    font-size: 18px;
     list-style: none;
     padding-left: 0;
 }
@@ -115,7 +124,8 @@
     margin-bottom: 0.5rem;
     padding-left: 1rem;
     position: relative;
-    font-size: 0.95em;
+    font-size: 18px;
+    /*font-size: 0.95em;*/
 }
 .subList > li::before {
     content: '›'; /* Другой маркер для подсписка */
@@ -181,7 +191,8 @@
     margin-bottom: 0.8rem;
     padding-left: 2rem;
     position: relative;
-    font-size: 1.05em;
+    font-size: 18px;
+    /*font-size: 1.05em;*/
 }
 
 .benefitsList > li::before {
@@ -209,4 +220,5 @@
     padding: 1rem 1.5rem;
     border-radius: 6px;
     color: #1a1a1a;
+    font-size: 19px;
 }
