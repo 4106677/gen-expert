@@ -66,7 +66,6 @@ export default function Modal() {
 					>
 						{images.map((src, index) => (
 							<div key={index} className={styles.sliderWrapper}>
-								// eslint-disable-next-line @next/next/no-img-element
 								<img src={bbExtractor(src)} alt={`Фото ${index + 1}`} className={styles.preview}/>
 							</div>
 						))}
