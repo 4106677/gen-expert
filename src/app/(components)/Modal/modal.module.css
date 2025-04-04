@@ -126,7 +126,7 @@
     overflow: hidden;
     width: 100%;
 
-    p {
+    .description_p {
         margin-top: 20px;
         overflow: auto;
         height: 492px;

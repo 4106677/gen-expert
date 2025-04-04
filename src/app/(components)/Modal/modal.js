@@ -126,7 +126,7 @@ export default function Modal() {
 
 
 					</ul>
-					<p dangerouslySetInnerHTML={{__html: showModal.description}}/>
+					<p dangerouslySetInnerHTML={{__html: showModal.description}} className={styles.description_p}/>
 				</div>
 			</div>
 		</div>

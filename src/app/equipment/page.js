@@ -343,7 +343,7 @@ export default function Equipment() {
 					<li className={styles.manufacturer}><h3 className={styles.left_h3}>{t("equipment.filters.items.manufacturer")}</h3>
 						{manufacturers?.map((item, index) =>
 							<div key={index}>
-								<input type="checkbox" onChange={() => onManufacturerInputClick(item)}
+								<input className={styles.manufacturer_input} type="checkbox" onChange={() => onManufacturerInputClick(item)}
 								       checked={filterManufacturer.length === 0 || filterManufacturer.includes(item)}/>
 								{item}
 							</div>
@@ -392,7 +392,7 @@ export default function Equipment() {
 					<li className={styles.condition}><h3 className={styles.left_h3}>{t("equipment.filters.items.condition")}</h3>
 						{conditions?.map((item, index) =>
 							<div key={index}>
-								<input type="checkbox" onChange={() => onConditionInputClick(item)}
+								<input className={styles.condition_input} type="checkbox" onChange={() => onConditionInputClick(item)}
 								       checked={filterCondition.length === 0 || filterCondition.includes(item)}/>
 								{item}
 							</div>

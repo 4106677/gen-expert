@@ -120,13 +120,13 @@
 }
 
 .manufacturer {
-    input {
+    .manufacturer_input {
         margin-right: 8px;
     }
 }
 
 .condition {
-    input {
+    .condition_input {
         margin-right: 8px;
     }
 }
