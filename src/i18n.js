@@ -3,9 +3,10 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import i18next from "i18next";
-import {useRouter} from "next/router";
+import getConfig from 'next/config';
 
-const { basePath } = useRouter();
+const { publicRuntimeConfig } = getConfig();
+const basePath = publicRuntimeConfig.basePath || '';
 
 i18next
 	.use(Backend)

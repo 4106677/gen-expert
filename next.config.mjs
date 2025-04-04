@@ -1,6 +1,4 @@
-// import pkg from "./next-i18next.config.js";
-// const { i18n } = pkg;
-const repoName = '/gen-expert';
+const repoName = 'https://4106677.github.io/gen-expert/';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,6 +16,9 @@ const nextConfig = {
 	},
 	basePath: repoName,
 	assetPrefix: repoName,
+	publicRuntimeConfig: {
+		basePath: repoName,
+	},
 	trailingSlash: true,
 };
 
