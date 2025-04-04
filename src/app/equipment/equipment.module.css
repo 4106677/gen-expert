@@ -38,7 +38,7 @@
         /*min-width: 200px;*/
     }
 
-    select option[disabled] {
+    .select_disabled[disabled] {
         color: #999;
     }
 

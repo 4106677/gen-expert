@@ -155,7 +155,7 @@ export default function Calculator () {
 					</li>
 					<li className={styles.chp_item} onClick={() => setChp(!chp)}>
 						<div className={`${styles.chp_check} ${chp ? '' : styles.chp_check_disable}`} />
-						<span>{t("calculator.params.chp")}</span>
+						<span className={styles.chp_item_span}>{t("calculator.params.chp")}</span>
 					</li>
 					<li className={`${styles.sliderList_item} ${chp ? '' : styles.sliderList_item_disable}`}>
 						<div className={styles.categoryTop}>

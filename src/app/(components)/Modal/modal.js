@@ -74,7 +74,7 @@ export default function Modal() {
 						<button className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
 					</div>
 					<div className={styles.filesWrapper}>
-						{files?.length > 0 && <h2>{t("equipment.modal.files")}</h2> }
+						{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
 						{files?.map((file, index) => (
 							<div key={index} className={styles.file}>
 								<a href={gdLink(file)} target='_blank'>								<Image

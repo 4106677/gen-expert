@@ -46,7 +46,7 @@
         cursor: pointer;
         margin-bottom: 10px;
 
-        span {
+        .chp_item_span {
             -webkit-user-select: none; /* для Safari */
             -moz-user-select: none;    /* для Firefox */
             -ms-user-select: none;     /* для IE/Edge */

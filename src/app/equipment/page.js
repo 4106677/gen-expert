@@ -286,7 +286,7 @@ export default function Equipment() {
 			<div className={styles.sortWrapper}>
 				<input type="text" value={search} onChange={handleSearch} placeholder={t("equipment.filters.items.sorting.search")} className={`${styles.search} ${styles.sortWrapper_input}`}/>
 				<select name="sorting" id="sorting" value={selectedSorting} onChange={handleSortingChange} className={styles.sortWrapper_select}>
-					<option value="" disabled>
+					<option value="" disabled className={styles.select_disabled}>
 						{t("equipment.filters.items.sorting.title")}
 					</option>
 					{sortingOptions.map((option) => (
