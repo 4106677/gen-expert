@@ -165,9 +165,9 @@ export default function Useful() {
 								<td>43-44%</td>
 								<td>45-47%</td>
 								<td>88-90%</td>
-								<td><span className={styles.highRating}>🔥 {t('useful.high')}</span></td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.economical')}</span></td>
-								<td><span className={styles.mediumRating}>🟡 {t('useful.medium')}</span></td>
+								<td><span className={styles.highRating}>🔥 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.economical")}</span></td>
+								<td><span className={styles.mediumRating}>🟡 {t("useful.medium")}</span></td>
 								<td><span className={styles.highRating}>🔥 60 000 - 80 000</span></td>
 								<td><span className={styles.lowRating}>🔴 1 500 - 2 000</span></td>
 								<td>230</td>
@@ -177,9 +177,9 @@ export default function Useful() {
 								<td>42-43%</td>
 								<td>44-46%</td>
 								<td>86-88%</td>
-								<td><span className={styles.highRating}>🔥 {t('useful.high')}</span></td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.economical')}</span></td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.good')}</span></td>
+								<td><span className={styles.highRating}>🔥 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.economical")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.good")}</span></td>
 								<td><span className={styles.highRating}>🔥 60 000 - 80 000</span></td>
 								<td><span className={styles.lowRating}>🔴 1 500 - 2 000</span></td>
 								<td>235</td>
@@ -189,13 +189,74 @@ export default function Useful() {
 								<td>40-42%</td>
 								<td>42-44%</td>
 								<td>82-85%</td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.high')}</span></td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.economical')}</span></td>
-								<td><span className={styles.goodRating}>🟢 {t('useful.good')}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.economical")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.good")}</span></td>
 								<td><span className={styles.goodRating}>🟢 50 000 - 60 000</span></td>
 								<td><span className={styles.mediumRating}>🟡 2 000 - 3 000</span></td>
 								<td>250</td>
 							</tr>
+							<tr>
+								<td>CAT</td>
+								<td>38-41%</td>
+								<td>40-43%</td>
+								<td>80-84%</td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟡 {t("useful.medium")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.excellent")}</span></td>
+								<td><span className={styles.goodRating}>🟢 50 000 - 60 000</span></td>
+								<td><span className={styles.mediumRating}>🟢 3 000 - 4 000</span></td>
+								<td>260</td>
+							</tr>
+							<tr>
+								<td>Bergen</td>
+								<td>44-45%</td>
+								<td>45-47%</td>
+								<td>89-92%</td>
+								<td><span className={styles.goodRating}>🔥 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.economical")}</span></td>
+								<td><span className={styles.goodRating}>🔴 {t("useful.complexLogistics")}</span></td>
+								<td><span className={styles.goodRating}>🔥 80 000 - 100 000</span></td>
+								<td><span className={styles.mediumRating}>🔴 1 000 - 2 000</span></td>
+								<td>225</td>
+							</tr>
+							<tr>
+								<td>Wärtsilä</td>
+								<td>44-46%</td>
+								<td>45-48%</td>
+								<td>89-92%</td>
+								<td><span className={styles.goodRating}>🔥 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.economical")}</span></td>
+								<td><span className={styles.goodRating}>🔴 {t("useful.limited")}</span></td>
+								<td><span className={styles.goodRating}>🔥 80 000 - 100 000</span></td>
+								<td><span className={styles.mediumRating}>🔴 1 500 - 2 000</span></td>
+								<td>220</td>
+							</tr>
+							<tr>
+								<td>Cummins</td>
+								<td>37-40%</td>
+								<td>40-42%</td>
+								<td>77-82%</td>
+								<td><span className={styles.goodRating}>🟡 {t("useful.medium")}</span></td>
+								<td><span className={styles.goodRating}>🔴 {t("useful.high")}</span></td>
+								<td><span className={styles.goodRating}>🟢 {t("useful.excellent")}</span></td>
+								<td><span className={styles.goodRating}>🟡 40 000 - 50 000</span></td>
+								<td><span className={styles.mediumRating}>🟢 3 000 - 4 000</span></td>
+								<td>270</td>
+							</tr>
+							<tr>
+								<td>Doosan</td>
+								<td>36-39%</td>
+								<td>38-41%</td>
+								<td>74-80%</td>
+								<td><span className={styles.goodRating}>🟡 {t("useful.medium")}</span></td>
+								<td><span className={styles.goodRating}>🟡 {t("useful.medium")}</span></td>
+								<td><span className={styles.goodRating}>🟡 {t("useful.medium")}</span></td>
+								<td><span className={styles.goodRating}>🟡 40 000 - 50 000</span></td>
+								<td><span className={styles.mediumRating}>🟢 3 000 - 4 000</span></td>
+								<td>280</td>
+							</tr>
+
 							{/* Остальные строки таблицы */}
 							</tbody>
 						</table>
@@ -204,9 +265,9 @@ export default function Useful() {
 
 				{/* Описание брендов ГПУ */}
 				<AccordionItem
-					title={t('useful.brands.title')}
-					isOpen={openSection === 'brands'}
-					onClick={() => toggleSection('brands')}
+					title={t("useful.brands.title")}
+					isOpen={openSection === "brands"}
+					onClick={() => toggleSection("brands")}
 				>
 					<div className={styles.brandsContainer}>
 						{/* Jenbacher */}
@@ -245,6 +306,97 @@ export default function Useful() {
 							</div>
 							<p className={styles.brandDescription}>
 								{t('useful.brands.mtu')}
+							</p>
+						</div>
+
+						{/* Caterpillar (CAT) */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>4️⃣</span>
+									<h3>Caterpillar (CAT)</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.cat')}
+							</p>
+						</div>
+
+						{/* Bergen */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>5️⃣</span>
+									<h3>Bergen Engines (Langley Holdings, ex-Rolls-Royce)</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.bergen')}
+							</p>
+						</div>
+
+						{/* Wärtsilä */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>6️⃣</span>
+									<h3>Wärtsilä</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.wartsila')}
+							</p>
+						</div>
+
+						{/* Cummins */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>7️⃣</span>
+									<h3>Cummins</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.cummins')}
+							</p>
+						</div>
+
+						{/* Doosan */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>8️⃣</span>
+									<h3>Doosan</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.doosan')}
+							</p>
+						</div>
+
+						{/* GENTEC */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>9️⃣</span>
+									<h3>GENTEC</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.gentec')}
+							</p>
+						</div>
+
+						{/* Mitsubishi */}
+						<div className={styles.brandCard}>
+							<div className={styles.brandHeader}>
+								<div className={styles.brandIcon}>
+									<span className={styles.brandNumber}>🔟</span>
+									<h3>Mitsubishi</h3>
+								</div>
+							</div>
+							<p className={styles.brandDescription}>
+								{t('useful.brands.mitsubishi')}
 							</p>
 						</div>
 
