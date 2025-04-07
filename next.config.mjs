@@ -1,4 +1,4 @@
-const repoName = 'https://4106677.github.io/gen-expert/';
+// const repoName = '/gen-expert';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,11 +14,12 @@ const nextConfig = {
 	experimental: {
 		disableOptimizedLoading: true,
 	},
-	basePath: repoName,
-	assetPrefix: repoName,
-	publicRuntimeConfig: {
-		basePath: repoName,
-	},
+	output: 'export',
+	// basePath: '',
+	// assetPrefix: '',
+	// publicRuntimeConfig: {
+	// 	basePath: '',
+	// },
 	trailingSlash: true,
 };
 
