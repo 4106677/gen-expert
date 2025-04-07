@@ -6,29 +6,42 @@ import styles from './modal.module.css';
 import { useModal } from "@/context/ModalContext";
 import {bbExtractor} from "@/helpers/bbExtractor";
 import {useEffect, useState} from "react";
-import {useLanguage} from "@/app/context";
 import {useTranslation} from "react-i18next";
 import {gdLink} from "@/helpers/gdLink";
+import {usePathname, useRouter} from "next/navigation";
 
 export default function Modal() {
 	const { showModal, setShowModal } = useModal();
-	const modalClose = () => setShowModal(false);
+	const router = useRouter();
+	const pathname = usePathname();
+
+	const modalClose = () => {
+		setShowModal(false);
+		const isEquipmentRoot = pathname === '/equipment/' || pathname === '/equipment';
+
+		if (!isEquipmentRoot) {
+			router.push('/equipment')
+		}
+	}
 	const { t } = useTranslation("common");
 
 	useEffect(() => {
 		if (showModal) {
+			const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 			document.body.style.overflow = 'hidden';
-			document.body.style.height = '100vh';
-		} else {
-			document.body.style.overflow = '';
-			document.body.style.height = '';
-		}
-		return () => {
-			document.body.style.overflow = '';
-			document.body.style.height = '';
-		};
-	}, [showModal]);
+			document.body.style.position = 'fixed';
+			document.body.style.top = `-${scrollPosition}px`;
+			document.body.style.width = '100%';
 
+			return () => {
+				document.body.style.overflow = '';
+				document.body.style.position = '';
+				document.body.style.top = '';
+				document.body.style.width = '';
+				window.scrollTo(0, scrollPosition);
+			};
+		}
+	}, [showModal]);
 	if (!showModal) return null;
 
 	const images = [

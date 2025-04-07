@@ -7,18 +7,20 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/app/context";
 import styles from "./equipment.module.css";
 import {bbExtractor} from "@/helpers/bbExtractor";
-import {useModal} from "@/context/ModalContext"; // Припускаю, що у вас є CSS-модуль
+import {useModal} from "@/context/ModalContext";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+// import {useRouter} from "next/navigation";
 
 
-export default function Equipment() {
+export default function Equipment({ modalId }) {
 	const [data, setData] = useState(null);
 	const [filterData, setFilterData] = useState([])
 	const [isMounted, setIsMounted] = useState(false);
 	const { t } = useTranslation("common");
 	const { lang } = useLanguage();
 	const { showModal, setShowModal } = useModal();
+
 
 	const [search, setSearch] = useState('')
 
@@ -45,16 +47,18 @@ export default function Equipment() {
 		setSelectedSorting(event.target.value);
 	};
 
+	const handleOpenModal = (item, event) => {
+		event.preventDefault();
+		setShowModal(item);
+	};
+
 	const handleResetSorting = (event) => {
 		setSelectedSorting("")
 		setSearch('')
 	}
 
 	const handleSearch = (event) => {
-		// const value = event.target.value;
-		// if (value === '') {setSearch(event.target.value);}
 		setSearch(event.target.value)
-		// if (value.length > 2 || value === '') {setSearch(event.target.value);}
 	}
 
 	const sortingValues = t("equipment.filters.items.sorting.values", { returnObjects: true });
@@ -62,6 +66,7 @@ export default function Equipment() {
 		value: key,
 		label: label,
 	}));
+
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -259,6 +264,24 @@ export default function Equipment() {
 			maxInput.value = filterPrice.max;
 		}
 	}, [filterPrice]);
+
+	useEffect(() => {
+		if (modalId) {
+			const decodedId = decodeURIComponent(modalId); // ← ось тут магія
+			const item = data?.find((item) => item.article === decodedId);
+			setShowModal(item);
+		} else {
+			// router.push('/equipment')
+		}
+	}, [modalId, data]);
+
+	// useEffect(() => {
+	// 	if (!showModal) {
+	// 		// router.push('/equipment')
+	// 		console.log('www')
+	// 	}
+	// }, [showModal]);
+
 	const applyPriceFilter = (event) => {
 		event.preventDefault();
 		if (!data) return;
@@ -484,7 +507,7 @@ export default function Equipment() {
 					<ul>
 						{filterData?.map(item => (
 							<li className={styles.product} key={item.article}>
-								<Image onClick={() => setShowModal(item)} width={400} height={300}
+								<Image onClick={(event) => handleOpenModal(item, event)} width={400} height={300}
 								       className={styles.img} src={bbExtractor(item.photo1)}
 								       alt={item.model}></Image>
 								<div className={styles.productsSection}>
@@ -499,7 +522,7 @@ export default function Equipment() {
 									</ul>
 									<p dangerouslySetInnerHTML={{__html: item.description}} className={styles.productsSection_p}/>
 									<button type="button" className={styles.product_button}
-									        onClick={() => setShowModal(item)}>{t("equipment.button")}</button>
+									        onClick={(event) => handleOpenModal(item, event)}>{t("equipment.button")}</button>
 								</div>
 							</li>
 						))}

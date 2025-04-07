@@ -9,7 +9,7 @@ export const ContactsModal = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const { showContactsModal, setContactsShowModal } = useContactsModal();
 
-	console.log(showContactsModal)
+	// console.log(showContactsModal)
 
 	useEffect(() => {
 		setIsMounted(true);

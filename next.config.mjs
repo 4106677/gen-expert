@@ -15,12 +15,7 @@ const nextConfig = {
 	experimental: {
 		disableOptimizedLoading: true,
 	},
-	output: 'export',
-	// basePath: '',
-	// assetPrefix: '',
-	// publicRuntimeConfig: {
-	// 	basePath: '',
-	// },
+	// output: 'export',
 	trailingSlash: true,
 };
 

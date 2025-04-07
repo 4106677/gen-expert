@@ -86,15 +86,31 @@
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 40px;
+    /*gap: 40px;*/
     padding: 0;
     /*margin-left: auto;*/
     margin-right: auto;
+    height: 100%;
 }
 
 .nav-list li a {
     text-decoration: none;
     color: #333;
+    height: 100%;
+}
+
+.nav-list li {
+    margin: 0;
+
+}
+
+.nav-list a {
+    padding: 20px;
+    /*display: block;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
