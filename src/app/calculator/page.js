@@ -23,8 +23,8 @@ export default function Calculator () {
 	const gpu_costs = gas_gen_price * 1000 * 18 *30 * 12
 	const yearly_econom = (elecPrice - gas_gen_price) * elecProd * 30 * 12 * 18
 	const yearly_econom_chp = yearly_econom + 1 * elecProd * 18 * 30 * yearlyHeat
-	const gpuPaybackPeriod = elecProd *300 * 44 / yearly_econom * 12
-	const chpPaybackPeriod = elecProd * 320 * 44 / yearly_econom_chp * 12
+	const gpuPaybackPeriod = elecProd * 360 * 44 / yearly_econom * 12
+	const chpPaybackPeriod = elecProd * 380 * 44 / yearly_econom_chp * 12
 
 
 	useEffect(() => {

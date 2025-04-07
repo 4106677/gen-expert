@@ -1,4 +1,3 @@
-// src/app/(components)/Header/header.js
 'use client';
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import styles from "./header.css";
 import { useLanguage } from "@/app/context";
 import "@/i18n";
+import Image from "next/image";
 
 export default function Header() {
 	const { t } = useTranslation("common");
@@ -13,7 +13,6 @@ export default function Header() {
 	const [langBox, setLangBox] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 
-	// Рендеримо переклади лише після монтування на клієнті
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
@@ -46,7 +45,7 @@ export default function Header() {
 						<span className="rounder">'EN'</span>
 					</div>
 					<div className="contacts">
-						<a href="tel:+380987666303">+380987666303</a>
+						<a href="tel:+380732370045">+38(073)237-00-45</a>
 						<a href="mailto:info@genexpert.ua">info@genexpert.ua</a>
 					</div>
 				</nav>
@@ -69,7 +68,13 @@ export default function Header() {
 					<li><Link href="/cooperation">{t("menu.cooperation")}</Link></li>
 				</ul>
 				<div className="language" onClick={() => setLangBox(true)}>
-					<span className="rounder">{lang.toUpperCase()}</span>
+					<Image
+						aria-hidden
+						src="/globe.svg"
+						alt="Globe icon"
+						width={16}
+						height={16}
+					/><span className="rounder">{lang.toUpperCase()}</span>
 					<ul className="selector" style={{ display: langBox ? "flex" : "none" }}>
 						<li onClick={(e) => onLangBoxClick(e, "ru")}>RU</li>
 						<li onClick={(e) => onLangBoxClick(e, "ua")}>UA</li>
@@ -77,7 +82,7 @@ export default function Header() {
 					</ul>
 				</div>
 				<div className="contacts">
-					<a href="tel:+380987666303">+380987666303</a>
+					<a href="tel:+380732370045">+38(073)237-00-45</a>
 					<a href="mailto:info@genexpert.ua">info@genexpert.ua</a>
 				</div>
 			</nav>

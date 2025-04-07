@@ -6,6 +6,7 @@ import SheetDataProvider from "@/app/(components)/SheetDataProvider";
 import ClientLayout from "./ClientLayout";
 import Modal from "@/app/(components)/Modal/modal";
 import {ContactsModal} from "@/app/(components)/ContactsModal/contactsModal";
+import {Footer} from "@/app/(components)/Footer/footer";
 
 const roboto = localFont({
     src: "../../public/fonts/Roboto.ttf",
@@ -40,7 +41,7 @@ export default async function RootLayout({children, params}) {
                 <Container>
                     <main>{children}</main>
                 </Container>
-                {/*<Footer/>*/}
+                <Footer/>
                 <Modal/>
                 <ContactsModal />
             </SheetDataProvider>

@@ -112,6 +112,7 @@
 
     .rounder {
         text-transform: uppercase;
+        margin-left: 8px;
     }
 
     .selector {

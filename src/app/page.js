@@ -15,7 +15,6 @@ export default function Home() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false)
     const { lang } = useLanguage();
-    console.log(data)
 
     useEffect(() => {
         async function loadSheetData() {

@@ -3,6 +3,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
+		unoptimized: true,
 		domains: [
 			"live.staticflickr.com",
 			"www.mtu-solutions.com",

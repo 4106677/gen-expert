@@ -4,47 +4,49 @@ import Image from "next/image";
 export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
+			<a href="tel:+380732370045"><Image
+				aria-hidden
+				src="/phone.svg"
+				alt="telegram icon"
+				width={20}
+				height={20}
+			/>
+				+38(073)237-00-45</a>
+			<a href="mailto:info@genexpert.ua">
+				<Image
+					aria-hidden
+					src="/email.svg"
+					alt="telegram icon"
+					width={20}
+					height={20}
+				/>info@genexpert.ua</a>
 			<a
-				href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+				href="https://t.me/genexpert_ua"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<Image
 					aria-hidden
-					src="/file.svg"
-					alt="File icon"
-					width={16}
-					height={16}
+					src="/telegram.svg"
+					alt="telegram icon"
+					width={20}
+					height={20}
 				/>
-				Learn
+				Telegram
 			</a>
 			<a
-				href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+				href="https://www.instagram.com/genexpert_ua/?igsh=ZDVkdmIzNmIyM2d1&utm_source=qr#"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<Image
 					aria-hidden
-					src="/window.svg"
-					alt="Window icon"
-					width={16}
-					height={16}
+					src="/instagram.svg"
+					alt="instagram icon"
+					width={20}
+					height={20}
 				/>
-				Examples
-			</a>
-			<a
-				href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<Image
-					aria-hidden
-					src="/globe.svg"
-					alt="Globe icon"
-					width={16}
-					height={16}
-				/>
-				Go to nextjs.org →
+				Instagram
 			</a>
 		</footer>
 	)
