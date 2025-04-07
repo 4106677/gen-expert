@@ -10,8 +10,6 @@ import {bbExtractor} from "@/helpers/bbExtractor";
 import {useModal} from "@/context/ModalContext";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-// import {useRouter} from "next/navigation";
-
 
 export default function Equipment({ modalId }) {
 	const [data, setData] = useState(null);
