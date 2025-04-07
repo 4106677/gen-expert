@@ -2,16 +2,15 @@
 .hero_image{
     object-fit: cover;
     margin-top: 40px;
-    opacity: 0.8;
+    opacity: 0.9;
     object-position: 50% 20%;
 }
 
 .container {
-    /*max-width: 900px;*/
     margin: 2rem auto;
     padding: 1.5rem;
-    font-family: sans-serif; /* Или ваш основной шрифт */
-    color: #000000; /* Черный шрифт */
+    font-family: sans-serif;
+    color: #000000;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -20,7 +19,7 @@
 .section {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eaeceb; /* Серый разделитель */
+    border-bottom: 1px solid #eaeceb;
 }
 
 .section:last-child {
