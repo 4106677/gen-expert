@@ -10,11 +10,13 @@ import {bbExtractor} from "@/helpers/bbExtractor";
 import {fetchGoogleSheetData} from "@/services/google";
 import {useEffect, useState} from "react";
 import {useLanguage} from "@/app/context";
-import { useRouter } from 'next/navigation';
+import {useModal} from "@/context/ModalContext";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false)
+    const { showModal, setShowModal } = useModal();
     const router = useRouter();
     const { lang } = useLanguage();
 
@@ -34,17 +36,13 @@ export default function Home() {
     }, [lang]);
 
     const handleSlideClick = (index) => {
-        // Перевіряємо, чи дані завантажені і чи є елемент з таким індексом
         if (data && data[index]) {
             const item = data[index];
-            // Перевіряємо, чи є у елемента поле 'article'
             if (item.article) {
-                // Виконуємо перехід
-                router.push(`/equipment/${item.article}`);
+                router.push(`/equipment`);
+                setShowModal(item)
             } else {
-                console.warn(`Item at index ${index} does not have an 'article' property.`);
-                // Опціонально: можна відкрити модальне вікно або показати помилку
-                // setShowModal(item);
+
             }
         } else {
             console.error(`Data is not loaded or index ${index} is out of bounds.`);

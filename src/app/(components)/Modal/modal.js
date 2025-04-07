@@ -8,21 +8,10 @@ import {bbExtractor} from "@/helpers/bbExtractor";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {gdLink} from "@/helpers/gdLink";
-import {usePathname, useRouter} from "next/navigation";
 
 export default function Modal() {
 	const { showModal, setShowModal } = useModal();
-	const router = useRouter();
-	const pathname = usePathname();
-
-	const modalClose = () => {
-		setShowModal(false);
-		const isEquipmentRoot = pathname === '/equipment/' || pathname === '/equipment';
-
-		if (!isEquipmentRoot) {
-			router.push('/equipment')
-		}
-	}
+	const modalClose = () => setShowModal(false);
 	const { t } = useTranslation("common");
 
 	useEffect(() => {

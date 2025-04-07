@@ -11,6 +11,7 @@ import {useModal} from "@/context/ModalContext";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
+
 export default function Equipment({ modalId }) {
 	const [data, setData] = useState(null);
 	const [filterData, setFilterData] = useState([])
@@ -18,7 +19,6 @@ export default function Equipment({ modalId }) {
 	const { t } = useTranslation("common");
 	const { lang } = useLanguage();
 	const { showModal, setShowModal } = useModal();
-
 
 	const [search, setSearch] = useState('')
 
@@ -64,7 +64,6 @@ export default function Equipment({ modalId }) {
 		value: key,
 		label: label,
 	}));
-
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -262,24 +261,6 @@ export default function Equipment({ modalId }) {
 			maxInput.value = filterPrice.max;
 		}
 	}, [filterPrice]);
-
-	useEffect(() => {
-		if (modalId) {
-			const decodedId = decodeURIComponent(modalId); // ← ось тут магія
-			const item = data?.find((item) => item.article === decodedId);
-			setShowModal(item);
-		} else {
-			// router.push('/equipment')
-		}
-	}, [modalId, data]);
-
-	// useEffect(() => {
-	// 	if (!showModal) {
-	// 		// router.push('/equipment')
-	// 		console.log('www')
-	// 	}
-	// }, [showModal]);
-
 	const applyPriceFilter = (event) => {
 		event.preventDefault();
 		if (!data) return;
