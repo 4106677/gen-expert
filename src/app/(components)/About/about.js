@@ -23,8 +23,8 @@ export const About = () => {
 		<div className={styles.main}>
 			<Image alt='About us image' src='/images/about_us.jpeg' width={500} height={375}/>
 			<div className={styles.description}>
-				<h3 className={styles.h3}>{t('about_main_page.title')}</h3>
-				<h4>{t('about_main_page.subtitle')}
+				<h3 className={styles.description_h3}>{t('about_main_page.title')}</h3>
+				<h4 className={styles.description_h4}>{t('about_main_page.subtitle')}
 				</h4>
 				<Link href='/about' className={styles.button}>{t('about_main_page.header')}
 				<Image src='./right.svg' height={40} width={40} alt='right button'/>

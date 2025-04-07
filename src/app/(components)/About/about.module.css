@@ -14,8 +14,12 @@
     margin-left: 40px;
     font-size: 18px;
 
-    .h3 {
+    .description_h3 {
         margin-bottom: 20px;
+    }
+
+    .description_h4 {
+        font-weight: normal;
     }
 }
 

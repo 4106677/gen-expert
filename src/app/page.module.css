@@ -26,7 +26,6 @@
 }
 
 .arrowStyles {
-
   position: absolute;
   z-index: 2;
   top: calc(50% - 15px);
@@ -78,8 +77,6 @@
       margin-right: 8px;
   }
   }
-
-
 }
 
 
