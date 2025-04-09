@@ -62,7 +62,7 @@
       "files": "Documentation"
     },
     "filters": {
-      "title": "",
+      "title": "Filter by",
       "items": {
         "power": "Power",
         "manufacturer": "Manufacturer",
@@ -254,6 +254,98 @@
     "limited": "Limited",
     "consultationCTA": "Get a consultation",
 
+    "whatIsGPU": {
+      "title": "What is a Gas-Piston Unit? Operating Principle",
+      "definition": {
+        "title": "What is a Gas-Piston Unit?",
+        "description": "A gas-piston power plant is an autonomous unit that produces electricity and heat by burning gas in an internal combustion engine. It can use natural gas, biogas, mine gas, or synthetic gas."
+      },
+      "structure": {
+        "title": "Design and Systems",
+        "typesIntro": "Gas-piston units come in different configurations:",
+        "type1": "Open design (all components on a frame)",
+        "type2": "Enclosed (in a container or sound-insulated housing)",
+        "componentsIntro": "Key systems of a GPU:",
+        "component1": "Gas and oil supply",
+        "component2": "Starting and control system",
+        "component3": "Exhaust and ventilation",
+        "component4": "Cooling and heat utilization",
+        "component5": "AC generator",
+        "component6": "Automation and signaling",
+        "component7": "Internal combustion engine"
+      },
+      "principle": {
+        "title": "Operating Principle",
+        "step1": {
+          "title": "🔹 1. Gas Supply to the Engine and Combustion Process",
+          "description": "🔸 Gas (natural, biogas, etc.) is supplied from the gas pipeline through:",
+          "point1": "Gas filter (to remove impurities)",
+          "point2": "Pressure regulator (maintains stable supply pressure)",
+          "point3": "Gas valve (controls flow)",
+          "point4": "Gas mixer/carburetor (mixes gas with air)",
+          "point5": "The mixture then enters the cylinders of the internal combustion engine",
+          "point6": "Ignition of the mixture creates pressure on the pistons"
+        },
+        "step2": {
+          "title": "🔹 2. Crankshaft Rotation",
+          "description": "Pistons transfer force to the crankshaft, which:",
+          "point1": "Converts linear motion into rotational motion",
+          "point2": "Rotates the flywheel and clutch connected to the generator"
+        },
+        "step3": {
+          "title": "🔹 3. Electricity Generation",
+          "description": "⚡ AC generator (synchronous or asynchronous):",
+          "point1": "Is driven by rotational motion",
+          "point2": "Generates electricity based on electromagnetic induction",
+          "point3": "The signal is sent to the automation system which manages current distribution, parallel operation with the grid, and overload protection"
+        },
+        "step4": {
+          "title": "🔹 4. Heat Recovery from the Engine through Heat Exchangers",
+          "description": "During combustion, a large amount of heat is released:",
+          "point1": "🔥 From the engine cooling jacket",
+          "point2": "🔥 From the oil (through an oil heat exchanger)",
+          "point3": "🔥 From exhaust gases"
+        },
+        "step5": {
+          "title": "🔹 5. Using Heat for Heating or Hot Water Supply",
+          "description": "Heated water or steam is transferred to:",
+          "point1": "🔁 Heating system (premises, production facilities)",
+          "point2": "💧 Hot water supply (showers, restrooms, technological needs)",
+          "point3": "If there is excess heat — it's diverted to a cooling tower or dry cooler"
+        },
+        "step6": {
+          "title": "🔹 6. Trigeneration: Producing Cold from Heat",
+          "description": "Part of the thermal energy is supplied to:",
+          "point1": "❄️ Absorption refrigeration machine (ABHM)",
+          "point2": "Hot water or steam acts as an energy source in this process",
+          "point3": "Water cooling occurs (without using electricity)",
+          "point4": "Chilled water is supplied to the air conditioning system or for technological equipment cooling"
+        }
+      },
+      "indicators": {
+        "title": "Technical and Economic Indicators",
+        "point1": "Electrical efficiency — up to 45%",
+        "point2": "Total efficiency — up to 90%",
+        "point3": "Share of recovered heat — up to 45%",
+        "point4": "Savings compared to separate production — up to 50%",
+        "point5": "Reduction of energy losses — up to 60%"
+      },
+      "cogeneration": {
+        "title": "Cogeneration = Electricity + Heat",
+        "formula": "Formula: η total = η electrical + η thermal ≈ 45% + 45% = up to 90%",
+        "sourcesIntro": "Heat sources:",
+        "source1": "Cooling system",
+        "source2": "Exhaust gases"
+      },
+      "trigeneration": {
+        "title": "Trigeneration = Electricity + Heat + Cold",
+        "description": "An absorption refrigeration machine (ABHM) converts heat into cold. Instead of electricity, hot water or steam is used as the energy source.",
+        "examples": "Examples:",
+        "example1": "1 MW of hot water → up to 800 kW of cooling capacity",
+        "example2": "1 MW of steam → up to 1400 kW of cooling capacity"
+      }
+    },
+
     "howToChooseGPU": {
       "title": "How to choose the right gas piston unit (GPU)",
       "intro1": "Gas piston units (GPUs) are an effective solution for autonomous power supply, reducing electricity costs, and increasing business energy independence.",
@@ -289,18 +381,81 @@
     },
 
     "serviceLife": {
-      "title": "Generator service life by brand until major overhaul, average maintenance interval, and types of maintenance",
+      "title": "Service Life of Generators by Brand, Maintenance Intervals, and Types",
       "table": {
         "manufacturer": "Manufacturer",
-        "electricalEfficiency": "Electrical efficiency (%)",
-        "thermalEfficiency": "Thermal efficiency (%)",
-        "totalEfficiency": "Total efficiency (%)",
+        "electricalEfficiency": "Electrical Efficiency (%)",
+        "thermalEfficiency": "Thermal Efficiency (%)",
+        "totalEfficiency": "Total Efficiency (%)",
         "reliability": "Reliability",
-        "fuelConsumption": "Fuel consumption",
-        "partsAvailability": "Parts availability",
-        "serviceLifeHours": "Service life until major overhaul (hours)",
-        "maintenanceInterval": "Maintenance interval (hours)",
-        "gasConsumption": "Gas consumption per 1 MW of electricity"
+        "fuelConsumption": "Fuel Consumption",
+        "partsAvailability": "Parts Availability",
+        "serviceLifeHours": "Service Life to Overhaul (h)",
+        "maintenanceInterval": "Maintenance Interval (h)",
+        "gasConsumption": "Gas Consumption per 1 MW el.",
+        "overhaul30000Hours": "30,000 Hours Maintenance (Mid-life Overhaul)",
+        "overhaul60000Hours": "60,000 Hours Maintenance (Major Overhaul)"
+      },
+      "maintenanceTypes": {
+        "standardTitle": "Standard Maintenance Procedures (1,500–3,000 hours)",
+        "component": "Component",
+        "works": "Work Performed",
+        "oil": "Engine Oil",
+        "oilChange": "Complete engine oil replacement",
+        "oilFilters": "Oil Filters",
+        "oilFiltersChange": "Oil filter replacement",
+        "airFilters": "Air Filters",
+        "airFiltersChange": "Air filter replacement or cleaning",
+        "sparkPlugs": "Spark Plugs",
+        "sparkPlugsChange": "Replacement (often at every maintenance or every other service)",
+        "engineDiagnostics": "Engine Diagnostics",
+        "engineDiagnosticsCheck": "Checking oil pressure, temperatures, vibrations",
+        "oilAnalysis": "Oil Analysis",
+        "oilAnalysisCheck": "Checking for metal particles and wear indicators",
+        "coolant": "Coolant",
+        "coolantCheck": "Level check, top-up or replacement if needed",
+        "gasValve": "Gas Valve and Fuel System",
+        "gasValveCheck": "Inspection, leak test, purging",
+        "generator": "Generator",
+        "generatorCheck": "Insulation check, load testing, brush inspection (if applicable)",
+        "automation": "Automation and Safety Systems",
+        "automationCheck": "Testing, log updates, control system communication check",
+        "fasteners": "Fasteners and Connections",
+        "fastenersCheck": "Bolt tightening, vibration mount inspection",
+
+        "midLifeTitle": "Mid-Life Overhaul (at ~30,000 operating hours)",
+        "midLifeDescription": "Purpose: extend engine life until major overhaul, address wear of critical components. Usually performed on-site, duration — 3–10 days.",
+        "mainWorks": "Main procedures:",
+        "midLife": {
+          "point1": "Replacement of pistons or piston rings",
+          "point2": "Inspection/replacement of crankshaft bearings",
+          "point3": "Replacement or overhaul of cylinder heads",
+          "point4": "Cleaning and inspection of the turbocharger",
+          "point5": "Inspection and replacement of injectors, spark plugs, fuel system components",
+          "point6": "Replacement of gaskets, seals, filters",
+          "point7": "Inspection of oil system, cooling system, gas valves",
+          "point8": "Generator and control system diagnostics",
+          "point9": "Balancing of rotating elements"
+        },
+
+        "majorTitle": "Major Overhaul (at ~60,000 operating hours)",
+        "majorDescription": "Purpose: complete engine rebuild extending service life by another 60,000 hours. Often conducted at specialized facilities or manufacturer plants, duration — 2–4 weeks.",
+        "includes": "Includes:",
+        "major": {
+          "point1": "Complete engine disassembly",
+          "point2": "Crankshaft grinding or replacement",
+          "point3": "Cylinder block inspection/replacement",
+          "point4": "Complete cylinder set replacement (liners, pistons, connecting rods)",
+          "point5": "Repair/replacement of turbocharger, pumps, radiators, thermostats",
+          "point6": "Updating gas, oil, and cooling systems",
+          "point7": "Generator diagnostics, brush/bearing replacement",
+          "point8": "Control system software updates (optional)"
+        },
+
+        "averageCosts": "Average costs:",
+        "standardCost": "Standard Maintenance: $5,000 - $10,000",
+        "midLifeCost": "Mid-Life Overhaul: $100,000 - $200,000",
+        "majorCost": "Major Overhaul: $200,000 - $400,000"
       }
     },
 

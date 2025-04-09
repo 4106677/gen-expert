@@ -24,22 +24,29 @@ export default function Equipment({ modalId }) {
 
 	const [filterPower, setFilterPower] = useState({min: 0, max: 10});
 	const [powerRange, setPowerRange] = useState({ min: 0, max: 10000 })
+	const [showPower, setShowPower] = useState(true)
 
 	const [filterVoltage, setFilterVoltage] = useState({min: 0, max: 10000});
 	const [voltageRange, setVoltageRange] = useState({ min: 0, max: 10000 })
+	const [showVoltage, setShowVoltage] = useState(false)
 
 	const [filterYear, setFilterYear] = useState({min: 1990, max: 2025});
 	const [yearRange, setYearRange] = useState({min: 1990, max: 2025});
+	const [showYear, setShowYear] = useState(false)
 
 	const [filterPrice, setFilterPrice] = useState({min: 0, max: 10000});
 	const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 })
+	const [showPrice, setShowPrice] = useState(false)
 
 	const [filterManufacturer, setFilterManufacturer] = useState([])
 	const [filterCondition, setFilterCondition] = useState([])
+	const [showManufacturer, setShowManufacturer] = useState(true)
+	const [showCondition, setShowCondition] = useState(true)
+
 	const manufacturers = [...new Set(data?.map(item => item.manufacturer))];
 	const conditions = [...new Set(data?.map(item => item.condition))];
 
-	const [selectedSorting, setSelectedSorting] = useState("");
+	const [selectedSorting, setSelectedSorting] = useState("latest");
 
 	const handleSortingChange = (event) => {
 		setSelectedSorting(event.target.value);
@@ -301,9 +308,20 @@ export default function Equipment({ modalId }) {
 			</div>
 			<div className={styles.container}>
 				<ul className={styles.left}>
-					<li className={styles.left_li}>
-						<h3 className={styles.left_h3}>{t("equipment.filters.items.power")}</h3>
-						<div className={styles.inputFilters}>
+					<h2 className={styles.left_title}>{t("equipment.filters.title")}</h2>
+					<li className={`${styles.left_li} ${!showPower && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3} onClick={() => setShowPower(!showPower)}>{t("equipment.filters.items.power")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showPower ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showPower && <div className={styles.inputFilters}>
 							<form onSubmit={applyPowerFilter}>
 								<div className={styles.inputs}>
 									<input
@@ -341,18 +359,44 @@ export default function Equipment({ modalId }) {
 								/>
 							</div>
 						</div>
+						}
 					</li>
-					<li className={styles.manufacturer}><h3 className={styles.left_h3}>{t("equipment.filters.items.manufacturer")}</h3>
-						{manufacturers?.map((item, index) =>
-							<div key={index}>
-								<input className={styles.manufacturer_input} type="checkbox" onChange={() => onManufacturerInputClick(item)}
-								       checked={filterManufacturer.length === 0 || filterManufacturer.includes(item)}/>
-								{item}
-							</div>
-						)}
+					<li className={`${styles.manufacturer} ${!showManufacturer && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3} onClick={() => setShowManufacturer(!showManufacturer)}>{t("equipment.filters.items.manufacturer")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showManufacturer ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showManufacturer && <>
+							{manufacturers?.map((item, index) =>
+								<div key={index}>
+									<input className={styles.manufacturer_input} type="checkbox"
+									       onChange={() => onManufacturerInputClick(item)}
+									       checked={filterManufacturer.length === 0 || filterManufacturer.includes(item)}/>
+									{item}
+								</div>
+							)}
+						</> }
 					</li>
-					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.voltage")}</h3>
-						<div className={styles.inputFilters}>
+					<li className={`${styles.left_li} ${!showVoltage && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3} onClick={() => setShowVoltage(!showVoltage)}>{t("equipment.filters.items.voltage")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showVoltage ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showVoltage && (<div className={styles.inputFilters}>
 							<form onSubmit={applyVoltageFilter}>
 								<div className={styles.inputs}>
 									<input
@@ -389,19 +433,42 @@ export default function Equipment({ modalId }) {
 									allowCross={false}
 								/>
 							</div>
-						</div>
+						</div>)}
 					</li>
-					<li className={styles.condition}><h3 className={styles.left_h3}>{t("equipment.filters.items.condition")}</h3>
-						{conditions?.map((item, index) =>
+					<li className={`${styles.condition} ${!showCondition && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowCondition(!showCondition)} className={styles.left_h3}>{t("equipment.filters.items.condition")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showCondition ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showCondition && (<>{conditions?.map((item, index) =>
 							<div key={index}>
-								<input className={styles.condition_input} type="checkbox" onChange={() => onConditionInputClick(item)}
+								<input className={styles.condition_input} type="checkbox"
+								       onChange={() => onConditionInputClick(item)}
 								       checked={filterCondition.length === 0 || filterCondition.includes(item)}/>
 								{item}
 							</div>
-						)}
+						)}</> )}
 					</li>
-					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.release")}</h3>
-						<div className={styles.inputFilters}>
+					<li className={`${styles.left_li} ${!showYear && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowYear(!showYear)} className={styles.left_h3}>{t("equipment.filters.items.release")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showYear ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showYear && (<div className={styles.inputFilters}>
 							<form onSubmit={applyYearFilter}>
 								<div className={styles.inputs}>
 									<input
@@ -438,10 +505,21 @@ export default function Equipment({ modalId }) {
 									allowCross={false}
 								/>
 							</div>
-						</div>
+						</div>)}
 					</li>
-					<li className={styles.left_li}><h3 className={styles.left_h3}>{t("equipment.filters.items.price")}</h3>
-						<div className={styles.inputFilters}>
+					<li className={`${styles.left_li} ${!showPrice && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowPrice(!showPrice)} className={styles.left_h3}>{t("equipment.filters.items.price")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{ transform: `rotate(${showPrice ? 180 : 0}deg)` }}
+							/>
+						</h3>
+						{showPrice && <div className={styles.inputFilters}>
 							<form onSubmit={applyPriceFilter}>
 								<div className={styles.inputs}>
 									<input
@@ -478,7 +556,7 @@ export default function Equipment({ modalId }) {
 									allowCross={false}
 								/>
 							</div>
-						</div>
+						</div>}
 					</li>
 
 				</ul>
@@ -499,7 +577,8 @@ export default function Equipment({ modalId }) {
 										<li>{item.year}</li>
 										<li>{item.hours} {item.hoursUnit}</li>
 									</ul>
-									<p dangerouslySetInnerHTML={{__html: item.description}} className={styles.productsSection_p}/>
+									<p dangerouslySetInnerHTML={{__html: item.description}}
+									   className={styles.productsSection_p}/>
 									<button type="button" className={styles.product_button}
 									        onClick={(event) => handleOpenModal(item, event)}>{t("equipment.button")}</button>
 								</div>

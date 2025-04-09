@@ -26,7 +26,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 
 export default function Useful() {
 
-	const [openSection, setOpenSection] = useState('howToChoose');
+	const [openSection, setOpenSection] = useState('whatIsGpu');
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
@@ -52,6 +52,151 @@ export default function Useful() {
 			<Image src="/images/useful_hero.jpg" alt="hero" width={1400} height={500} className={styles.hero_image}/>
 			<div className={styles.usefulContainer}>
 				<h1 className={styles.mainTitle}>{t('useful.title')}</h1>
+
+				{/* Що таке ГПУ? Принцип роботи */}
+				<AccordionItem
+					title={t('useful.whatIsGPU.title')}
+					isOpen={openSection === 'whatIsGpu'}
+					onClick={() => toggleSection('whatIsGpu')}
+				>
+					<div className={styles.sectionContent}>
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t('useful.whatIsGPU.definition.title')}
+							</h3>
+							<p>{t('useful.whatIsGPU.definition.description')}</p>
+						</div>
+
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔧</span>
+								{t('useful.whatIsGPU.structure.title')}
+							</h3>
+							<p>{t('useful.whatIsGPU.structure.typesIntro')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.structure.type1')}</li>
+								<li>{t('useful.whatIsGPU.structure.type2')}</li>
+							</ul>
+							<p>{t('useful.whatIsGPU.structure.componentsIntro')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.structure.component1')}</li>
+								<li>{t('useful.whatIsGPU.structure.component2')}</li>
+								<li>{t('useful.whatIsGPU.structure.component3')}</li>
+								<li>{t('useful.whatIsGPU.structure.component4')}</li>
+								<li>{t('useful.whatIsGPU.structure.component5')}</li>
+								<li>{t('useful.whatIsGPU.structure.component6')}</li>
+								<li>{t('useful.whatIsGPU.structure.component7')}</li>
+							</ul>
+						</div>
+
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>⚙️</span>
+								{t('useful.whatIsGPU.principle.title')}
+							</h3>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step1.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step1.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step1.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step1.point2')}</li>
+								<li>{t('useful.whatIsGPU.principle.step1.point3')}</li>
+								<li>{t('useful.whatIsGPU.principle.step1.point4')}</li>
+								<li>{t('useful.whatIsGPU.principle.step1.point5')}</li>
+								<li>{t('useful.whatIsGPU.principle.step1.point6')}</li>
+							</ul>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step2.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step2.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step2.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step2.point2')}</li>
+							</ul>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step3.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step3.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step3.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step3.point2')}</li>
+								<li>{t('useful.whatIsGPU.principle.step3.point3')}</li>
+							</ul>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step4.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step4.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step4.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step4.point2')}</li>
+								<li>{t('useful.whatIsGPU.principle.step4.point3')}</li>
+							</ul>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step5.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step5.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step5.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step5.point2')}</li>
+								<li>{t('useful.whatIsGPU.principle.step5.point3')}</li>
+							</ul>
+
+							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step6.title')}</h4>
+							<p>{t('useful.whatIsGPU.principle.step6.description')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.principle.step6.point1')}</li>
+								<li>{t('useful.whatIsGPU.principle.step6.point2')}</li>
+								<li>{t('useful.whatIsGPU.principle.step6.point3')}</li>
+								<li>{t('useful.whatIsGPU.principle.step6.point4')}</li>
+							</ul>
+						</div>
+
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>📈</span>
+								{t('useful.whatIsGPU.indicators.title')}
+							</h3>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.indicators.point1')}</li>
+								<li>{t('useful.whatIsGPU.indicators.point2')}</li>
+								<li>{t('useful.whatIsGPU.indicators.point3')}</li>
+								<li>{t('useful.whatIsGPU.indicators.point4')}</li>
+								<li>{t('useful.whatIsGPU.indicators.point5')}</li>
+							</ul>
+						</div>
+
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>♻️</span>
+								{t('useful.whatIsGPU.cogeneration.title')}
+							</h3>
+							<p>{t('useful.whatIsGPU.cogeneration.formula')}</p>
+							<p>{t('useful.whatIsGPU.cogeneration.sourcesIntro')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.cogeneration.source1')}</li>
+								<li>{t('useful.whatIsGPU.cogeneration.source2')}</li>
+							</ul>
+
+							<div className={styles.imageWrapper}>
+								<Image src="/images/cogeneration.png" alt="cogeneration" width={600} height={400} className={styles.schemeImage}/>
+							</div>
+						</div>
+
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>❄️</span>
+								{t('useful.whatIsGPU.trigeneration.title')}
+							</h3>
+							<p>{t('useful.whatIsGPU.trigeneration.description')}</p>
+							<p>{t('useful.whatIsGPU.trigeneration.examples')}</p>
+							<ul className={styles.checkList}>
+								<li>{t('useful.whatIsGPU.trigeneration.example1')}</li>
+								<li>{t('useful.whatIsGPU.trigeneration.example2')}</li>
+							</ul>
+
+							<div className={styles.imageWrapper}>
+								<Image src="/images/trigeneration.png" alt="trigeneration" width={600} height={400} className={styles.schemeImage}/>
+							</div>
+						</div>
+					</div>
+				</AccordionItem>
 
 				{/* Как выбрать ГПУ */}
 				<AccordionItem
@@ -261,6 +406,121 @@ export default function Useful() {
 							</tbody>
 						</table>
 					</div>
+
+					{/* Описание типов ТО */}
+					<div className={styles.maintenanceInfo}>
+						<h3 className={styles.maintenanceTitle}>
+							<span className={styles.parameterIcon}>🔧</span>
+							{t('useful.serviceLife.maintenanceTypes.standardTitle')}
+						</h3>
+
+						<div className={styles.maintenanceTable}>
+							<table className={styles.comparisonTable}>
+								<thead>
+								<tr>
+									<th>{t('useful.serviceLife.maintenanceTypes.component')}</th>
+									<th>{t('useful.serviceLife.maintenanceTypes.works')}</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>🛢️ {t('useful.serviceLife.maintenanceTypes.oil')}</td>
+									<td>🔄 {t('useful.serviceLife.maintenanceTypes.oilChange')}</td>
+								</tr>
+								<tr>
+									<td>🧴 {t('useful.serviceLife.maintenanceTypes.oilFilters')}</td>
+									<td>🔄 {t('useful.serviceLife.maintenanceTypes.oilFiltersChange')}</td>
+								</tr>
+								<tr>
+									<td>🌀 {t('useful.serviceLife.maintenanceTypes.airFilters')}</td>
+									<td>🔄 {t('useful.serviceLife.maintenanceTypes.airFiltersChange')}</td>
+								</tr>
+								<tr>
+									<td>🔥 {t('useful.serviceLife.maintenanceTypes.sparkPlugs')}</td>
+									<td>🔄 {t('useful.serviceLife.maintenanceTypes.sparkPlugsChange')}</td>
+								</tr>
+								<tr>
+									<td>🔍 {t('useful.serviceLife.maintenanceTypes.engineDiagnostics')}</td>
+									<td>📈 {t('useful.serviceLife.maintenanceTypes.engineDiagnosticsCheck')}</td>
+								</tr>
+								<tr>
+									<td>🧪 {t('useful.serviceLife.maintenanceTypes.oilAnalysis')}</td>
+									<td>🧫 {t('useful.serviceLife.maintenanceTypes.oilAnalysisCheck')}</td>
+								</tr>
+								<tr>
+									<td>🌡️ {t('useful.serviceLife.maintenanceTypes.coolant')}</td>
+									<td>🔄 {t('useful.serviceLife.maintenanceTypes.coolantCheck')}</td>
+								</tr>
+								<tr>
+									<td>⛽ {t('useful.serviceLife.maintenanceTypes.gasValve')}</td>
+									<td>🔎 {t('useful.serviceLife.maintenanceTypes.gasValveCheck')}</td>
+								</tr>
+								<tr>
+									<td>⚡ {t('useful.serviceLife.maintenanceTypes.generator')}</td>
+									<td>🔍 {t('useful.serviceLife.maintenanceTypes.generatorCheck')}</td>
+								</tr>
+								<tr>
+									<td>🧠 {t('useful.serviceLife.maintenanceTypes.automation')}</td>
+									<td>🛠️ {t('useful.serviceLife.maintenanceTypes.automationCheck')}</td>
+								</tr>
+								<tr>
+									<td>📋 {t('useful.serviceLife.maintenanceTypes.fasteners')}</td>
+									<td>🔧 {t('useful.serviceLife.maintenanceTypes.fastenersCheck')}</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h3 className={styles.maintenanceTitle}>
+							<span className={styles.parameterIcon}>🔧</span>
+							{t('useful.serviceLife.maintenanceTypes.midLifeTitle')}
+						</h3>
+						<p className={styles.maintenanceDescription}>{t('useful.serviceLife.maintenanceTypes.midLifeDescription')}</p>
+
+						<div className={styles.keyPoints}>
+							<h4>{t('useful.serviceLife.maintenanceTypes.mainWorks')}</h4>
+							<ul className={styles.checkList}>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point1')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point2')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point3')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point4')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point5')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point6')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point7')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point8')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point9')}</li>
+							</ul>
+						</div>
+
+						<h3 className={styles.maintenanceTitle}>
+							<span className={styles.parameterIcon}>🔧</span>
+							{t('useful.serviceLife.maintenanceTypes.majorTitle')}
+						</h3>
+						<p className={styles.maintenanceDescription}>{t('useful.serviceLife.maintenanceTypes.majorDescription')}</p>
+
+						<div className={styles.keyPoints}>
+							<h4>{t('useful.serviceLife.maintenanceTypes.includes')}</h4>
+							<ul className={styles.checkList}>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point1')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point2')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point3')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point4')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point5')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point6')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point7')}</li>
+								<li>{t('useful.serviceLife.maintenanceTypes.major.point8')}</li>
+							</ul>
+						</div>
+
+						<div className={styles.maintenanceCosts}>
+							<h3>{t('useful.serviceLife.maintenanceTypes.averageCosts')}</h3>
+							<ul className={styles.costsList}>
+								<li><span className={styles.goodRating}>🟢</span> {t('useful.serviceLife.maintenanceTypes.standardCost')}</li>
+								<li><span className={styles.mediumRating}>🟡</span> {t('useful.serviceLife.maintenanceTypes.midLifeCost')}</li>
+								<li><span className={styles.lowRating}>🔴</span> {t('useful.serviceLife.maintenanceTypes.majorCost')}</li>
+							</ul>
+						</div>
+					</div>
 				</AccordionItem>
 
 				{/* Описание брендов ГПУ */}
@@ -448,4 +708,3 @@ export default function Useful() {
 		</>
 	);
 }
-

@@ -371,6 +371,82 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для секции ТО */
+.maintenanceInfo {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.maintenanceTitle {
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.maintenanceDescription {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.maintenanceTable {
+    margin-bottom: 30px;
+}
+
+.costsList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.costsList li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.costsList li span {
+    margin-right: 10px;
+}
+
+.maintenanceCosts {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+}
+
+.maintenanceCosts h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Для новых секций про ГПУ */
+.subTitle {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #444;
+    border-left: 3px solid #85e28f;
+    padding-left: 10px;
+}
+
+.imageWrapper {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.schemeImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .mainTitle {
