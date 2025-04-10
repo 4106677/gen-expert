@@ -140,8 +140,24 @@
     margin-bottom: 10px;
 }
 
+.whatIsGPU_p {
+    font-weight: bold;
+}
+
+.checkList_simple li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
 .checkList li::before {
     content: '✅';
+    position: absolute;
+    left: 0;
+}
+
+.checkList_simple li::before {
+    content: '';
     position: absolute;
     left: 0;
 }
@@ -438,6 +454,18 @@
 .imageWrapper {
     margin: 20px 0;
     text-align: center;
+    position: relative;
+}
+
+.imageWrapper_list {
+    display: block;
+    position: absolute;
+    top: 50%;
+    text-align: left;
+}
+
+.imageWrapper_list__item {
+    border-bottom-style: solid;
 }
 
 .schemeImage {

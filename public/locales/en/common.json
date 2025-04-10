@@ -343,6 +343,13 @@
         "examples": "Examples:",
         "example1": "1 MW of hot water → up to 800 kW of cooling capacity",
         "example2": "1 MW of steam → up to 1400 kW of cooling capacity"
+      },
+      "carriers": {
+        "gas": "Natural gas",
+        "heating": "Heat carrier",
+        "electricity": "Electricity",
+        "coolant": "Coolant",
+        "exhaust": "Exhaust gases"
       }
     },
 

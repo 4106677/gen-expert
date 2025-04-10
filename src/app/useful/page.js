@@ -25,9 +25,16 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 };
 
 export default function Useful() {
-
 	const [openSection, setOpenSection] = useState('whatIsGpu');
 	const [isMounted, setIsMounted] = useState(false);
+
+	const carriers = {
+		gas: "#ffc931",
+		heating: "#f90101",
+		electricity: "#538135",
+		coolant: "#739dcb",
+		exhaust: "#000000"
+	}
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -73,13 +80,13 @@ export default function Useful() {
 								<span className={styles.parameterIcon}>🔧</span>
 								{t('useful.whatIsGPU.structure.title')}
 							</h3>
-							<p>{t('useful.whatIsGPU.structure.typesIntro')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.structure.typesIntro')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.structure.type1')}</li>
 								<li>{t('useful.whatIsGPU.structure.type2')}</li>
 							</ul>
-							<p>{t('useful.whatIsGPU.structure.componentsIntro')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.structure.componentsIntro')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.structure.component1')}</li>
 								<li>{t('useful.whatIsGPU.structure.component2')}</li>
 								<li>{t('useful.whatIsGPU.structure.component3')}</li>
@@ -97,8 +104,8 @@ export default function Useful() {
 							</h3>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step1.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step1.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step1.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step1.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step1.point2')}</li>
 								<li>{t('useful.whatIsGPU.principle.step1.point3')}</li>
@@ -108,39 +115,39 @@ export default function Useful() {
 							</ul>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step2.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step2.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step2.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step2.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step2.point2')}</li>
 							</ul>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step3.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step3.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step3.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step3.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step3.point2')}</li>
 								<li>{t('useful.whatIsGPU.principle.step3.point3')}</li>
 							</ul>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step4.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step4.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step4.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step4.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step4.point2')}</li>
 								<li>{t('useful.whatIsGPU.principle.step4.point3')}</li>
 							</ul>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step5.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step5.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step5.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step5.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step5.point2')}</li>
 								<li>{t('useful.whatIsGPU.principle.step5.point3')}</li>
 							</ul>
 
 							<h4 className={styles.subTitle}>{t('useful.whatIsGPU.principle.step6.title')}</h4>
-							<p>{t('useful.whatIsGPU.principle.step6.description')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.principle.step6.description')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.principle.step6.point1')}</li>
 								<li>{t('useful.whatIsGPU.principle.step6.point2')}</li>
 								<li>{t('useful.whatIsGPU.principle.step6.point3')}</li>
@@ -153,7 +160,7 @@ export default function Useful() {
 								<span className={styles.parameterIcon}>📈</span>
 								{t('useful.whatIsGPU.indicators.title')}
 							</h3>
-							<ul className={styles.checkList}>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.indicators.point1')}</li>
 								<li>{t('useful.whatIsGPU.indicators.point2')}</li>
 								<li>{t('useful.whatIsGPU.indicators.point3')}</li>
@@ -167,14 +174,20 @@ export default function Useful() {
 								<span className={styles.parameterIcon}>♻️</span>
 								{t('useful.whatIsGPU.cogeneration.title')}
 							</h3>
-							<p>{t('useful.whatIsGPU.cogeneration.formula')}</p>
-							<p>{t('useful.whatIsGPU.cogeneration.sourcesIntro')}</p>
-							<ul className={styles.checkList}>
+							<p >{t('useful.whatIsGPU.cogeneration.formula')}</p>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.cogeneration.sourcesIntro')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.cogeneration.source1')}</li>
 								<li>{t('useful.whatIsGPU.cogeneration.source2')}</li>
 							</ul>
 
 							<div className={styles.imageWrapper}>
+								<ul className={styles.imageWrapper_list}>
+									<li style={{ borderBottomColor: carriers.gas}} className={styles.imageWrapper_list__item}>{t("useful.whatIsGPU.carriers.gas")}</li>
+									<li style={{ borderBottomColor: carriers.heating}} className={styles.imageWrapper_list__item}>{t("useful.whatIsGPU.carriers.heating")}</li>
+									<li style={{ borderBottomColor: carriers.electricity}} className={styles.imageWrapper_list__item}>{t("useful.whatIsGPU.carriers.electricity")}</li>
+									<li style={{ borderBottomColor: carriers.exhaust}} className={styles.imageWrapper_list__item}>{t("useful.whatIsGPU.carriers.exhaust")}</li>
+								</ul>
 								<Image src="/images/cogeneration.png" alt="cogeneration" width={600} height={400} className={styles.schemeImage}/>
 							</div>
 						</div>
@@ -185,13 +198,21 @@ export default function Useful() {
 								{t('useful.whatIsGPU.trigeneration.title')}
 							</h3>
 							<p>{t('useful.whatIsGPU.trigeneration.description')}</p>
-							<p>{t('useful.whatIsGPU.trigeneration.examples')}</p>
-							<ul className={styles.checkList}>
+							<p className={styles.whatIsGPU_p}>{t('useful.whatIsGPU.trigeneration.examples')}</p>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.whatIsGPU.trigeneration.example1')}</li>
 								<li>{t('useful.whatIsGPU.trigeneration.example2')}</li>
 							</ul>
 
 							<div className={styles.imageWrapper}>
+								<ul className={styles.imageWrapper_list}>
+									<li style={{ borderBottomColor: carriers.gas}} className={styles.imageWrapper_list__item}>{t('useful.whatIsGPU.carriers.gas')}</li>
+									<li style={{ borderBottomColor: carriers.heating}} className={styles.imageWrapper_list__item}>{t('useful.whatIsGPU.carriers.heating')}</li>
+									<li style={{ borderBottomColor: carriers.electricity}} className={styles.imageWrapper_list__item}>{t('useful.whatIsGPU.carriers.electricity')}</li>
+									<li style={{ borderBottomColor: carriers.coolant}} className={styles.imageWrapper_list__item}>{t('useful.whatIsGPU.carriers.coolant')}</li>
+									<li style={{ borderBottomColor: carriers.exhaust}} className={styles.imageWrapper_list__item}>{t('useful.whatIsGPU.carriers.exhaust')}</li>
+
+								</ul>
 								<Image src="/images/trigeneration.png" alt="trigeneration" width={600} height={400} className={styles.schemeImage}/>
 							</div>
 						</div>
