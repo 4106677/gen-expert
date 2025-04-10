@@ -17,12 +17,44 @@
   flex-shrink: 0;
 }
 
+/* Добавлен класс для основного футера в разметке */
+.mainFooter {
+  display: flex;
+}
+
+/* Класс для футера внутри бургер-меню */
+.burgerFooter {
+  display: none;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-
   .footer a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 1249px) {
+  /* Скрываем основной футер на мобильных устройствах */
+  .mainFooter {
+    display: none;
+  }
+
+  /* Показываем футер в бургер-меню на мобильных устройствах */
+  .burgerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    height: max-content;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    height: max-content;
   }
 }
 

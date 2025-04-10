@@ -210,6 +210,15 @@
     background-color: #6dca76;
 }
 
+@media (max-width: 1249px) {
+    .hero_image {
+        margin-top: 0;
+    }
+    .container {
+        border: none;
+        margin-top: 0}
+}
+
 /* Адаптивность */
 @media (max-width: 640px) {
     .container {

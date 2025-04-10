@@ -15,14 +15,14 @@
 }
 
 .sortWrapper {
-    /*margin-left: 300px;*/
     margin-bottom: 20px;
     display: flex;
     justify-content: right;
+    flex-wrap: wrap;
+    gap: 10px;
 
     .search {
         margin-right: auto;
-        /*margin-right: 20px;*/
         width: 600px;
         margin-left: 300px;
     }
@@ -35,7 +35,6 @@
         color: black;
         padding: 2px 5px;
         height: 30px;
-        /*min-width: 200px;*/
     }
 
     .select_disabled[disabled] {
@@ -64,8 +63,6 @@
         font-size: 20px;
         font-weight: normal;
         padding: 10px;
-        /*background-color: #eaeceb;*/
-        /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 42px), calc(100% - 42px) 100%, 0 100%);*/
     }
 
     .left_li {
@@ -73,15 +70,11 @@
         padding: 5px 10px;
         margin-top: 10px;
         background-color: white;
-        /*background-color: #eaeceb;*/
         border: 1px solid #eaeceb;
-        /*clip-path: none;*/
     }
 
     .left_li__hide {
-        /*background-color: white;*/
         background-color: #eaeceb;
-        /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 82px), calc(100% - 82px) 100%, 0 100%);*/
     }
 
     .left_h3 {
@@ -102,11 +95,19 @@
     }
 }
 
+.filter_power { order: 1; }
+.filter_manufacturer { order: 2; }
+.filter_model { order: 3; }
+.filter_voltage { order: 4; }
+.filter_condition { order: 5; }
+.filter_bodyType { order: 6; }
+.filter_genType { order: 7; }
+.filter_year { order: 8; }
+.filter_price { order: 9; }
+
 .inputFilters {
     display: flex;
     flex-direction: column;
-    /*max-width: 180px;*/
-    /*overflow: hidden;*/
 
     .inputs {
         display: flex;
@@ -139,8 +140,6 @@
             cursor: pointer;
         }
     }
-
-
 }
 
 .sliderContainer {
@@ -159,22 +158,15 @@
     }
 }
 
-/*.condition {*/
-/*    border: 1px solid #eaeceb;*/
-/*    padding: 5px 10px;*/
-/*    .condition_input {*/
-/*        margin-right: 8px;*/
-/*    }*/
-/*}*/
-
 .right {
-    width: 1100px;
+    width: calc(100% - 300px);
 }
 
 .product {
     display: flex;
     flex-direction: row;
     position: relative;
+    max-height: 400px;
 
     &:not(:last-child) {
         margin-bottom: 18px;
@@ -206,6 +198,8 @@
         margin-right: 15px;
         cursor: pointer;
         min-width: 400px;
+        max-width: 400px;
+
     }
 
     .product_h3 {
@@ -256,4 +250,319 @@
     gap: 3px 30px;
 }
 
+/* Для мобильного фильтра */
+.mobileFilterToggle {
+    display: none;
+    background-color: #85e28f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
+/* Адаптивные стили */
+@media (max-width: 1450px) {
+    .main {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 1249px) {
+    .main {
+        padding: 0 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: none; /* Скрываем по умолчанию на мобильных */
+    }
+
+    .left_title {
+        display: none;
+    }
+
+    .left_li, .checkboxes {
+        max-height: 210px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #fff;
+    }
+
+    .left_h3 {
+        font-size: 20px;
+    }
+
+    .left_input__text {
+        font-size: 19px;
+    }
+
+    .inputFilters {
+        display: flex;
+        flex-direction: column;
+
+        .inputs {
+            .inputFilters_button {
+                height: 40px;
+                font-size: 19px;
+                width: auto;
+                padding: 2px 10px;
+            }
+            .inputFilters_input { font-size: 19px;
+                height: 40px;
+                width: calc(50% - 35px);
+            }
+        }
+    }
+
+    .left.visible {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .sliderContainer {
+        max-width: none;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .product {
+        max-height: max-content;
+
+        .img {
+            height: auto;
+            max-height: 400px;
+        }
+    }
+
+    .mobileFilterToggle {
+        display: flex;
+    }
+
+    .sortWrapper {
+        justify-content: space-between;
+
+        .sortWrapper_input, .sortWrapper_select {
+            height: 50px;
+            font-size: 20px;
+            padding: 2px 15px;
+        }
+
+        .sortWrapper_button {
+            height: 50px;
+            font-size: 20px;
+            padding: 5px 20px;
+        }
+    }
+
+    .sortWrapper .search {
+        margin-left: 0;
+        width: 100%;
+        margin-right: 0;
+        order: 3;
+    }
+
+    .sortWrapper_select {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .sortWrapper_button {
+        margin-left: 0;
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product .img {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .productsSection {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .product_button {
+        position: static;
+        display: block;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .product:hover .product_button {
+        display: block;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .productDescription {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter_power { order: 1; }
+    .filter_voltage { order: 2; }
+    .filter_manufacturer { order: 3; }
+    .filter_model { order: 4; }
+    .filter_year { order: 5; }
+    .filter_price { order: 6; }
+    .filter_condition { order: 7; }
+    .filter_bodyType { order: 8; }
+    .filter_genType { order: 9; }
+
+    /* Apply grid layout to visible filters */
+    .left.visible {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Specific layout for tablets (768px-1249px) */
+    @media (min-width: 768px) and (max-width: 1249px) {
+        .left.visible {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        /* Row 1: Power and Voltage filters (3fr each) */
+        .filter_power {
+            grid-column: 1 / span 3;
+        }
+
+        .filter_voltage {
+            grid-column: 4 / span 3;
+        }
+
+        /* Row 2: Manufacturer and Model filters (3fr each) */
+        .filter_manufacturer {
+            grid-column: 1 / span 3;
+        }
+
+        .filter_model {
+            grid-column: 4 / span 3;
+        }
+
+        /* Row 3: Year and Price filters (3fr each) */
+        .filter_year {
+            grid-column: 1 / span 3;
+        }
+
+        .filter_price {
+            grid-column: 4 / span 3;
+        }
+
+        /* Row 4: Body Type, Gen Type, and Condition filters (2fr each) */
+        .filter_condition {
+            grid-column: 1 / span 2;
+        }
+
+        .filter_bodyType {
+            grid-column: 3 / span 2;
+        }
+
+        .filter_genType {
+            grid-column: 5 / span 2;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sortWrapper {
+        flex-direction: column;
+
+        .sortWrapper_button {
+            margin-left: 0;
+        }
+    }
+
+    .left.visible {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    /* All filters take full width */
+    .filter_power,
+    .filter_voltage,
+    .filter_manufacturer,
+    .filter_model,
+    .filter_condition,
+    .filter_bodyType,
+    .filter_genType,
+    .filter_year,
+    .filter_price {
+        grid-column: 1;
+    }
+
+
+    .sortWrapper .search,
+    .sortWrapper_select,
+    .sortWrapper_button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .productDescription {
+        grid-template-columns: 1fr;
+    }
+
+    .inputFilters .inputs {
+        flex-direction: row;
+        align-items: center
+
+        /*align-items: stretch;*/
+    }
+
+    .inputFilters .inputs .inputFilters_input {
+        max-width: 100%;
+    }
+
+    /*.inputFilters .inputs .inputFilters_span {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*.inputFilters .inputs .inputFilters_button {*/
+    /*    margin-left: 0;*/
+    /*    width: 100%;*/
+    /*}*/
+
+    .sliderContainer {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 0 10px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .productsSection_p {
+        -webkit-line-clamp: 5;
+    }
+}

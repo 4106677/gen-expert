@@ -63,6 +63,8 @@
     },
     "filters": {
       "title": "Фильтровать по",
+      "hideFilters": "Скрыть фильтры",
+      "showFilters": "Показать фильтры",
       "items": {
         "power": "Мощность",
         "manufacturer": "Производитель",

@@ -21,7 +21,7 @@ export const About = () => {
 	}
 	return (
 		<div className={styles.main}>
-			<Image alt='About us image' src='/images/about_us.jpeg' width={500} height={375}/>
+			<Image alt='About us image' src='/images/about_us.jpeg' width={1000} height={750} className={styles.image}/>
 			<div className={styles.description}>
 				<h3 className={styles.description_h3}>{t('about_main_page.title')}</h3>
 				<h4 className={styles.description_h4}>{t('about_main_page.subtitle')}

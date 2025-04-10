@@ -185,3 +185,30 @@
     margin: 0 auto;
     display: block;
 }
+
+
+@media (max-width: 1249px) {
+    .main {
+        margin-top: 20px;
+    }
+    .title{
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .container{
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .calculated_wrapper {
+        max-width: 700px;
+        margin:  0 auto;
+    }
+}

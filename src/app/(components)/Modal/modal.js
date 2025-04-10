@@ -13,6 +13,22 @@ export default function Modal() {
 	const { showModal, setShowModal } = useModal();
 	const modalClose = () => setShowModal(false);
 	const { t } = useTranslation("common");
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkIfMobile = () => {
+			setIsMobile(window.innerWidth < 980);
+		};
+
+		// Initial check
+		checkIfMobile();
+
+		// Add event listener for window resize
+		window.addEventListener('resize', checkIfMobile);
+
+		// Cleanup
+		return () => window.removeEventListener('resize', checkIfMobile);
+	}, []);
 
 	useEffect(() => {
 		if (showModal) {
@@ -51,51 +67,55 @@ export default function Modal() {
 		showModal.dataSheet3
 	].filter(Boolean);
 
+	const CarouselComponent = () => (
+		<div className={styles.carouselWrapper}>
+			<Carousel
+				showArrows={true}
+				showThumbs={true}
+				showStatus={false}
+				showIndicators={false}
+				infiniteLoop={true}
+				useKeyboardArrows={true}
+				autoPlay={false}
+				emulateTouch={true}
+				className={styles.carousel}
+			>
+				{images.map((src, index) => (
+					<div key={index} className={styles.sliderWrapper}>
+						<img src={bbExtractor(src)} alt={`Фото ${index + 1}`} className={styles.preview}/>
+					</div>
+				))}
+			</Carousel>
+			<div className={styles.purpose}>
+				<button className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
+			</div>
+			<div className={styles.filesWrapper}>
+				{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
+				{files?.map((file, index) => (
+					<div key={index} className={styles.file}>
+						<a href={gdLink(file)} target='_blank' className={styles.file_a}>
+							<Image
+								aria-hidden
+								src="/doc.svg"
+								alt="Document icon"
+								width={30}
+								height={30}
+								className={styles.file_img}
+							/>Datasheet {index+1}</a>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+
 	return (
 		<div className={styles.wrapper} onClick={modalClose}>
 			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-				<div className={styles.carouselWrapper}>
-					<Carousel
-						showArrows={true}
-						showThumbs={true}
-						showStatus={false}
-						showIndicators={false}
-						infiniteLoop={true}
-						useKeyboardArrows={true}
-						autoPlay={false}
-						emulateTouch={true}
-						className={styles.carousel}
-					>
-						{images.map((src, index) => (
-							<div key={index} className={styles.sliderWrapper}>
-								<img src={bbExtractor(src)} alt={`Фото ${index + 1}`} className={styles.preview}/>
-							</div>
-						))}
-					</Carousel>
-					<div className={styles.purpose}>
-						<button className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
-					</div>
-					<div className={styles.filesWrapper}>
-						{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
-						{files?.map((file, index) => (
-							<div key={index} className={styles.file}>
-								<a href={gdLink(file)} target='_blank' className={styles.file_a}>
-									<Image
-									aria-hidden
-									src="/doc.svg"
-									alt="Document icon"
-									width={30}
-									height={30}
-									className={styles.file_img}
-								/>Datasheet {index+1}</a>
-							</div>
-						))}
-					</div>
-				</div>
+				{!isMobile && <CarouselComponent />}
 				<div className={styles.description}>
 					<div className={styles.heading}>
 						<h2 className={styles.heading_h2}>{showModal.manufacturer} {showModal.model}</h2>
-					<button onClick={modalClose} className={styles.heading_button}>x</button>
+						<button onClick={modalClose} className={styles.heading_button}>x</button>
 					</div>
 					<ul className={styles.productDescription}>
 						<li className={styles.productDescription_li}>
@@ -125,9 +145,8 @@ export default function Modal() {
 							<h3>{t("equipment.filters.items.working")}</h3>
 							<span><span>{showModal.hours} {showModal.hoursUnit}</span></span>
 						</li>
-
-
 					</ul>
+					{isMobile && <CarouselComponent />}
 					<p dangerouslySetInnerHTML={{__html: showModal.description}} className={styles.description_p}/>
 				</div>
 			</div>

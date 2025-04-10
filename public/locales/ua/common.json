@@ -63,6 +63,8 @@
     },
     "filters": {
       "title": "Фільтрувати за",
+      "hideFilters": "Скрити фільтри",
+      "showFilters": "Показати фільтри",
       "items": {
         "power": "Потужність",
         "manufacturer": "Виробник",

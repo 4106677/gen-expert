@@ -63,6 +63,8 @@
     },
     "filters": {
       "title": "Filter by",
+      "hideFilters": "Hide filters",
+      "showFilters": "Show filters",
       "items": {
         "power": "Power",
         "manufacturer": "Manufacturer",

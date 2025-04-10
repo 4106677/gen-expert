@@ -26,3 +26,10 @@
         font-weight: bold;
     }
 }
+
+@media (max-width: 950px) {
+    .why {
+        padding: 20px;
+        width: auto;
+    }
+}

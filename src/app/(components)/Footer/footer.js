@@ -1,25 +1,30 @@
 import styles from "./footer.module.css";
 import Image from "next/image";
 
-export const Footer = () => {
+// Добавлен дополнительный параметр className для возможности добавления классов
+export const Footer = ({ className }) => {
 	return (
-		<footer className={styles.footer}>
-			<a href="tel:+380732370045"><Image
-				aria-hidden
-				src="/phone.svg"
-				alt="telegram icon"
-				width={20}
-				height={20}
-			/>
-				+38(073)237-00-45</a>
+		<footer className={`${styles.footer} ${className || ''}`}>
+			<a href="tel:+380732370045">
+				<Image
+					aria-hidden
+					src="/phone.svg"
+					alt="phone icon"
+					width={22}
+					height={22}
+				/>
+				+38(073)237-00-45
+			</a>
 			<a href="mailto:info@genexpert.ua">
 				<Image
 					aria-hidden
 					src="/email.svg"
-					alt="telegram icon"
-					width={20}
-					height={20}
-				/>info@genexpert.ua</a>
+					alt="email icon"
+					width={22}
+					height={22}
+				/>
+				info@genexpert.ua
+			</a>
 			<a
 				href="https://t.me/genexpert_ua"
 				target="_blank"
@@ -29,8 +34,8 @@ export const Footer = () => {
 					aria-hidden
 					src="/telegram.svg"
 					alt="telegram icon"
-					width={20}
-					height={20}
+					width={22}
+					height={22}
 				/>
 				Telegram
 			</a>
@@ -43,8 +48,8 @@ export const Footer = () => {
 					aria-hidden
 					src="/instagram.svg"
 					alt="instagram icon"
-					width={20}
-					height={20}
+					width={22}
+					height={22}
 				/>
 				Instagram
 			</a>

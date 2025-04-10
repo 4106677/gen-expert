@@ -7,6 +7,7 @@ import ClientLayout from "./ClientLayout";
 import Modal from "@/app/(components)/Modal/modal";
 import {ContactsModal} from "@/app/(components)/ContactsModal/contactsModal";
 import {Footer} from "@/app/(components)/Footer/footer";
+import styles from "@/app/(components)/Footer/footer.module.css";
 
 const roboto = localFont({
     src: "../../public/fonts/Roboto.ttf",
@@ -36,12 +37,12 @@ export default async function RootLayout({children, params}) {
         <html lang="en">
         <body className={`${caviarDreams.variable} ${caviarDreamsBold.variable} ${roboto.variable}`}>
         <ClientLayout>
-            <SheetDataProvider >
+            <SheetDataProvider>
                 <Header />
                 <Container>
                     <main>{children}</main>
                 </Container>
-                <Footer/>
+                <Footer className={styles.mainFooter} />
                 <Modal/>
                 <ContactsModal />
             </SheetDataProvider>

@@ -6,6 +6,12 @@
     width: 100%;
 }
 
+@media (max-width: 1450px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 10px;

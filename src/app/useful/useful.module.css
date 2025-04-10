@@ -490,6 +490,42 @@
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
 }
 
+
+
+@media (max-width: 1249px) {
+    .hero_image {
+        margin-top: 0;
+    }
+    .usefulContainer {
+        border: none;
+        margin-top: 0}
+}
+
+@media (max-width: 960px) {
+    .imageWrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .imageWrapper_list {
+        margin-top: 10px;
+        position: relative;
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .imageWrapper_list {
+        margin-top: 10px;
+        position: relative;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 2fr 2fr 2fr;
+        text-align: center;
+    }
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .mainTitle {
