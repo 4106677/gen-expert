@@ -37,6 +37,8 @@ const processSheetData = (data) => {
 				photo8: item[23],
 				photo9: item[24],
 				photo10: item[25],
+				genType: item[28],
+				bodyType: item[29],
 				dataSheet1: item[30],
 				dataSheet2: item[31],
 				dataSheet3: item[32],

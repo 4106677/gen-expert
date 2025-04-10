@@ -64,8 +64,8 @@
         font-size: 20px;
         font-weight: normal;
         padding: 10px;
-        background-color: #eaeceb;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 42px), calc(100% - 42px) 100%, 0 100%);
+        /*background-color: #eaeceb;*/
+        /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 42px), calc(100% - 42px) 100%, 0 100%);*/
     }
 
     .left_li {
@@ -149,21 +149,23 @@
     max-width: 300px;
 }
 
-.manufacturer {
+.checkboxes {
     border: 1px solid #eaeceb;
     padding: 5px 10px;
-    .manufacturer_input {
+    margin: 10px 0;
+
+    .checkboxes_input {
         margin-right: 8px;
     }
 }
 
-.condition {
-    border: 1px solid #eaeceb;
-    padding: 5px 10px;
-    .condition_input {
-        margin-right: 8px;
-    }
-}
+/*.condition {*/
+/*    border: 1px solid #eaeceb;*/
+/*    padding: 5px 10px;*/
+/*    .condition_input {*/
+/*        margin-right: 8px;*/
+/*    }*/
+/*}*/
 
 .right {
     width: 1100px;

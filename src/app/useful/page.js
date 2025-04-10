@@ -276,8 +276,227 @@ export default function Useful() {
 							</div>
 						</div>
 
-						{/* Параметры 3-8 в таком же стиле */}
-						{/* Для краткости, я опустил параметры 3-8, но они аналогичны по структуре */}
+						{/* Параметр 3 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t('useful.howToChooseGPU.parameter3.title')}
+							</h3>
+							<p>{t('useful.howToChooseGPU.parameter3.description')}</p>
+
+							<div className={styles.keyPoints}>
+								<h4>{t('useful.whatToConsider')}</h4>
+								<ul className={styles.checkList}>
+									<li>{t('useful.howToChooseGPU.parameter3.point1')}</li>
+									<li>{t('useful.howToChooseGPU.parameter3.point2')}</li>
+									<li>{t('useful.howToChooseGPU.parameter3.point3')}</li>
+									<li>{t('useful.howToChooseGPU.parameter3.point4')}</li>
+								</ul>
+
+								<div className={styles.tableWrapper}>
+									<h4>{t("useful.howToChooseGPU.parameter3.consumptionTable.title")}</h4>
+									<table className={styles.comparisonTable}>
+										<thead>
+										<tr>
+											<th>{t("useful.howToChooseGPU.parameter3.consumptionTable.headers.model")}</th>
+											<th>{t("useful.howToChooseGPU.parameter3.consumptionTable.headers.efficiency")}</th>
+											<th>{t("useful.howToChooseGPU.parameter3.consumptionTable.headers.consumption")}</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.0.model")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.0.efficiency")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.0.consumption")}</td>
+										</tr>
+										<tr>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.1.model")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.1.efficiency")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.1.consumption")}</td>
+										</tr>
+										<tr>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.2.model")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.2.efficiency")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.2.consumption")}</td>
+										</tr>
+										<tr>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.3.model")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.3.efficiency")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.3.consumption")}</td>
+										</tr>
+										<tr>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.4.model")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.4.efficiency")}</td>
+											<td>{t("useful.howToChooseGPU.parameter3.consumptionTable.rows.4.consumption")}</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div className={styles.tip}>
+									<h4><span className={styles.tipIcon}>💡</span> {t("useful.tip")}</h4>
+									<p>{t("useful.howToChooseGPU.parameter3.tip")}</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Параметр 4 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t("useful.howToChooseGPU.parameter4.title")}
+							</h3>
+							<p>{t("useful.howToChooseGPU.parameter4.description")}</p>
+
+							<div className={styles.keyPoints}>
+								<ul className={styles.checkList}>
+									<li>{t("useful.howToChooseGPU.parameter4.point1")}</li>
+									<li>{t("useful.howToChooseGPU.parameter4.point2")}</li>
+									<li>{t("useful.howToChooseGPU.parameter4.point3")}</li>
+								</ul>
+							</div>
+						</div>
+
+						{/* Параметр 5 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t("useful.howToChooseGPU.parameter5.title")}
+							</h3>
+							<p>{t("useful.howToChooseGPU.parameter5.description")}</p>
+
+							<div className={styles.keyPoints}>
+								<h4>{t("useful.whatToConsider")}</h4>
+								<ul className={styles.checkList}>
+									<li>{t("useful.howToChooseGPU.parameter5.point1")}</li>
+									<li>{t("useful.howToChooseGPU.parameter5.point2")}</li>
+									<li>{t("useful.howToChooseGPU.parameter5.point3")}</li>
+									<li>{t("useful.howToChooseGPU.parameter5.point4")}</li>
+									<li>{t("useful.howToChooseGPU.parameter5.point5")}</li>
+								</ul>
+
+								<div className={styles.tip}>
+									<h4><span className={styles.tipIcon}>💡</span> {t("useful.tip")}</h4>
+									<p>{t("useful.howToChooseGPU.parameter5.tip")}</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Параметр 6 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t('useful.howToChooseGPU.parameter6.title')}
+							</h3>
+							<p>{t('useful.howToChooseGPU.parameter6.description')}</p>
+
+							<div className={styles.keyPoints}>
+								<h4>{t('useful.whatToConsider')}</h4>
+								<ul className={styles.checkList}>
+									<li>{t('useful.howToChooseGPU.parameter6.point1')}</li>
+									<li>{t('useful.howToChooseGPU.parameter6.point2')}</li>
+									<li>{t('useful.howToChooseGPU.parameter6.point3')}</li>
+									<li>{t('useful.howToChooseGPU.parameter6.point4')}</li>
+								</ul>
+
+								<div className={styles.tip}>
+									<h4><span className={styles.tipIcon}>💡</span> {t('useful.tip')}</h4>
+									<p>{t('useful.howToChooseGPU.parameter6.tip')}</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Параметр 7 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t('useful.howToChooseGPU.parameter7.title')}
+							</h3>
+							<p>{t('useful.howToChooseGPU.parameter7.description')}</p>
+
+							<div className={styles.keyPoints}>
+								<ul className={styles.checkList}>
+									<li>{t('useful.howToChooseGPU.parameter7.point1')}</li>
+									<li>{t('useful.howToChooseGPU.parameter7.point2')}</li>
+									<li>{t('useful.howToChooseGPU.parameter7.point3')}</li>
+								</ul>
+
+								<div className={styles.tip}>
+									<h4><span className={styles.tipIcon}>💡</span> {t('useful.tip')}</h4>
+									<p>{t('useful.howToChooseGPU.parameter7.tip')}</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Параметр 8 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t('useful.howToChooseGPU.parameter8.title')}
+							</h3>
+							<p>{t('useful.howToChooseGPU.parameter8.description')}</p>
+
+							<div className={styles.tableWrapper}>
+								<h4>{t('useful.howToChooseGPU.parameter8.costTable.title')}</h4>
+								<table className={styles.comparisonTable}>
+									<thead>
+									<tr>
+										<th>{t("useful.howToChooseGPU.parameter8.costTable.headers.factor")}</th>
+										<th>{t("useful.howToChooseGPU.parameter8.costTable.headers.cost")}</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.0.factor")}</td>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.0.cost")}</td>
+									</tr>
+									<tr>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.1.factor")}</td>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.1.cost")}</td>
+									</tr>
+									<tr>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.2.factor")}</td>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.2.cost")}</td>
+									</tr>
+									<tr>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.3.factor")}</td>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.3.cost")}</td>
+									</tr>
+									<tr>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.4.factor")}</td>
+										<td>{t("useful.howToChooseGPU.parameter8.costTable.rows.4.cost")}</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div className={styles.tip}>
+								<h4><span className={styles.tipIcon}>💡</span> {t("useful.tip")}</h4>
+								<p>{t("useful.howToChooseGPU.parameter8.tip")}</p>
+							</div>
+						</div>
+
+						{/* Параметр 9 */}
+						<div className={styles.parameterBlock}>
+							<h3 className={styles.parameterTitle}>
+								<span className={styles.parameterIcon}>🔹</span>
+								{t("useful.howToChooseGPU.parameter9.title")}
+							</h3>
+							<p>{t("useful.howToChooseGPU.parameter9.description")}</p>
+
+							<div className={styles.keyPoints}>
+								<ul className={styles.checkList}>
+									<li>{t("useful.howToChooseGPU.parameter9.point1")}</li>
+									<li>{t("useful.howToChooseGPU.parameter9.point2")}</li>
+									<li>{t("useful.howToChooseGPU.parameter9.point3")}</li>
+								</ul>
+
+								<div className={styles.tip}>
+									<h4><span className={styles.tipIcon}>💡</span> {t("useful.tip")}</h4>
+									<p>{t('useful.howToChooseGPU.parameter9.tip')}</p>
+								</div>
+							</div>
+						</div>
 
 						{/* Итоги */}
 						<div className={styles.summaryBlock}>
@@ -435,6 +654,13 @@ export default function Useful() {
 							{t('useful.serviceLife.maintenanceTypes.standardTitle')}
 						</h3>
 
+						<h4 className={styles.serviceInterval_title}>{t('useful.serviceLife.serviceInterval.title')}</h4>
+						<ul>
+							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.regular.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.regular.desc')}</span> </li>
+							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.middle.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.middle.desc')}</span> </li>
+							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.major.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.major.desc')}</span> </li>
+						</ul>
+
 						<div className={styles.maintenanceTable}>
 							<table className={styles.comparisonTable}>
 								<thead>
@@ -445,48 +671,92 @@ export default function Useful() {
 								</thead>
 								<tbody>
 								<tr>
-									<td>🛢️ {t('useful.serviceLife.maintenanceTypes.oil')}</td>
-									<td>🔄 {t('useful.serviceLife.maintenanceTypes.oilChange')}</td>
+									<td>
+										{/*🛢️*/}
+										{t('useful.serviceLife.maintenanceTypes.oil')}</td>
+									<td>
+										{/*🔄 */}
+										{t('useful.serviceLife.maintenanceTypes.oilChange')}</td>
 								</tr>
 								<tr>
-									<td>🧴 {t('useful.serviceLife.maintenanceTypes.oilFilters')}</td>
-									<td>🔄 {t('useful.serviceLife.maintenanceTypes.oilFiltersChange')}</td>
+									<td>
+										{/*🧴 */}
+										{t('useful.serviceLife.maintenanceTypes.oilFilters')}</td>
+									<td>
+										{/*🔄 */}
+										{t('useful.serviceLife.maintenanceTypes.oilFiltersChange')}</td>
 								</tr>
 								<tr>
-									<td>🌀 {t('useful.serviceLife.maintenanceTypes.airFilters')}</td>
-									<td>🔄 {t('useful.serviceLife.maintenanceTypes.airFiltersChange')}</td>
+									<td>
+										{/*🌀 */}
+										{t('useful.serviceLife.maintenanceTypes.airFilters')}</td>
+									<td>
+										{/*🔄 */}
+										{t('useful.serviceLife.maintenanceTypes.airFiltersChange')}</td>
 								</tr>
 								<tr>
-									<td>🔥 {t('useful.serviceLife.maintenanceTypes.sparkPlugs')}</td>
-									<td>🔄 {t('useful.serviceLife.maintenanceTypes.sparkPlugsChange')}</td>
+									<td>
+										{/*🔥 */}
+										{t('useful.serviceLife.maintenanceTypes.sparkPlugs')}</td>
+									<td>
+										{/*🔄 */}
+										{t('useful.serviceLife.maintenanceTypes.sparkPlugsChange')}</td>
 								</tr>
 								<tr>
-									<td>🔍 {t('useful.serviceLife.maintenanceTypes.engineDiagnostics')}</td>
-									<td>📈 {t('useful.serviceLife.maintenanceTypes.engineDiagnosticsCheck')}</td>
+									<td>
+										{/*🔍 */}
+										{t('useful.serviceLife.maintenanceTypes.engineDiagnostics')}</td>
+									<td>
+										{/*📈 */}
+										{t('useful.serviceLife.maintenanceTypes.engineDiagnosticsCheck')}</td>
 								</tr>
 								<tr>
-									<td>🧪 {t('useful.serviceLife.maintenanceTypes.oilAnalysis')}</td>
-									<td>🧫 {t('useful.serviceLife.maintenanceTypes.oilAnalysisCheck')}</td>
+									<td>
+										{/*🧪 */}
+										{t('useful.serviceLife.maintenanceTypes.oilAnalysis')}</td>
+									<td>
+										{/*🧫 */}
+										{t('useful.serviceLife.maintenanceTypes.oilAnalysisCheck')}</td>
 								</tr>
 								<tr>
-									<td>🌡️ {t('useful.serviceLife.maintenanceTypes.coolant')}</td>
-									<td>🔄 {t('useful.serviceLife.maintenanceTypes.coolantCheck')}</td>
+									<td>
+										{/*🌡️*/}
+										{t('useful.serviceLife.maintenanceTypes.coolant')}</td>
+									<td>
+										{/*🔄 */}
+										{t('useful.serviceLife.maintenanceTypes.coolantCheck')}</td>
 								</tr>
 								<tr>
-									<td>⛽ {t('useful.serviceLife.maintenanceTypes.gasValve')}</td>
-									<td>🔎 {t('useful.serviceLife.maintenanceTypes.gasValveCheck')}</td>
+									<td>
+										{/*⛽ */}
+										{t('useful.serviceLife.maintenanceTypes.gasValve')}</td>
+									<td>
+										{/*🔎 */}
+										{t('useful.serviceLife.maintenanceTypes.gasValveCheck')}</td>
 								</tr>
 								<tr>
-									<td>⚡ {t('useful.serviceLife.maintenanceTypes.generator')}</td>
-									<td>🔍 {t('useful.serviceLife.maintenanceTypes.generatorCheck')}</td>
+									<td>
+										{/*⚡ */}
+										{t('useful.serviceLife.maintenanceTypes.generator')}</td>
+									<td>
+										{/*🔍 */}
+										{t('useful.serviceLife.maintenanceTypes.generatorCheck')}</td>
 								</tr>
 								<tr>
-									<td>🧠 {t('useful.serviceLife.maintenanceTypes.automation')}</td>
-									<td>🛠️ {t('useful.serviceLife.maintenanceTypes.automationCheck')}</td>
+									<td>
+										{/*🧠 */}
+										{t('useful.serviceLife.maintenanceTypes.automation')}</td>
+									<td>
+										{/*🛠️*/}
+										{t('useful.serviceLife.maintenanceTypes.automationCheck')}</td>
 								</tr>
 								<tr>
-									<td>📋 {t('useful.serviceLife.maintenanceTypes.fasteners')}</td>
-									<td>🔧 {t('useful.serviceLife.maintenanceTypes.fastenersCheck')}</td>
+									<td>
+										{/*📋 */}
+										{t('useful.serviceLife.maintenanceTypes.fasteners')}</td>
+									<td>
+										{/*🔧 */}
+										{t('useful.serviceLife.maintenanceTypes.fastenersCheck')}</td>
 								</tr>
 								</tbody>
 							</table>
@@ -500,7 +770,7 @@ export default function Useful() {
 
 						<div className={styles.keyPoints}>
 							<h4>{t('useful.serviceLife.maintenanceTypes.mainWorks')}</h4>
-							<ul className={styles.checkList}>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point1')}</li>
 								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point2')}</li>
 								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point3')}</li>
@@ -521,7 +791,7 @@ export default function Useful() {
 
 						<div className={styles.keyPoints}>
 							<h4>{t('useful.serviceLife.maintenanceTypes.includes')}</h4>
-							<ul className={styles.checkList}>
+							<ul className={styles.checkList_simple}>
 								<li>{t('useful.serviceLife.maintenanceTypes.major.point1')}</li>
 								<li>{t('useful.serviceLife.maintenanceTypes.major.point2')}</li>
 								<li>{t('useful.serviceLife.maintenanceTypes.major.point3')}</li>

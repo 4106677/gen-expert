@@ -69,6 +69,9 @@
         "voltage": "Voltage",
         "condition": "Condition",
         "release": "Year of manufacture",
+        "model": "Model",
+        "bodyType": "Body",
+        "genType": "Type",
         "price": "Price",
         "working": "Operating hours",
         "sorting": {
@@ -354,36 +357,166 @@
     },
 
     "howToChooseGPU": {
-      "title": "How to choose the right gas piston unit (GPU)",
-      "intro1": "Gas piston units (GPUs) are an effective solution for autonomous power supply, reducing electricity costs, and increasing business energy independence.",
-      "intro2": "However, to select the optimal GPU, it’s important to consider many technical parameters and the characteristics of the site where it will be installed. In this article, we’ll break down what to focus on when choosing a gas piston unit to ensure maximum efficiency and reliability.",
+      "title": "How to Choose the Right Gas-Piston Unit (GPU)",
+      "intro1": "Gas-piston units (GPUs) are an effective solution for autonomous power supply, reducing electricity costs, and increasing business energy independence.",
+      "intro2": "However, to choose the optimal GPU, it's important to consider many technical parameters and characteristics of the facility where it will be installed. In this article, we'll discuss what to pay attention to when choosing a gas-piston unit to achieve maximum efficiency and reliability.",
+
       "parameter1": {
-        "title": "1. Determining power and operating mode",
-        "description": "Before purchasing a GPU, it’s essential to accurately calculate the facility’s power consumption and select a unit with matching specifications.",
-        "point1": "What is the peak and average daily load at the facility?",
-        "point2": "Will the GPU be used as the primary or backup energy source?",
-        "point3": "Is it necessary to consider the possibility of parallel operation with multiple units?",
-        "tip": "If the unit will be the primary energy source, choose a GPU with a 10-15% power reserve to account for load. If it will work in parallel with the grid or as a backup, you can calculate power more precisely based on critical loads."
+        "title": "1. Determining Power Capacity and Operating Mode",
+        "description": "Before purchasing a GPU, it's necessary to accurately calculate the power consumption of the facility and choose a unit with appropriate characteristics.",
+        "point1": "What are the peak and average daily loads at the facility?",
+        "point2": "Will the GPU be used as the primary or backup power source?",
+        "point3": "Is it necessary to consider the possibility of parallel operation of several units?",
+        "tip": "If the unit will be used as the main power source, choose a GPU with a power reserve of 10-15% to account for load variations. If the GPU will work in parallel with the grid or as a backup, you can calculate the capacity more precisely based on critical loads."
       },
+
       "parameter2": {
-        "title": "2. Fuel efficiency and gas consumption",
-        "description": "GPU efficiency is measured by electrical efficiency, thermal efficiency, and total efficiency (cogeneration). Higher efficiency means lower operating costs.",
-        "point1": "Electrical efficiency (%) – shows how much gas energy is converted into electricity. Good models achieve 38-46%.",
-        "point2": "Thermal efficiency (%) – if heat utilization is planned, thermal efficiency matters (typically 40-48%).",
-        "point3": "Total efficiency (%) – with combined electricity and heat production (cogeneration), efficiency can reach 90% or more.",
-        "point4": "Gas consumption – measured in m³/MW of electricity and affects the cost of electricity.",
-        "tip": "Choose a unit with maximum total efficiency (e.g., Jenbacher, MWM, Bergen, Wärtsilä) for cogeneration solutions. If heat isn’t used, focus on electrical efficiency."
+        "title": "2. Fuel Efficiency and Gas Consumption",
+        "description": "The efficiency of a GPU is measured in electrical efficiency, thermal efficiency, and total efficiency (cogeneration). The higher the efficiency, the lower the operating costs.",
+        "point1": "Electrical efficiency (%) – shows how much energy from gas is converted into electricity. In good models, this indicator is 38-46%.",
+        "point2": "Thermal efficiency (%) – if heat utilization is planned, it's important to consider thermal efficiency (usually 40-48%).",
+        "point3": "Total efficiency (%) – in combined production of electricity and heat (cogeneration), efficiency can reach 90% or higher.",
+        "point4": "Gas consumption – measured in m³/MW el and affects the cost of electricity production.",
+        "tip": "Choose a unit with maximum total efficiency (for example, Jenbacher, MWM, Bergen, Wärtsilä) for cogeneration solutions. If heat is not utilized, you should focus on electrical efficiency."
       },
+
+      "parameter3": {
+        "title": "3. Gas Supply and Pressure at the Facility",
+        "description": "One of the most important factors is the ability to supply the necessary amount of gas with the required pressure parameters.",
+        "point1": "Is there a connection to the gas network?",
+        "point2": "Is the gas pressure sufficient? (usually from 100 mbar to 5 bar is required, depending on the model)",
+        "point3": "Is the gas supply stable? (important for uninterrupted operation)",
+        "point4": "Possibility of installing a gas pressure regulator to bring gas parameters to the required standard.",
+        "consumptionTable": {
+          "title": "Average Gas Consumption (m³/MWel)",
+          "headers": {
+            "model": "Unit Type",
+            "efficiency": "Electrical Efficiency",
+            "consumption": "Gas Consumption (m³/MWel)"
+          },
+          "rows": [
+            {
+              "model": "Jenbacher J420",
+              "efficiency": "43%",
+              "consumption": "220-240"
+            },
+            {
+              "model": "MWM TCG 2020",
+              "efficiency": "42%",
+              "consumption": "235-245"
+            },
+            {
+              "model": "MTU 16V4000",
+              "efficiency": "40%",
+              "consumption": "250-260"
+            },
+            {
+              "model": "Caterpillar G3516",
+              "efficiency": "38%",
+              "consumption": "250-270"
+            },
+            {
+              "model": "Cummins QSK60",
+              "efficiency": "37%",
+              "consumption": "270-280"
+            }
+          ]
+        },
+        "tip": "If the gas pressure at the facility is unstable, installation of a pressure regulator or compressor station is required, which will increase the initial costs."
+      },
+
+      "parameter4": {
+        "title": "4. Reliability, Service Life, and Maintenance Frequency",
+        "description": "Different manufacturers offer GPUs with varying engine life and maintenance intervals.",
+        "point1": "Service life until major overhaul – top brands (Jenbacher, MWM, Bergen, Wärtsilä) offer 70,000 – 100,000 hours.",
+        "point2": "Maintenance frequency – affects maintenance costs (Jenbacher, Wärtsilä require maintenance every 1,500 - 2,000 hours, while CAT, Cummins – 3,000 - 4,000 hours).",
+        "point3": "Availability of spare parts and service support – European brands may require complex maintenance, while American and Asian brands are more accessible in this regard."
+      },
+
+      "parameter5": {
+        "title": "5. Operating Conditions and Site Characteristics",
+        "description": "Before installing a GPU, it's important to consider the conditions at the site.",
+        "point1": "Fuel availability – is there a stable supply of natural gas with the required pressure?",
+        "point2": "Temperature conditions – in low temperatures, a heating system should be considered.",
+        "point3": "Noise restrictions – if the GPU is located near residential buildings, sound insulation is important.",
+        "point4": "Dimensions and weight – is there enough space at the facility for installing and servicing the unit?",
+        "point5": "Emission restrictions – do NOx, CO, and CO₂ emissions comply with environmental standards?",
+        "tip": "Before purchasing, conduct a site audit – this will help choose the right unit option and minimize costs for site preparation."
+      },
+
+      "parameter6": {
+        "title": "6. Importance of Transformer and Power Coordination",
+        "description": "When connecting a GPU to the power grid, it's important to consider the availability of a transformer and the permitted power capacity at the facility.",
+        "point1": "Permitted power capacity of the facility – can the GPU be connected to the existing power system?",
+        "point2": "Availability of a transformer – if the GPU generates 400V, and the grid accepts 6-10 kV, a transformer will be required.",
+        "point3": "Type of grid connection – will the facility consume all electricity itself or sell part of it to the grid?",
+        "point4": "Documents for electricity sales – permission for parallel operation with the grid is required.",
+        "tip": "If electricity sales to the grid are planned, it's important to coordinate power limits with the grid operator in advance, and install an automatic generation regulation system (AGR)."
+      },
+
+      "parameter7": {
+        "title": "7. Choosing the Type of Gas-Piston Unit (GPU or CHP)",
+        "description": "There are different types of gas-piston units depending on the energy produced.",
+        "point1": "GPU (gas-piston units) – generate only electricity.",
+        "point2": "CHP (cogeneration units) – produce both electricity and heat.",
+        "point3": "Trigeneration – produce electricity, heat, and cooling.",
+        "tip": "If you have a need for heat (for example, building heating, technological processes), choose CHP – this will reduce the cost of energy."
+      },
+
+      "parameter8": {
+        "title": "8. Budget and Payback Calculation",
+        "description": "The cost of a GPU varies from $100,000 to several million dollars, so it's important to consider not only the purchase price but also operating costs.",
+        "costTable": {
+          "title": "Approximate GPU Installation Costs",
+          "headers": {
+            "factor": "Factor",
+            "cost": "Cost ($)"
+          },
+          "rows": [
+            {
+              "factor": "Gas-piston unit (1 MW)",
+              "cost": "200,000 – 900,000"
+            },
+            {
+              "factor": "Installation and connection",
+              "cost": "30,000 – 150,000"
+            },
+            {
+              "factor": "Gas pipeline and pressure regulator",
+              "cost": "10,000 – 50,000"
+            },
+            {
+              "factor": "Transformer and electrical connection",
+              "cost": "10,000 – 100,000"
+            },
+            {
+              "factor": "Annual maintenance",
+              "cost": "10,000 – 50,000"
+            }
+          ]
+        },
+        "tip": "Use a payback calculator to compare the cost of purchasing electricity from the grid and producing it with a GPU. For example, with a gas price of 18.5 UAH/m³ and grid electricity at 9 UAH/kWh, you can save up to 50% on electricity."
+      },
+
+      "parameter9": {
+        "title": "9. Service Support and Warranty",
+        "description": "When choosing a GPU, it's important to understand what service offerings the manufacturer or its official representatives provide.",
+        "point1": "Availability of service centers in the region – affects the efficiency of maintenance.",
+        "point2": "Manufacturer's warranty – usually from 1 to 5 years, but it's better to choose models with the possibility of warranty extension.",
+        "point3": "Availability of remote monitoring system – allows remote management and diagnostics of the unit.",
+        "tip": "Choose a GPU with a long-term warranty and remote monitoring capability to reduce maintenance costs."
+      },
+
       "summary": {
-        "title": "Summary: How to choose the optimal gas piston unit?",
+        "title": "Summary: How to Choose the Optimal Gas-Piston Unit?",
         "point1": "Calculate the required power and determine the operating mode (primary/backup).",
-        "point2": "Assess operating conditions and site specifics for GPU placement: availability of electrical and gas infrastructure, as well as required space.",
-        "point3": "Compare efficiency and fuel consumption across different models.",
-        "point4": "Consider operating life and maintenance intervals.",
-        "point5": "Determine budget and payback calculation.",
-        "point6": "Check availability of service support in your region.",
-        "point7": "Choose between GPU or CHP if cogeneration is needed.",
-        "conclusion": "The right choice of a gas piston unit ensures reliable power supply, minimizes fuel and maintenance costs, and accelerates investment payback."
+        "point2": "Evaluate the operating conditions and characteristics of the site for GPU placement: availability of electrical and gas infrastructure for connection, as well as the necessary space.",
+        "point3": "Compare efficiency and fuel consumption of different models.",
+        "point4": "Consider service life and maintenance intervals.",
+        "point5": "Determine the budget and calculate payback.",
+        "point6": "Check the availability of service support in your region.",
+        "point7": "Choose between GPU or CHP if cogeneration is required.",
+        "conclusion": "The right choice of a gas-piston unit will provide reliable power supply, minimize fuel and maintenance costs, and accelerate investment payback."
       }
     },
 
@@ -402,6 +535,24 @@
         "gasConsumption": "Gas Consumption per 1 MW el.",
         "overhaul30000Hours": "30,000 Hours Maintenance (Mid-life Overhaul)",
         "overhaul60000Hours": "60,000 Hours Maintenance (Major Overhaul)"
+      },
+      "serviceInterval": {
+        "title": "Main Types of Gas Piston Unit Maintenance:",
+        "regular": {
+          "title": "Regular Maintenance",
+          "subtitle": "",
+          "desc": " – performed every 1,500–3,000 operating hours. Includes oil, filter, and spark plug replacement, as well as diagnostics of the main equipment components."
+        },
+        "middle": {
+          "title": "Midlife Overhaul",
+          "subtitle": "",
+          "desc": " – carried out after 25,000–30,000 operating hours. Involves a more thorough inspection and replacement of worn engine components."
+        },
+        "major": {
+          "title": "Major Overhaul",
+          "subtitle": "",
+          "desc": " – conducted after 55,000–60,000 operating hours. Includes complete engine disassembly, replacement of major components, and restoration of the unit's resources to the level of a new one."
+        }
       },
       "maintenanceTypes": {
         "standardTitle": "Standard Maintenance Procedures (1,500–3,000 hours)",

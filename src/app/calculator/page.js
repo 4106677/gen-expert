@@ -278,7 +278,7 @@ export default function Calculator () {
 						          }}>
 							<XAxis dataKey="name" />
 							<YAxis />
-							<Tooltip />
+							{/*<Tooltip />*/}
 							{/*<Bar dataKey="1" fill="#82E58F" activeBar={<Rectangle fill="pink" stroke="blue" />} />*/}
 							{/*<Bar dataKey="2" fill="#8884d8" activeBar={<Rectangle fill="gold" stroke="purple" />} />*/}
 							<Bar dataKey="pv" stackId="a" fill="#8884d8" />

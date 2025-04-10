@@ -24,27 +24,37 @@ export default function Equipment({ modalId }) {
 
 	const [filterPower, setFilterPower] = useState({min: 0, max: 10});
 	const [powerRange, setPowerRange] = useState({ min: 0, max: 10000 })
-	const [showPower, setShowPower] = useState(true)
 
 	const [filterVoltage, setFilterVoltage] = useState({min: 0, max: 10000});
 	const [voltageRange, setVoltageRange] = useState({ min: 0, max: 10000 })
-	const [showVoltage, setShowVoltage] = useState(false)
 
 	const [filterYear, setFilterYear] = useState({min: 1990, max: 2025});
 	const [yearRange, setYearRange] = useState({min: 1990, max: 2025});
-	const [showYear, setShowYear] = useState(false)
 
 	const [filterPrice, setFilterPrice] = useState({min: 0, max: 10000});
 	const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 })
-	const [showPrice, setShowPrice] = useState(false)
 
 	const [filterManufacturer, setFilterManufacturer] = useState([])
 	const [filterCondition, setFilterCondition] = useState([])
+	const [filterGenType, setFilterGenType] = useState([])
+	const [filterBodyType, setFilterBodyType] = useState([])
+	const [filterModel, setFilterModel] = useState([])
+
+	const [showPower, setShowPower] = useState(true)
 	const [showManufacturer, setShowManufacturer] = useState(true)
+	const [showModels, setShowModels] = useState(false)
+	const [showVoltage, setShowVoltage] = useState(true)
 	const [showCondition, setShowCondition] = useState(true)
+	const [showBodyType, setShowBodyType] = useState(true)
+	const [showGenType, setShowGenType] = useState(true)
+	const [showYear, setShowYear] = useState(true)
+	const [showPrice, setShowPrice] = useState(true)
 
 	const manufacturers = [...new Set(data?.map(item => item.manufacturer))];
 	const conditions = [...new Set(data?.map(item => item.condition))];
+	const genTypes = [...new Set(data?.map(item => item.genType))];
+	const bodyTypes = [...new Set(data?.map(item => item.bodyType))];
+	const models = [...new Set(data?.map(item => item.model))];
 
 	const [selectedSorting, setSelectedSorting] = useState("latest");
 
@@ -132,6 +142,15 @@ export default function Equipment({ modalId }) {
 		if (filterCondition.length > 0) {
 			filtered = filtered.filter((item) => filterCondition.includes(item.condition));
 		}
+		if (filterGenType.length > 0) {
+			filtered = filtered.filter((item) => filterGenType.includes(item.genType));
+		}
+		if (filterModel.length > 0) {
+			filtered = filtered.filter((item) => filterModel.includes(item.model));
+		}
+		if (filterBodyType.length > 0) {
+			filtered = filtered.filter((item) => filterBodyType.includes(item.bodyType));
+		}
 		if (search !== '') {
 			filtered = filtered.filter((item) => item.description.toLowerCase().includes(search.toLowerCase()));
 		}
@@ -177,7 +196,7 @@ export default function Equipment({ modalId }) {
 		}
 
 		setFilterData(sortedData);
-	}, [filterManufacturer, filterCondition, filterPower, filterVoltage, filterYear, filterPrice, search, data, selectedSorting]);
+	}, [filterManufacturer, filterCondition,filterModel, filterBodyType, filterGenType, filterPower, filterVoltage, filterYear, filterPrice, search, data, selectedSorting]);
 
 	const onManufacturerInputClick = (id) => {
 		if (filterManufacturer.includes(id)) {
@@ -194,6 +213,33 @@ export default function Equipment({ modalId }) {
 			setFilterCondition(filtered);
 		} else {
 			setFilterCondition([...filterCondition, id]);
+		}
+	};
+
+	const onGenTypeInputClick = (id) => {
+		if (filterGenType.includes(id)) {
+			const filtered = filterGenType.filter((item) => item !== id);
+			setFilterGenType(filtered);
+		} else {
+			setFilterGenType([...filterGenType, id]);
+		}
+	};
+
+	const onBodyTypeInputClick = (id) => {
+		if (filterBodyType.includes(id)) {
+			const filtered = filterBodyType.filter((item) => item !== id);
+			setFilterBodyType(filtered);
+		} else {
+			setFilterBodyType([...filterBodyType, id]);
+		}
+	};
+
+	const onModelInputClick = (id) => {
+		if (filterModel.includes(id)) {
+			const filtered = filterModel.filter((item) => item !== id);
+			setFilterModel(filtered);
+		} else {
+			setFilterModel([...filterModel, id]);
 		}
 	};
 
@@ -310,7 +356,8 @@ export default function Equipment({ modalId }) {
 				<ul className={styles.left}>
 					<h2 className={styles.left_title}>{t("equipment.filters.title")}</h2>
 					<li className={`${styles.left_li} ${!showPower && styles.left_li__hide}`}>
-						<h3 className={styles.left_h3} onClick={() => setShowPower(!showPower)}>{t("equipment.filters.items.power")}
+						<h3 className={styles.left_h3}
+						    onClick={() => setShowPower(!showPower)}>{t("equipment.filters.items.power")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -318,7 +365,7 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showPower ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showPower ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showPower && <div className={styles.inputFilters}>
@@ -361,8 +408,9 @@ export default function Equipment({ modalId }) {
 						</div>
 						}
 					</li>
-					<li className={`${styles.manufacturer} ${!showManufacturer && styles.left_li__hide}`}>
-						<h3 className={styles.left_h3} onClick={() => setShowManufacturer(!showManufacturer)}>{t("equipment.filters.items.manufacturer")}
+					<li className={`${styles.checkboxes} ${!showManufacturer && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3}
+						    onClick={() => setShowManufacturer(!showManufacturer)}>{t("equipment.filters.items.manufacturer")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -370,22 +418,23 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showManufacturer ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showManufacturer ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showManufacturer && <>
 							{manufacturers?.map((item, index) =>
 								<div key={index}>
-									<input className={styles.manufacturer_input} type="checkbox"
+									<input className={styles.checkboxes_input} type="checkbox"
 									       onChange={() => onManufacturerInputClick(item)}
 									       checked={filterManufacturer.length === 0 || filterManufacturer.includes(item)}/>
 									{item}
 								</div>
 							)}
-						</> }
+						</>}
 					</li>
-					<li className={`${styles.left_li} ${!showVoltage && styles.left_li__hide}`}>
-						<h3 className={styles.left_h3} onClick={() => setShowVoltage(!showVoltage)}>{t("equipment.filters.items.voltage")}
+					<li className={`${styles.checkboxes} ${!showModels && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3}
+						    onClick={() => setShowModels(!showModels)}>{t("equipment.filters.items.model")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -393,7 +442,31 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showVoltage ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showModels ? 180 : 0}deg)`}}
+							/>
+						</h3>
+						{showModels && <>
+							{models?.map((item, index) =>
+								<div key={index}>
+									<input className={styles.checkboxes_input} type="checkbox"
+									       onChange={() => onModelInputClick(item)}
+									       checked={filterModel.length === 0 || filterModel.includes(item)}/>
+									{item}
+								</div>
+							)}
+						</>}
+					</li>
+					<li className={`${styles.left_li} ${!showVoltage && styles.left_li__hide}`}>
+						<h3 className={styles.left_h3}
+						    onClick={() => setShowVoltage(!showVoltage)}>{t("equipment.filters.items.voltage")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{transform: `rotate(${showVoltage ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showVoltage && (<div className={styles.inputFilters}>
@@ -435,8 +508,9 @@ export default function Equipment({ modalId }) {
 							</div>
 						</div>)}
 					</li>
-					<li className={`${styles.condition} ${!showCondition && styles.left_li__hide}`}>
-						<h3 onClick={() => setShowCondition(!showCondition)} className={styles.left_h3}>{t("equipment.filters.items.condition")}
+					<li className={`${styles.checkboxes} ${!showCondition && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowCondition(!showCondition)}
+						    className={styles.left_h3}>{t("equipment.filters.items.condition")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -444,20 +518,21 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showCondition ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showCondition ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showCondition && (<>{conditions?.map((item, index) =>
 							<div key={index}>
-								<input className={styles.condition_input} type="checkbox"
+								<input className={styles.checkboxes_input} type="checkbox"
 								       onChange={() => onConditionInputClick(item)}
 								       checked={filterCondition.length === 0 || filterCondition.includes(item)}/>
 								{item}
 							</div>
-						)}</> )}
+						)}</>)}
 					</li>
-					<li className={`${styles.left_li} ${!showYear && styles.left_li__hide}`}>
-						<h3 onClick={() => setShowYear(!showYear)} className={styles.left_h3}>{t("equipment.filters.items.release")}
+					<li className={`${styles.checkboxes} ${!showBodyType && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowBodyType(!showBodyType)}
+						    className={styles.left_h3}>{t("equipment.filters.items.bodyType")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -465,7 +540,51 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showYear ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showBodyType ? 180 : 0}deg)`}}
+							/>
+						</h3>
+						{showBodyType && (<>{bodyTypes?.map((item, index) =>
+							<div key={index}>
+								<input className={styles.checkboxes_input} type="checkbox"
+								       onChange={() => onBodyTypeInputClick(item)}
+								       checked={filterBodyType.length === 0 || filterBodyType.includes(item)}/>
+								{item}
+							</div>
+						)}</>)}
+					</li>
+					<li className={`${styles.checkboxes} ${!showGenType && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowGenType(!showGenType)}
+						    className={styles.left_h3}>{t("equipment.filters.items.genType")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{transform: `rotate(${showGenType ? 180 : 0}deg)`}}
+							/>
+						</h3>
+						{showGenType && (<>{genTypes?.map((item, index) =>
+							<div key={index}>
+								<input className={styles.checkboxes_input} type="checkbox"
+								       onChange={() => onGenTypeInputClick(item)}
+								       checked={filterGenType.length === 0 || filterGenType.includes(item)}/>
+								{item}
+							</div>
+						)}</>)}
+					</li>
+					<li className={`${styles.left_li} ${!showYear && styles.left_li__hide}`}>
+						<h3 onClick={() => setShowYear(!showYear)}
+						    className={styles.left_h3}>{t("equipment.filters.items.release")}
+							<Image
+								aria-hidden
+								src="/bottom.svg"
+								alt="telegram icon"
+								width={20}
+								height={20}
+								className={styles.h3_icon}
+								style={{transform: `rotate(${showYear ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showYear && (<div className={styles.inputFilters}>
@@ -508,7 +627,8 @@ export default function Equipment({ modalId }) {
 						</div>)}
 					</li>
 					<li className={`${styles.left_li} ${!showPrice && styles.left_li__hide}`}>
-						<h3 onClick={() => setShowPrice(!showPrice)} className={styles.left_h3}>{t("equipment.filters.items.price")}
+						<h3 onClick={() => setShowPrice(!showPrice)}
+						    className={styles.left_h3}>{t("equipment.filters.items.price")}
 							<Image
 								aria-hidden
 								src="/bottom.svg"
@@ -516,7 +636,7 @@ export default function Equipment({ modalId }) {
 								width={20}
 								height={20}
 								className={styles.h3_icon}
-								style={{ transform: `rotate(${showPrice ? 180 : 0}deg)` }}
+								style={{transform: `rotate(${showPrice ? 180 : 0}deg)`}}
 							/>
 						</h3>
 						{showPrice && <div className={styles.inputFilters}>
