@@ -190,6 +190,14 @@
     }
 }
 
+/* New mobile content styling */
+.mobileContent {
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 70px); /* Height minus header */
+    /*padding: 0 10px;*/
+}
+
 @media (max-width: 980px) {
     .modal {
         width: 100%;
@@ -198,8 +206,22 @@
         flex-direction: column;
         align-items: center;
         border-radius: 0;
-        overflow-y: auto;
         padding: 10px;
+        overflow: hidden; /* Changed from overflow-y: auto */
+    }
+
+    .heading {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        width: 100%;
+
+        .heading_h2 {
+            font-size: 24px;
+        }
     }
 
     .description {
@@ -210,16 +232,15 @@
 
         .description_p {
             height: auto;
-            max-height: 300px;
+            max-height: none;
             margin-top: 15px;
-            order: 3;
+            overflow: visible;
         }
     }
 
     .carouselWrapper {
         width: 100%;
         margin: 15px 0;
-        order: 2;
     }
 
     .carousel {
@@ -231,14 +252,8 @@
         height: 400px;
     }
 
-    .heading {
-        .heading_h2 {
-            font-size: 24px;
-        }
-    }
-
     .productDescription {
-        order: 1;
+        width: 100%;
     }
 
     .filesWrapper {

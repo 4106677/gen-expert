@@ -15,7 +15,7 @@ export const Footer = ({ className }) => {
 				/>
 				+38(073)237-00-45
 			</a>
-			<a href="mailto:info@genexpert.ua">
+			<a href="mailto:info@genexpert.com.ua">
 				<Image
 					aria-hidden
 					src="/email.svg"
@@ -23,7 +23,7 @@ export const Footer = ({ className }) => {
 					width={22}
 					height={22}
 				/>
-				info@genexpert.ua
+				info@genexpert.com.ua
 			</a>
 			<a
 				href="https://t.me/genexpert_ua"

@@ -51,6 +51,9 @@ button {
   border: 1px solid #6b6b6b;
   border-radius: 3px;
   cursor: pointer;
+  /*-webkit-text-fill-color: white;*/
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input {

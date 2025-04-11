@@ -8,6 +8,8 @@ import Modal from "@/app/(components)/Modal/modal";
 import {ContactsModal} from "@/app/(components)/ContactsModal/contactsModal";
 import {Footer} from "@/app/(components)/Footer/footer";
 import styles from "@/app/(components)/Footer/footer.module.css";
+import GoogleTagManagerNoScript from "@/app/(components)/GoogleTagManagerNoScript";
+import GoogleTagManager from "@/app/(components)/GoogleTagManager";
 
 const roboto = localFont({
     src: "../../public/fonts/Roboto.ttf",
@@ -35,16 +37,20 @@ export const metadata = {
 export default async function RootLayout({children, params}) {
     return (
         <html lang="en">
+        <head>
+            <GoogleTagManager/>
+        </head>
         <body className={`${caviarDreams.variable} ${caviarDreamsBold.variable} ${roboto.variable}`}>
+        <GoogleTagManagerNoScript/>
         <ClientLayout>
             <SheetDataProvider>
-                <Header />
+                <Header/>
                 <Container>
                     <main>{children}</main>
                 </Container>
-                <Footer className={styles.mainFooter} />
+                <Footer className={styles.mainFooter}/>
                 <Modal/>
-                <ContactsModal />
+                <ContactsModal/>
             </SheetDataProvider>
         </ClientLayout>
         </body>

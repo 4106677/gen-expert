@@ -35,6 +35,31 @@
         color: black;
         padding: 2px 5px;
         height: 30px;
+
+        /* Специфичные стили для Safari */
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-text-fill-color: black;
+
+        /* Сброс стандартных стилей */
+        font: inherit;
+    }
+
+    /* Специальные стили для select в Safari */
+    .sortWrapper_select {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 5px center;
+        padding-right: 25px; /* пространство для стрелки */
+    }
+
+    /* Сброс для iOS */
+    @supports (-webkit-touch-callout: none) {
+        .sortWrapper_input, .sortWrapper_select {
+            font-size: 16px; /* предотвращает масштабирование страницы при фокусе */
+        }
     }
 
     .select_disabled[disabled] {
@@ -45,6 +70,13 @@
         height: 30px;
         padding: 5px 10px;
         margin-left: 15px;
+        color: white;
+        background-color: #85e28f;
+        border: none;
+        font-size: 16px;
+        -webkit-text-fill-color: white;
+        -webkit-appearance: none;
+        appearance: none;
 
         &:disabled {
             cursor: default;
@@ -190,6 +222,7 @@
 
         .product_button {
             display: block;
+            color: white !important;
         }
     }
 
@@ -260,9 +293,9 @@
     cursor: pointer;
     margin-bottom: 15px;
     width: 100%;
-    height: 60px;
+    height: 50px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
     gap: 10px;

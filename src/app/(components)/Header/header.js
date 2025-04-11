@@ -167,7 +167,7 @@ export default function Header() {
 
 					<div className="contacts">
 						<a href="tel:+380732370045">+38(073)237-00-45</a>
-						<a href="mailto:info@genexpert.ua">info@genexpert.ua</a>
+						<a href="mailto:info@genexpert.com.ua">info@genexpert.com.ua</a>
 					</div>
 				</div>
 			</nav>

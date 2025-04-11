@@ -10,6 +10,30 @@ import {useTranslation} from "react-i18next";
 import {gdLink} from "@/helpers/gdLink";
 
 export default function Modal() {
+	// Добавляем viewport meta tag для поддержки safe area
+	useEffect(() => {
+		// Проверяем, есть ли уже meta viewport
+		let viewportMeta = document.querySelector('meta[name="viewport"]');
+
+		if (viewportMeta) {
+			// Обновляем существующий viewport meta
+			viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, viewport-fit=cover');
+		} else {
+			// Создаем новый meta тег если не существует
+			viewportMeta = document.createElement('meta');
+			viewportMeta.name = 'viewport';
+			viewportMeta.content = 'width=device-width, initial-scale=1, viewport-fit=cover';
+			document.head.appendChild(viewportMeta);
+		}
+
+		// Очистка при размонтировании
+		return () => {
+			// Если мы создали этот тег, удаляем его
+			if (!document.querySelector('meta[name="viewport"][content*="viewport-fit=cover"]')) {
+				document.head.removeChild(viewportMeta);
+			}
+		};
+	}, []);
 	const { showModal, setShowModal } = useModal();
 	const modalClose = () => setShowModal(false);
 	const { t } = useTranslation("common");
@@ -110,45 +134,88 @@ export default function Modal() {
 
 	return (
 		<div className={styles.wrapper} onClick={modalClose}>
-			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-				{!isMobile && <CarouselComponent />}
-				<div className={styles.description}>
-					<div className={styles.heading}>
-						<h2 className={styles.heading_h2}>{showModal.manufacturer} {showModal.model}</h2>
-						<button onClick={modalClose} className={styles.heading_button}>x</button>
-					</div>
-					<ul className={styles.productDescription}>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.power")}</h3>
-							<span>{showModal.power} {showModal.powerUnit}</span>
-						</li>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.manufacturer")}</h3>
-							<span>{showModal.manufacturer}</span>
-						</li>
-						<li className={styles.productDescription_li}><h3>{t("equipment.filters.items.voltage")}</h3>
-							<span>{showModal.voltage} {showModal.voltageUnit}</span>
-						</li>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.condition")}</h3>
-							<span>{showModal.condition}</span>
-						</li>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.release")}</h3>
-							<span>{showModal.year}</span>
-						</li>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.price")}</h3>
-							<span>{showModal.price} {showModal.priceUnit}</span>
-						</li>
-						<li className={styles.productDescription_li}>
-							<h3>{t("equipment.filters.items.working")}</h3>
-							<span><span>{showModal.hours} {showModal.hoursUnit}</span></span>
-						</li>
-					</ul>
-					{isMobile && <CarouselComponent />}
-					<p dangerouslySetInnerHTML={{__html: showModal.description}} className={styles.description_p}/>
-				</div>
+			<div className={styles.modal} onClick={(e) => e.stopPropagation()} style={{paddingBottom: 'env(safe-area-inset-bottom, 0px)'}}>
+				{isMobile ? (
+					<>
+						<div className={styles.heading}>
+							<h2 className={styles.heading_h2}>{showModal.manufacturer} {showModal.model}</h2>
+							<button onClick={modalClose} className={styles.heading_button}>x</button>
+						</div>
+						<div className={styles.mobileContent}>
+							<ul className={styles.productDescription}>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.power")}</h3>
+									<span>{showModal.power} {showModal.powerUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.manufacturer")}</h3>
+									<span>{showModal.manufacturer}</span>
+								</li>
+								<li className={styles.productDescription_li}><h3>{t("equipment.filters.items.voltage")}</h3>
+									<span>{showModal.voltage} {showModal.voltageUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.condition")}</h3>
+									<span>{showModal.condition}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.release")}</h3>
+									<span>{showModal.year}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.price")}</h3>
+									<span>{showModal.price} {showModal.priceUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.working")}</h3>
+									<span><span>{showModal.hours} {showModal.hoursUnit}</span></span>
+								</li>
+							</ul>
+							<CarouselComponent />
+							<p dangerouslySetInnerHTML={{__html: showModal.description}} className={styles.description_p}/>
+						</div>
+					</>
+				) : (
+					<>
+						<CarouselComponent />
+						<div className={styles.description}>
+							<div className={styles.heading}>
+								<h2 className={styles.heading_h2}>{showModal.manufacturer} {showModal.model}</h2>
+								<button onClick={modalClose} className={styles.heading_button}>x</button>
+							</div>
+							<ul className={styles.productDescription}>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.power")}</h3>
+									<span>{showModal.power} {showModal.powerUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.manufacturer")}</h3>
+									<span>{showModal.manufacturer}</span>
+								</li>
+								<li className={styles.productDescription_li}><h3>{t("equipment.filters.items.voltage")}</h3>
+									<span>{showModal.voltage} {showModal.voltageUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.condition")}</h3>
+									<span>{showModal.condition}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.release")}</h3>
+									<span>{showModal.year}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.price")}</h3>
+									<span>{showModal.price} {showModal.priceUnit}</span>
+								</li>
+								<li className={styles.productDescription_li}>
+									<h3>{t("equipment.filters.items.working")}</h3>
+									<span><span>{showModal.hours} {showModal.hoursUnit}</span></span>
+								</li>
+							</ul>
+							<p dangerouslySetInnerHTML={{__html: showModal.description}} className={styles.description_p}/>
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);
