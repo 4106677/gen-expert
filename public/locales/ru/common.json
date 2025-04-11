@@ -165,7 +165,7 @@
         "gpuPaybackPeriod": "Срок окупаемости GPU",
         "chpPaybackPeriod": "Срок окупаемости CHP"
       },
-      "button": "Свяжись с собой"
+      "button": "Получить консультацию"
     },
     "unit": {
       "kw": "кВт",
@@ -710,5 +710,26 @@
     "cta": {
       "text": "Ваш путь к энергонезависимости начинается с одного шага — заполните форму, и мы подготовим для Вас оптимальное предложение."
     }
+  },
+  "contactsModal": {
+    "contactUs": "Свяжитесь с нами",
+    "fullName": "ФИО",
+    "companyName": "Название компании",
+    "contactPhone": "Контактный номер",
+    "email": "Почта (eMail)",
+    "comment": "Комментарий",
+    "enterFullName": "Введите ваше полное имя",
+    "enterCompanyName": "Введите название компании",
+    "enterContactPhone": "Введите контактный номер",
+    "enterWorkEmail": "Введите рабочий email",
+    "enterComment": "Введите ваш комментарий",
+    "submit": "Отправить",
+    "submitting": "Отправка...",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "required": "Обязательное поле",
+    "invalidEmail": "Неверный формат email",
+    "formSubmissionSuccess": "Форма успешно отправлена",
+    "formSubmissionError": "Ошибка при отправке формы"
   }
 }

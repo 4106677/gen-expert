@@ -105,7 +105,7 @@ export default function Cooperation() {
 							<span className={styles.icon}>📎</span> {t('cooperation.submit.downloadLink')}
 						</a>
 						{/* Замените '/contact-form' на реальный путь к онлайн-форме */}
-						<Link href="/contact-form" className={styles.onlineButton}>
+						<Link target='_blank' href="https://forms.gle/A3rqy1syDY3ZsJN49" className={styles.onlineButton}>
 							<span className={styles.icon}>📨</span> {t('cooperation.submit.onlineLink')}
 						</Link>
 					</div>

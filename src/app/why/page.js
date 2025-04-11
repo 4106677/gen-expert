@@ -3,11 +3,13 @@ import styles from './why.module.css'
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 import Image from "next/image";
+import {useContactsModal} from "@/context/ContactsModalContext";
 
 export default function Why () {
 	const [isOpen, setIsOpen] = useState(false);
 	const { t } = useTranslation('common');
 	const [isMounted, setIsMounted] = useState(false);
+	const { setContactsShowModal } = useContactsModal();
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -188,7 +190,7 @@ export default function Why () {
 							</div>
 
 							<div className={styles.ctaContainer}>
-								<button className={styles.ctaButton}>
+								<button className={styles.ctaButton} onClick={() => setContactsShowModal(true)}>
 									{t('why.savings.cta')}
 								</button>
 							</div>

@@ -8,36 +8,14 @@ import {bbExtractor} from "@/helpers/bbExtractor";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {gdLink} from "@/helpers/gdLink";
+import {useContactsModal} from "@/context/ContactsModalContext";
 
 export default function Modal() {
-	// Добавляем viewport meta tag для поддержки safe area
-	useEffect(() => {
-		// Проверяем, есть ли уже meta viewport
-		let viewportMeta = document.querySelector('meta[name="viewport"]');
-
-		if (viewportMeta) {
-			// Обновляем существующий viewport meta
-			viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, viewport-fit=cover');
-		} else {
-			// Создаем новый meta тег если не существует
-			viewportMeta = document.createElement('meta');
-			viewportMeta.name = 'viewport';
-			viewportMeta.content = 'width=device-width, initial-scale=1, viewport-fit=cover';
-			document.head.appendChild(viewportMeta);
-		}
-
-		// Очистка при размонтировании
-		return () => {
-			// Если мы создали этот тег, удаляем его
-			if (!document.querySelector('meta[name="viewport"][content*="viewport-fit=cover"]')) {
-				document.head.removeChild(viewportMeta);
-			}
-		};
-	}, []);
 	const { showModal, setShowModal } = useModal();
 	const modalClose = () => setShowModal(false);
 	const { t } = useTranslation("common");
 	const [isMobile, setIsMobile] = useState(false);
+	const { setContactsShowModal } = useContactsModal();
 
 	useEffect(() => {
 		const checkIfMobile = () => {
@@ -91,6 +69,10 @@ export default function Modal() {
 		showModal.dataSheet3
 	].filter(Boolean);
 
+	const onPurposeClick = () => {
+		setContactsShowModal(showModal.article)
+	}
+
 	const CarouselComponent = () => (
 		<div className={styles.carouselWrapper}>
 			<Carousel
@@ -111,7 +93,7 @@ export default function Modal() {
 				))}
 			</Carousel>
 			<div className={styles.purpose}>
-				<button className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
+				<button onClick={onPurposeClick} className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
 			</div>
 			<div className={styles.filesWrapper}>
 				{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
@@ -134,7 +116,7 @@ export default function Modal() {
 
 	return (
 		<div className={styles.wrapper} onClick={modalClose}>
-			<div className={styles.modal} onClick={(e) => e.stopPropagation()} style={{paddingBottom: 'env(safe-area-inset-bottom, 0px)'}}>
+			<div className={styles.modal} onClick={(e) => e.stopPropagation()} >
 				{isMobile ? (
 					<>
 						<div className={styles.heading}>

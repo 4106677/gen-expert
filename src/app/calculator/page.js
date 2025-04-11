@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import "rc-slider/assets/index.css";
 import {BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle} from "recharts";
 import dynamic from "next/dynamic";
+import {useContactsModal} from "@/context/ContactsModalContext";
 const Slider = dynamic(() => import('rc-slider'), { ssr: false });
 
 export default function Calculator () {
@@ -16,6 +17,7 @@ export default function Calculator () {
 	const [chp, setChp] = useState(false)
 	const [isMounted, setIsMounted] = useState(false);
 	const { t } = useTranslation("common");
+	const { setContactsShowModal } = useContactsModal();
 	const avg = 0.233
 	const gas_gen_price = gasPrice * elecProd * avg / elecProd
 	const yearly_elec_price = elecProd * elecPrice * 30 * 12 * 18
@@ -25,7 +27,6 @@ export default function Calculator () {
 	const yearly_econom_chp = yearly_econom + 1 * elecProd * 18 * 30 * yearlyHeat
 	const gpuPaybackPeriod = elecProd * 460 * 44 / yearly_econom * 12
 	const chpPaybackPeriod = elecProd * 510 * 44 / yearly_econom_chp * 12
-
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -286,7 +287,7 @@ export default function Calculator () {
 							<Bar dataKey="uv" fill="#ffc658" />
 						</BarChart>
 					</ResponsiveContainer>
-					<button className={styles.contact_us}>{t("calculator.estimate.button")}</button>
+					<button className={styles.contact_us} onClick={() => setContactsShowModal(true)}>{t("calculator.estimate.button")}</button>
 				</div>
 			</div>
 		</div>

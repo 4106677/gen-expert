@@ -369,7 +369,8 @@
     text-align: center;
 }
 
-.ctaButton a {
+.ctaButton span {
+    cursor: pointer;
     display: inline-block;
     background-color: #85e28f;
     color: #000;

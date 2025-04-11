@@ -165,7 +165,7 @@
         "gpuPaybackPeriod": "Строк окупності GPU",
         "chpPaybackPeriod": "Строк окупності CHP"
       },
-      "button": "Зв’яжись з нами"
+      "button": "Отримати консультацію"
     },
     "unit": {
       "kw": "кВт",
@@ -711,5 +711,27 @@
     "cta": {
       "text": "Ваш шлях до енергонезалежності починається з одного кроку — заповніть форму, і ми підготуємо для Вас оптимальну пропозицію."
     }
+  },
+  "contactsModal": {
+    "contactUs": "Зв'яжіться з нами",
+    "fullName": "ПІБ",
+    "companyName": "Назва компанії",
+    "contactPhone": "Контактний номер",
+    "email": "Пошта (eMail)",
+    "comment": "Коментар",
+    "enterFullName": "Введіть ваше повне ім'я",
+    "enterCompanyName": "Введіть назву компанії",
+    "enterContactPhone": "Введіть контактний номер",
+    "enterWorkEmail": "Введіть робочий email",
+    "enterComment": "Введіть ваш коментар",
+    "submit": "Надіслати",
+    "submitting": "Надсилання...",
+    "cancel": "Скасувати",
+    "close": "Закрити",
+    "required": "Обов'язкове поле",
+    "invalidEmail": "Невірний формат email",
+    "formSubmissionSuccess": "Форма успішно надіслана",
+    "formSubmissionError": "Помилка під час надсилання форми"
   }
 }
+

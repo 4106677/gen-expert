@@ -4,6 +4,7 @@ import styles from './useful.module.css';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import Image from "next/image";
+import {useContactsModal} from "@/context/ContactsModalContext";
 
 // Компонент аккордеона для раскрывающихся разделов
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -27,6 +28,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 export default function Useful() {
 	const [openSection, setOpenSection] = useState('whatIsGpu');
 	const [isMounted, setIsMounted] = useState(false);
+	const { setContactsShowModal } = useContactsModal();
 
 	const carriers = {
 		gas: "#ffc931",
@@ -515,8 +517,8 @@ export default function Useful() {
 							</ul>
 							<p className={styles.conclusion}>{t('useful.howToChooseGPU.summary.conclusion')}</p>
 
-							<div className={styles.ctaButton}>
-								<Link href="/contacts">{t('useful.consultationCTA')}</Link>
+							<div className={styles.ctaButton} onClick={() => setContactsShowModal(true)}>
+								<span href="/contacts">{t('useful.consultationCTA')}</span>
 							</div>
 						</div>
 					</div>

@@ -711,5 +711,26 @@
     "cta": {
       "text": "Your path to energy independence starts with one step – fill out the form, and we’ll prepare the best offer for you."
     }
+  },
+  "contactsModal": {
+    "contactUs": "Contact Us",
+    "fullName": "Full Name",
+    "companyName": "Company Name",
+    "contactPhone": "Contact Phone",
+    "email": "Email",
+    "comment": "Comment",
+    "enterFullName": "Enter your full name",
+    "enterCompanyName": "Enter company name",
+    "enterContactPhone": "Enter contact phone",
+    "enterWorkEmail": "Enter work email",
+    "enterComment": "Enter your comment",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "cancel": "Cancel",
+    "close": "Close",
+    "required": "Required field",
+    "invalidEmail": "Invalid email format",
+    "formSubmissionSuccess": "Form submitted successfully",
+    "formSubmissionError": "Error submitting form"
   }
 }

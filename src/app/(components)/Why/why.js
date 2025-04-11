@@ -6,7 +6,6 @@ import {useLanguage} from "@/app/context";
 export const Why = () => {
 	const { t } = useTranslation("common");
 	const [isClient, setIsClient] = useState(false);
-	const { lang } = useLanguage();
 
 	useEffect(() => {
 		setIsClient(true);
