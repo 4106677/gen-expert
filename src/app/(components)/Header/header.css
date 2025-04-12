@@ -338,13 +338,40 @@
 @media (max-width: 768px) {
     .logoLink {
         font-size: 28px;
+        .logoGen {
+            width: 120px;
+        }
+
+        .logoExpert {
+            width: 150px;
+        }
     }
 
-    .logoGen {
-        width: 100px;
-    }
 
-    .logoExpert {
-        width: 150px;
-    }
 }
+
+/*.logoGen {*/
+/*    background-color: #85e28f;*/
+/*    color: #fff;*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    position: relative;*/
+/*    width: 140px;*/
+/*    clip-path: polygon(23px 0, 100% 0, calc(100% - 23px) 100%, 0 100%);*/
+/*    z-index: 2;*/
+/*}*/
+
+/*.logoExpert {*/
+/*    color: #dedede;*/
+/*    background-color: white;*/
+/*    transform: translateX(-23px);*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    position: relative;*/
+/*    width: 200px;*/
+/*    clip-path: polygon(23px 0, 100% 0, calc(100% - 23px) 100%, 0 100%);*/
+/*}*/
