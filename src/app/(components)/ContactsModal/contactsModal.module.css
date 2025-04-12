@@ -81,6 +81,7 @@
     font-size: 14px;
     width: 100%;
     transition: border-color 0.2s;
+    color: black;
 }
 
 .input:focus, .textarea:focus {

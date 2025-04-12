@@ -14,21 +14,15 @@ export default function Modal() {
 	const { showModal, setShowModal } = useModal();
 	const modalClose = () => setShowModal(false);
 	const { t } = useTranslation("common");
-	const [isMobile, setIsMobile] = useState(false);
 	const { setContactsShowModal } = useContactsModal();
+	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
 		const checkIfMobile = () => {
 			setIsMobile(window.innerWidth < 980);
 		};
-
-		// Initial check
 		checkIfMobile();
-
-		// Add event listener for window resize
 		window.addEventListener('resize', checkIfMobile);
-
-		// Cleanup
 		return () => window.removeEventListener('resize', checkIfMobile);
 	}, []);
 

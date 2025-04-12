@@ -221,3 +221,15 @@
     color: #1a1a1a;
     font-size: 19px;
 }
+
+@media (max-width: 1249px) {
+    .hero_image {
+        margin-top: 0;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .container {
+        border: none;
+        margin-top: 0}
+}

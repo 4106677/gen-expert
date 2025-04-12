@@ -526,24 +526,24 @@ export default function Useful() {
 
 				{/* Срок службы генераторов по брендам */}
 				<AccordionItem
-					title={t('useful.serviceLife.title')}
-					isOpen={openSection === 'serviceLife'}
-					onClick={() => toggleSection('serviceLife')}
+					title={t("useful.serviceLife.title")}
+					isOpen={openSection === "serviceLife"}
+					onClick={() => toggleSection("serviceLife")}
 				>
 					<div className={styles.tableWrapper}>
 						<table className={styles.comparisonTable}>
 							<thead>
 							<tr>
-								<th>{t('useful.serviceLife.table.manufacturer')}</th>
-								<th>{t('useful.serviceLife.table.electricalEfficiency')}</th>
-								<th>{t('useful.serviceLife.table.thermalEfficiency')}</th>
-								<th>{t('useful.serviceLife.table.totalEfficiency')}</th>
-								<th>{t('useful.serviceLife.table.reliability')}</th>
-								<th>{t('useful.serviceLife.table.fuelConsumption')}</th>
-								<th>{t('useful.serviceLife.table.partsAvailability')}</th>
-								<th>{t('useful.serviceLife.table.serviceLifeHours')}</th>
-								<th>{t('useful.serviceLife.table.maintenanceInterval')}</th>
-								<th>{t('useful.serviceLife.table.gasConsumption')}</th>
+								<th>{t("useful.serviceLife.table.manufacturer")}</th>
+								<th>{t("useful.serviceLife.table.electricalEfficiency")}</th>
+								<th>{t("useful.serviceLife.table.thermalEfficiency")}</th>
+								<th>{t("useful.serviceLife.table.totalEfficiency")}</th>
+								<th>{t("useful.serviceLife.table.reliability")}</th>
+								<th>{t("useful.serviceLife.table.fuelConsumption")}</th>
+								<th>{t("useful.serviceLife.table.partsAvailability")}</th>
+								<th>{t("useful.serviceLife.table.serviceLifeHours")}</th>
+								<th>{t("useful.serviceLife.table.maintenanceInterval")}</th>
+								<th>{t("useful.serviceLife.table.gasConsumption")}</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -649,116 +649,141 @@ export default function Useful() {
 						</table>
 					</div>
 
+					<div className={styles.maintenanceCosts}>
+						<h3>{t("useful.serviceLife.serviceInterval.title")}</h3>
+						<ul className={styles.costsList}>
+							<li><span
+								className={styles.goodRating}>🟢</span>{t("useful.serviceLife.serviceInterval.regular.title")} {t("useful.serviceLife.serviceInterval.regular.desc")}
+							</li>
+							<li><span
+								className={styles.mediumRating}>🟡</span>{t("useful.serviceLife.serviceInterval.middle.title")} {t("useful.serviceLife.serviceInterval.middle.desc")}
+							</li>
+							<li><span
+								className={styles.lowRating}>🔴</span>{t("useful.serviceLife.serviceInterval.major.title")} {t("useful.serviceLife.serviceInterval.major.desc")}
+							</li>
+						</ul>
+					</div>
+
+					{/*<h4 className={styles.serviceInterval_title}>{t("useful.serviceLife.serviceInterval.title")}</h4>*/}
+					{/*<ul>*/}
+					{/*	<li className={styles.serviceInterval_item}>{t("useful.serviceLife.serviceInterval.regular.title")}*/}
+					{/*		<span*/}
+					{/*			className={styles.serviceInterval_item__span}>{t("useful.serviceLife.serviceInterval.regular.desc")}</span>*/}
+					{/*	</li>*/}
+					{/*	<li className={styles.serviceInterval_item}>{t("useful.serviceLife.serviceInterval.middle.title")}*/}
+					{/*		<span*/}
+					{/*			className={styles.serviceInterval_item__span}>{t("useful.serviceLife.serviceInterval.middle.desc")}</span>*/}
+					{/*	</li>*/}
+					{/*	<li className={styles.serviceInterval_item}>{t("useful.serviceLife.serviceInterval.major.title")}*/}
+					{/*		<span*/}
+					{/*			className={styles.serviceInterval_item__span}>{t("useful.serviceLife.serviceInterval.major.desc")}</span>*/}
+					{/*	</li>*/}
+					{/*</ul>*/}
+
 					{/* Описание типов ТО */}
 					<div className={styles.maintenanceInfo}>
 						<h3 className={styles.maintenanceTitle}>
 							<span className={styles.parameterIcon}>🔧</span>
-							{t('useful.serviceLife.maintenanceTypes.standardTitle')}
+							{t("useful.serviceLife.maintenanceTypes.standardTitle")}
 						</h3>
 
-						<h4 className={styles.serviceInterval_title}>{t('useful.serviceLife.serviceInterval.title')}</h4>
-						<ul>
-							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.regular.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.regular.desc')}</span> </li>
-							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.middle.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.middle.desc')}</span> </li>
-							<li className={styles.serviceInterval_item}>{t('useful.serviceLife.serviceInterval.major.title')} <span className={styles.serviceInterval_item__span}>{t('useful.serviceLife.serviceInterval.major.desc')}</span> </li>
-						</ul>
 
 						<div className={styles.maintenanceTable}>
 							<table className={styles.comparisonTable}>
 								<thead>
 								<tr>
-									<th>{t('useful.serviceLife.maintenanceTypes.component')}</th>
-									<th>{t('useful.serviceLife.maintenanceTypes.works')}</th>
+									<th>{t("useful.serviceLife.maintenanceTypes.component")}</th>
+									<th>{t("useful.serviceLife.maintenanceTypes.works")}</th>
 								</tr>
 								</thead>
 								<tbody>
 								<tr>
 									<td>
 										{/*🛢️*/}
-										{t('useful.serviceLife.maintenanceTypes.oil')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oil")}</td>
 									<td>
 										{/*🔄 */}
-										{t('useful.serviceLife.maintenanceTypes.oilChange')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oilChange")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🧴 */}
-										{t('useful.serviceLife.maintenanceTypes.oilFilters')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oilFilters")}</td>
 									<td>
 										{/*🔄 */}
-										{t('useful.serviceLife.maintenanceTypes.oilFiltersChange')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oilFiltersChange")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🌀 */}
-										{t('useful.serviceLife.maintenanceTypes.airFilters')}</td>
+										{t("useful.serviceLife.maintenanceTypes.airFilters")}</td>
 									<td>
 										{/*🔄 */}
-										{t('useful.serviceLife.maintenanceTypes.airFiltersChange')}</td>
+										{t("useful.serviceLife.maintenanceTypes.airFiltersChange")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🔥 */}
-										{t('useful.serviceLife.maintenanceTypes.sparkPlugs')}</td>
+										{t("useful.serviceLife.maintenanceTypes.sparkPlugs")}</td>
 									<td>
 										{/*🔄 */}
-										{t('useful.serviceLife.maintenanceTypes.sparkPlugsChange')}</td>
+										{t("useful.serviceLife.maintenanceTypes.sparkPlugsChange")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🔍 */}
-										{t('useful.serviceLife.maintenanceTypes.engineDiagnostics')}</td>
+										{t("useful.serviceLife.maintenanceTypes.engineDiagnostics")}</td>
 									<td>
 										{/*📈 */}
-										{t('useful.serviceLife.maintenanceTypes.engineDiagnosticsCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.engineDiagnosticsCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🧪 */}
-										{t('useful.serviceLife.maintenanceTypes.oilAnalysis')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oilAnalysis")}</td>
 									<td>
 										{/*🧫 */}
-										{t('useful.serviceLife.maintenanceTypes.oilAnalysisCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.oilAnalysisCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🌡️*/}
-										{t('useful.serviceLife.maintenanceTypes.coolant')}</td>
+										{t("useful.serviceLife.maintenanceTypes.coolant")}</td>
 									<td>
 										{/*🔄 */}
-										{t('useful.serviceLife.maintenanceTypes.coolantCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.coolantCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*⛽ */}
-										{t('useful.serviceLife.maintenanceTypes.gasValve')}</td>
+										{t("useful.serviceLife.maintenanceTypes.gasValve")}</td>
 									<td>
 										{/*🔎 */}
-										{t('useful.serviceLife.maintenanceTypes.gasValveCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.gasValveCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*⚡ */}
-										{t('useful.serviceLife.maintenanceTypes.generator')}</td>
+										{t("useful.serviceLife.maintenanceTypes.generator")}</td>
 									<td>
 										{/*🔍 */}
-										{t('useful.serviceLife.maintenanceTypes.generatorCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.generatorCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*🧠 */}
-										{t('useful.serviceLife.maintenanceTypes.automation')}</td>
+										{t("useful.serviceLife.maintenanceTypes.automation")}</td>
 									<td>
 										{/*🛠️*/}
-										{t('useful.serviceLife.maintenanceTypes.automationCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.automationCheck")}</td>
 								</tr>
 								<tr>
 									<td>
 										{/*📋 */}
-										{t('useful.serviceLife.maintenanceTypes.fasteners')}</td>
+										{t("useful.serviceLife.maintenanceTypes.fasteners")}</td>
 									<td>
 										{/*🔧 */}
-										{t('useful.serviceLife.maintenanceTypes.fastenersCheck')}</td>
+										{t("useful.serviceLife.maintenanceTypes.fastenersCheck")}</td>
 								</tr>
 								</tbody>
 							</table>
@@ -766,51 +791,57 @@ export default function Useful() {
 
 						<h3 className={styles.maintenanceTitle}>
 							<span className={styles.parameterIcon}>🔧</span>
-							{t('useful.serviceLife.maintenanceTypes.midLifeTitle')}
+							{t("useful.serviceLife.maintenanceTypes.midLifeTitle")}
 						</h3>
-						<p className={styles.maintenanceDescription}>{t('useful.serviceLife.maintenanceTypes.midLifeDescription')}</p>
+						<p className={styles.maintenanceDescription}>{t("useful.serviceLife.maintenanceTypes.midLifeDescription")}</p>
 
 						<div className={styles.keyPoints}>
-							<h4>{t('useful.serviceLife.maintenanceTypes.mainWorks')}</h4>
+							<h4>{t("useful.serviceLife.maintenanceTypes.mainWorks")}</h4>
 							<ul className={styles.checkList_simple}>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point1')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point2')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point3')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point4')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point5')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point6')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point7')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point8')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.midLife.point9')}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point1")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point2")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point3")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point4")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point5")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point6")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point7")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point8")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.midLife.point9")}</li>
 							</ul>
 						</div>
 
 						<h3 className={styles.maintenanceTitle}>
 							<span className={styles.parameterIcon}>🔧</span>
-							{t('useful.serviceLife.maintenanceTypes.majorTitle')}
+							{t("useful.serviceLife.maintenanceTypes.majorTitle")}
 						</h3>
-						<p className={styles.maintenanceDescription}>{t('useful.serviceLife.maintenanceTypes.majorDescription')}</p>
+						<p className={styles.maintenanceDescription}>{t("useful.serviceLife.maintenanceTypes.majorDescription")}</p>
 
 						<div className={styles.keyPoints}>
-							<h4>{t('useful.serviceLife.maintenanceTypes.includes')}</h4>
+							<h4>{t("useful.serviceLife.maintenanceTypes.includes")}</h4>
 							<ul className={styles.checkList_simple}>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point1')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point2')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point3')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point4')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point5')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point6')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point7')}</li>
-								<li>{t('useful.serviceLife.maintenanceTypes.major.point8')}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point1")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point2")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point3")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point4")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point5")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point6")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point7")}</li>
+								<li>{t("useful.serviceLife.maintenanceTypes.major.point8")}</li>
 							</ul>
 						</div>
 
 						<div className={styles.maintenanceCosts}>
-							<h3>{t('useful.serviceLife.maintenanceTypes.averageCosts')}</h3>
+							<h3>{t("useful.serviceLife.maintenanceTypes.averageCosts")}</h3>
 							<ul className={styles.costsList}>
-								<li><span className={styles.goodRating}>🟢</span> {t('useful.serviceLife.maintenanceTypes.standardCost')}</li>
-								<li><span className={styles.mediumRating}>🟡</span> {t('useful.serviceLife.maintenanceTypes.midLifeCost')}</li>
-								<li><span className={styles.lowRating}>🔴</span> {t('useful.serviceLife.maintenanceTypes.majorCost')}</li>
+								<li><span
+									className={styles.goodRating}>🟢</span> {t("useful.serviceLife.maintenanceTypes.standardCost")}
+								</li>
+								<li><span
+									className={styles.mediumRating}>🟡</span> {t("useful.serviceLife.maintenanceTypes.midLifeCost")}
+								</li>
+								<li><span
+									className={styles.lowRating}>🔴</span> {t("useful.serviceLife.maintenanceTypes.majorCost")}
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -832,7 +863,7 @@ export default function Useful() {
 								</div>
 							</div>
 							<p className={styles.brandDescription}>
-								{t('useful.brands.jenbacher')}
+								{t("useful.brands.jenbacher")}
 							</p>
 						</div>
 

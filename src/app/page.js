@@ -19,6 +19,16 @@ export default function Home() {
     const { showModal, setShowModal } = useModal();
     const router = useRouter();
     const { lang } = useLanguage();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkIfMobile = () => {
+            setIsMobile(window.innerWidth < 980);
+        };
+        checkIfMobile();
+        window.addEventListener('resize', checkIfMobile);
+        return () => window.removeEventListener('resize', checkIfMobile);
+    }, []);
 
     useEffect(() => {
         async function loadSheetData() {
@@ -59,6 +69,7 @@ export default function Home() {
     return (
         <div className={styles.page}>
             <Carousel
+                swipeable={isMobile ? false : true}
                 showThumbs={false}
                 autoPlay={true}
                 infiniteLoop={true}
@@ -67,7 +78,6 @@ export default function Home() {
                 showIndicators={false}
                 showArrows={true}
                 onClickItem={handleSlideClick}
-                // onChange={(index) => setCurrentIndex(index)} // Відстежуємо індекс
                 renderArrowNext={(onClickHandler, hasNext, label) =>
                     hasNext && (
                         <button type="button" className={styles.arrowStyles} onClick={onClickHandler} title={label}
