@@ -12,26 +12,26 @@ export const ContactsModal = () => {
 	const { showContactsModal, setContactsShowModal } = useContactsModal();
 	const [submitStatus, setSubmitStatus] = useState(null);
 
-	const FORM_ID = '1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w';
+	// const FORM_ID = '1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w';
 
-	// const FORM_ID = process.env.FORM_ID || '';
-	const FIELD_IDS = {
-		fullName: 'entry.1283254910',    // ФИО
-		companyName: 'entry.1701837133',  // Название компании
-		contactPhone: 'entry.255713489', // Контактный номер
-		workEmail: 'entry.1448260147',    // Рабочий email
-		comment: 'entry.1675151971',      // Комментарий
-		model: 'entry.2077737950'        // Модель
-	};
-
+	const FORM_ID = process.env.FORM_ID || '';
 	// const FIELD_IDS = {
-	// 	fullName: 'entry.1068065394',    // ФИО
-	// 	companyName: 'entry.238390855',  // Название компании
-	// 	contactPhone: 'entry.354872363', // Контактный номер
-	// 	workEmail: 'entry.170382577',    // Рабочий email
-	// 	comment: 'entry.682639409',      // Комментарий
-	// 	model: 'entry.1720971177'        // Модель
+	// 	fullName: 'entry.1283254910',    // ФИО
+	// 	companyName: 'entry.1701837133',  // Название компании
+	// 	contactPhone: 'entry.255713489', // Контактный номер
+	// 	workEmail: 'entry.1448260147',    // Рабочий email
+	// 	comment: 'entry.1675151971',      // Комментарий
+	// 	model: 'entry.2077737950'        // Модель
 	// };
+
+	const FIELD_IDS = {
+		fullName: 'entry.1068065394',    // ФИО
+		companyName: 'entry.238390855',  // Название компании
+		contactPhone: 'entry.354872363', // Контактный номер
+		workEmail: 'entry.170382577',    // Рабочий email
+		comment: 'entry.682639409',      // Комментарий
+		model: 'entry.1720971177'        // Модель
+	};
 
 	const initialValues = {
 		fullName: '',
