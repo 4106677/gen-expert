@@ -12,6 +12,17 @@ export const ContactsModal = () => {
 	const { showContactsModal, setContactsShowModal } = useContactsModal();
 	const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
+	// Google Forms ID и ID полей из вашей формы
+	const FORM_ID = process.env.FORM_ID || '';
+	const FIELD_IDS = {
+		fullName: 'entry.1068065394',    // ФИО
+		companyName: 'entry.238390855',  // Название компании
+		contactPhone: 'entry.354872363', // Контактный номер
+		workEmail: 'entry.170382577',    // Рабочий email
+		comment: 'entry.682639409',      // Комментарий
+		model: 'entry.1720971177'        // Модель
+	};
+
 	const initialValues = {
 		fullName: '',
 		companyName: '',
@@ -32,23 +43,47 @@ export const ContactsModal = () => {
 	const handleSubmit = async (values, { setSubmitting, resetForm }) => {
 		try {
 			setSubmitStatus(null);
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(values),
+			console.log('Отправка формы:', values);
+
+			// Создаем невидимый iframe для отправки формы
+			// (это обходит ограничения CORS при отправке в Google Forms)
+			const iframe = document.createElement('iframe');
+			iframe.style.display = 'none';
+			document.body.appendChild(iframe);
+
+			// Создаем форму внутри iframe
+			const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+			const form = iframeDocument.createElement('form');
+			form.method = 'POST';
+			form.action = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+			form.target = '_blank'; // Если захотите открыть страницу подтверждения Google в новой вкладке
+
+			// Добавляем поля формы
+			Object.keys(FIELD_IDS).forEach(key => {
+				const input = iframeDocument.createElement('input');
+				input.type = 'hidden';
+				input.name = FIELD_IDS[key];
+				input.value = values[key] || '';
+				form.appendChild(input);
 			});
 
-			const data = await response.json();
+			// Добавляем форму в iframe и отправляем
+			iframeDocument.body.appendChild(form);
+			form.submit();
 
-			if (!response.ok) {
-				throw new Error(data.error || 'Ошибка при отправке формы');
-			}
+			// Удаляем iframe через несколько секунд
+			setTimeout(() => {
+				if (document.body.contains(iframe)) {
+					document.body.removeChild(iframe);
+				}
+			}, 5000);
 
+			// Успешная отправка
+			console.log('Форма успешно отправлена в Google Forms');
 			setSubmitStatus('success');
 			resetForm();
 
+			// Закрываем модальное окно через 2 секунды после успешной отправки
 			setTimeout(() => {
 				setContactsShowModal(false);
 				setSubmitStatus(null);
