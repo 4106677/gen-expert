@@ -72,10 +72,8 @@ jobs:
       # Добавляем создание .env.production файла перед сборкой
       - name: Create .env file
         run: |
-          echo "EMAIL_USER=${{ secrets.EMAIL_USER }}" >> .env.production
-          echo "EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> .env.production
-          echo "EMAIL_RECIPIENT=${{ secrets.EMAIL_RECIPIENT }}" >> .env.production
-          echo "Создан .env.production с переменными EMAIL_USER, EMAIL_PASSWORD, EMAIL_RECIPIENT"
+          echo "FORM_ID=${{ secrets.FORM_ID }}" >> .env.production
+          echo "Создан .env.production с переменными FORM_ID"
       
       # Опционально: проверить, что файл создан и переменные установлены
       - name: Check .env file exists
