@@ -13,7 +13,17 @@ export const ContactsModal = () => {
 	const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
 	// Google Forms ID и ID полей из вашей формы
+	// const FORM_ID = '1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w';
 	const FORM_ID = process.env.FORM_ID || '';
+	// const FIELD_IDS = {
+	// 	fullName: 'entry.1283254910',    // ФИО
+	// 	companyName: 'entry.1701837133',  // Название компании
+	// 	contactPhone: 'entry.255713489', // Контактный номер
+	// 	workEmail: 'entry.1448260147',    // Рабочий email
+	// 	comment: 'entry.1675151971',      // Комментарий
+	// 	model: 'entry.2077737950'        // Модель
+	// };
+
 	const FIELD_IDS = {
 		fullName: 'entry.1068065394',    // ФИО
 		companyName: 'entry.238390855',  // Название компании
@@ -22,6 +32,20 @@ export const ContactsModal = () => {
 		comment: 'entry.682639409',      // Комментарий
 		model: 'entry.1720971177'        // Модель
 	};
+
+	// https://docs.google.com/forms/d/e/1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w/viewform?usp=pp_url&
+		// entry.1283254910=gdfgsdfg&
+		// entry.1701837133=sdfgsdfg&
+		// entry.255713489=sdfgsdfg&
+		// entry.1448260147=sdfgsdfg&
+		// entry.1675151971=sdfgsdfg&
+		// entry.2077737950=sdfg
+	// https://docs.google.com/forms/d/e/1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w/viewform?usp=pp_url&
+		// entry.1283254910=%D0%9F%D0%86%D0%91&
+		// entry.1701837133=%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0+%D0%9F%D1%96%D0%B4%D0%BF%D1%80%D0%B8%D1%94%D0%BC%D1%81%D1%82%D0%B2%D0%B0&
+		// entry.255713489=%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D0%B8%D0%B9+%D0%BD%D0%BE%D0%BC%D0%B5%D1%80+%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D1%83&
+		// entry.1675151971=%D0%A0%D0%BE%D0%B1%D0%BE%D1%87%D0%B8%D0%B9+Email&
+		// entry.2077737950=%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C
 
 	const initialValues = {
 		fullName: '',
@@ -45,38 +69,23 @@ export const ContactsModal = () => {
 			setSubmitStatus(null);
 			console.log('Отправка формы:', values);
 
-			// Создаем невидимый iframe для отправки формы
-			// (это обходит ограничения CORS при отправке в Google Forms)
-			const iframe = document.createElement('iframe');
-			iframe.style.display = 'none';
-			document.body.appendChild(iframe);
+			// URL для отправки формы в Google Forms
+			const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
 
-			// Создаем форму внутри iframe
-			const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-			const form = iframeDocument.createElement('form');
-			form.method = 'POST';
-			form.action = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
-			form.target = '_blank'; // Если захотите открыть страницу подтверждения Google в новой вкладке
+			// Создаем FormData для отправки
+			const formData = new FormData();
 
-			// Добавляем поля формы
+			// Добавляем все поля в FormData с соответствующими ID
 			Object.keys(FIELD_IDS).forEach(key => {
-				const input = iframeDocument.createElement('input');
-				input.type = 'hidden';
-				input.name = FIELD_IDS[key];
-				input.value = values[key] || '';
-				form.appendChild(input);
+				formData.append(FIELD_IDS[key], values[key] || '');
 			});
 
-			// Добавляем форму в iframe и отправляем
-			iframeDocument.body.appendChild(form);
-			form.submit();
-
-			// Удаляем iframe через несколько секунд
-			setTimeout(() => {
-				if (document.body.contains(iframe)) {
-					document.body.removeChild(iframe);
-				}
-			}, 5000);
+			// Отправляем данные с использованием no-cors режима
+			await fetch(url, {
+				method: 'POST',
+				mode: 'no-cors', // Важно для работы с Google Forms
+				body: formData,
+			});
 
 			// Успешная отправка
 			console.log('Форма успешно отправлена в Google Forms');
