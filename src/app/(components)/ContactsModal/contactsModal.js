@@ -13,9 +13,9 @@ export const ContactsModal = () => {
 	const [submitStatus, setSubmitStatus] = useState(null);
 
 	// const FORM_ID = '1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w';
-
-	const FORM_ID = '1FAIpQLSdRdjEpfyMI_kIvkYpQ0xNrp1K_NAH5lTcDyxO-c-Xm10m7iA';
-	// const FORM_ID = process.env.FORM_ID || '';
+	//
+	//
+	// // const FORM_ID = process.env.FORM_ID || '';
 	// const FIELD_IDS = {
 	// 	fullName: 'entry.1283254910',    // ФИО
 	// 	companyName: 'entry.1701837133',  // Название компании
@@ -25,7 +25,7 @@ export const ContactsModal = () => {
 	// 	model: 'entry.2077737950'        // Модель
 	// };
 
-
+	const FORM_ID = '1FAIpQLSdRdjEpfyMI_kIvkYpQ0xNrp1K_NAH5lTcDyxO-c-Xm10m7iA';
 	const FIELD_IDS = {
 		fullName: 'entry.1068065394',    // ФИО
 		companyName: 'entry.238390855',  // Название компании
@@ -35,7 +35,11 @@ export const ContactsModal = () => {
 		model: 'entry.1720971177'        // Модель
 	};
 
-	const initialValues = {
+
+
+
+
+		const initialValues = {
 		fullName: '',
 		companyName: '',
 		contactPhone: '',
