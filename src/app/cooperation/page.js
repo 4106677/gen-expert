@@ -101,10 +101,9 @@ export default function Cooperation() {
 
 					<div className={styles.submitOptions}>
 						{/* Замените '#' на реальный путь к файлу */}
-						<a href="/path/to/your/template.docx" download className={styles.downloadButton}>
+						<a href="/cooperation.docx" download className={styles.downloadButton}>
 							<span className={styles.icon}>📎</span> {t('cooperation.submit.downloadLink')}
 						</a>
-						{/* Замените '/contact-form' на реальный путь к онлайн-форме */}
 						<Link target='_blank' href="https://forms.gle/A3rqy1syDY3ZsJN49" className={styles.onlineButton}>
 							<span className={styles.icon}>📨</span> {t('cooperation.submit.onlineLink')}
 						</Link>

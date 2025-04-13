@@ -5,10 +5,12 @@ import styles from './contactsModal.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 
 export const ContactsModal = () => {
 	const { t } = useTranslation('common');
 	const { showContactsModal, setContactsShowModal } = useContactsModal();
+	const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
 	const initialValues = {
 		fullName: '',
@@ -16,7 +18,7 @@ export const ContactsModal = () => {
 		contactPhone: '',
 		workEmail: '',
 		comment: '',
-		model: showContactsModal || '',
+		model: showContactsModal || '', // Скрытое поле для модели
 	};
 
 	const validationSchema = Yup.object({
@@ -29,25 +31,32 @@ export const ContactsModal = () => {
 
 	const handleSubmit = async (values, { setSubmitting, resetForm }) => {
 		try {
-			const formData = new FormData();
-			Object.keys(values).forEach((key) => {
-				formData.append(key, values[key]);
-			});
-
-			const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/YOUR_GOOGLE_FORM_ID/formResponse';
-
-			await fetch(googleFormURL, {
+			setSubmitStatus(null);
+			const response = await fetch('/api/contact', {
 				method: 'POST',
-				mode: 'no-cors',
-				body: formData,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(values),
 			});
 
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.error || 'Ошибка при отправке формы');
+			}
+
+			setSubmitStatus('success');
 			resetForm();
-			setContactsShowModal(false);
-			alert(t('contactsModal.formSubmissionSuccess'));
+
+			setTimeout(() => {
+				setContactsShowModal(false);
+				setSubmitStatus(null);
+			}, 2000);
+
 		} catch (error) {
 			console.error('Ошибка при отправке формы:', error);
-			alert(t('contactsModal.formSubmissionError'));
+			setSubmitStatus('error');
 		} finally {
 			setSubmitting(false);
 		}
@@ -70,95 +79,119 @@ export const ContactsModal = () => {
 					</button>
 				</div>
 
-				<Formik
-					initialValues={initialValues}
-					validationSchema={validationSchema}
-					onSubmit={handleSubmit}
-				>
-					{({ isSubmitting }) => (
-						<Form className={styles.form}>
-							<div className={styles.formGroup}>
-								<label htmlFor="fullName" className={styles.label}>{t('contactsModal.fullName')}</label>
-								<Field
-									type="text"
-									id="fullName"
-									name="fullName"
-									className={styles.input}
-									placeholder={t('contactsModal.enterFullName')}
-								/>
-								<ErrorMessage name="fullName" component="div" className={styles.error} />
-							</div>
+				{submitStatus === 'success' && (
+					<div className={styles.successMessage}>
+						{t('contactsModal.formSubmissionSuccess')}
+					</div>
+				)}
 
-							<div className={styles.formGroup}>
-								<label htmlFor="companyName" className={styles.label}>{t('contactsModal.companyName')}</label>
-								<Field
-									type="text"
-									id="companyName"
-									name="companyName"
-									className={styles.input}
-									placeholder={t('contactsModal.enterCompanyName')}
-								/>
-								<ErrorMessage name="companyName" component="div" className={styles.error} />
-							</div>
+				{submitStatus === 'error' && (
+					<div className={styles.errorMessage}>
+						{t('contactsModal.formSubmissionError')}
+					</div>
+				)}
 
-							<div className={styles.formGroup}>
-								<label htmlFor="contactPhone" className={styles.label}>{t('contactsModal.contactPhone')}</label>
-								<Field
-									type="tel"
-									id="contactPhone"
-									name="contactPhone"
-									className={styles.input}
-									placeholder={t('contactsModal.enterContactPhone')}
-								/>
-								<ErrorMessage name="contactPhone" component="div" className={styles.error} />
-							</div>
+				{submitStatus !== 'success' && (
+					<Formik
+						initialValues={initialValues}
+						validationSchema={validationSchema}
+						onSubmit={handleSubmit}
+					>
+						{({ isSubmitting }) => (
+							<Form className={styles.form}>
+								<div className={styles.formGroup}>
+									<label htmlFor="fullName" className={styles.label}>
+										{t('contactsModal.fullName')}
+									</label>
+									<Field
+										type="text"
+										id="fullName"
+										name="fullName"
+										className={styles.input}
+										placeholder={t('contactsModal.enterFullName')}
+									/>
+									<ErrorMessage name="fullName" component="div" className={styles.error} />
+								</div>
 
-							<div className={styles.formGroup}>
-								<label htmlFor="workEmail" className={styles.label}>{t('contactsModal.email')}</label>
-								<Field
-									type="email"
-									id="workEmail"
-									name="workEmail"
-									className={styles.input}
-									placeholder={t('contactsModal.enterWorkEmail')}
-								/>
-								<ErrorMessage name="workEmail" component="div" className={styles.error} />
-							</div>
+								<div className={styles.formGroup}>
+									<label htmlFor="companyName" className={styles.label}>
+										{t('contactsModal.companyName')}
+									</label>
+									<Field
+										type="text"
+										id="companyName"
+										name="companyName"
+										className={styles.input}
+										placeholder={t('contactsModal.enterCompanyName')}
+									/>
+									<ErrorMessage name="companyName" component="div" className={styles.error} />
+								</div>
 
-							<div className={styles.formGroup}>
-								<label htmlFor="comment" className={styles.label}>{t('contactsModal.comment')}</label>
-								<Field
-									as="textarea"
-									id="comment"
-									name="comment"
-									className={styles.textarea}
-									placeholder={t('contactsModal.enterComment')}
-								/>
-								<ErrorMessage name="comment" component="div" className={styles.error} />
-							</div>
+								<div className={styles.formGroup}>
+									<label htmlFor="contactPhone" className={styles.label}>
+										{t('contactsModal.contactPhone')}
+									</label>
+									<Field
+										type="tel"
+										id="contactPhone"
+										name="contactPhone"
+										className={styles.input}
+										placeholder={t('contactsModal.enterContactPhone')}
+									/>
+									<ErrorMessage name="contactPhone" component="div" className={styles.error} />
+								</div>
 
-							{/* Скрытое поле для модели */}
-							<Field type="hidden" name="model" />
+								<div className={styles.formGroup}>
+									<label htmlFor="workEmail" className={styles.label}>
+										{t('contactsModal.email')}
+									</label>
+									<Field
+										type="email"
+										id="workEmail"
+										name="workEmail"
+										className={styles.input}
+										placeholder={t('contactsModal.enterWorkEmail')}
+									/>
+									<ErrorMessage name="workEmail" component="div" className={styles.error} />
+								</div>
 
-							<div className={styles.buttonGroup}>
-								<button
-									type="button"
-									className={styles.cancelButton}
-									onClick={() => setContactsShowModal(false)}
-								>
-									{t('contactsModal.cancel')}
-								</button>
-								<button
-									type="submit"
-									className={styles.submitButton}
-									disabled={isSubmitting}
-								>
-									{isSubmitting ? t('contactsModal.submitting') : t('contactsModal.submit')}
-								</button>
-							</div>
-						</Form>
-					)}
-				</Formik>
+								<div className={styles.formGroup}>
+									<label htmlFor="comment" className={styles.label}>
+										{t('contactsModal.comment')}
+									</label>
+									<Field
+										as="textarea"
+										id="comment"
+										name="comment"
+										className={styles.textarea}
+										placeholder={t('contactsModal.enterComment')}
+									/>
+									<ErrorMessage name="comment" component="div" className={styles.error} />
+								</div>
+
+								{/* Скрытое поле для модели */}
+								<Field type="hidden" name="model" />
+
+								<div className={styles.buttonGroup}>
+									<button
+										type="button"
+										className={styles.cancelButton}
+										onClick={() => setContactsShowModal(false)}
+									>
+										{t('contactsModal.cancel')}
+									</button>
+									<button
+										type="submit"
+										className={styles.submitButton}
+										disabled={isSubmitting}
+									>
+										{isSubmitting ? t('contactsModal.submitting') : t('contactsModal.submit')}
+									</button>
+								</div>
+							</Form>
+						)}
+					</Formik>
+				)}
 			</div>
 		</div>
 	);
