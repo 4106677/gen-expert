@@ -127,11 +127,12 @@
     /*font-size: 0.95em;*/
 }
 .subList > li::before {
-    content: '›'; /* Другой маркер для подсписка */
+    content: '•'; /* Маркер списка */
     position: absolute;
     left: 0;
     top: 0;
-    color: #6c757d; /* Серый маркер */
+    color: #85e28f; /* Акцентный цвет маркера */
+    font-size: 1.2em;
     line-height: 1.7;
 }
 

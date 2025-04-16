@@ -58,7 +58,7 @@ export default function Cooperation() {
 							{/* Электроэнергетическая инфраструктура */}
 							<li className={styles.subSection}>
 								<h4 className={styles.subSectionTitle}>{t('cooperation.start.electrical.title')}</h4>
-								<ul className={styles.subList}>
+								<ul className={styles.infoList}>
 									<li>{t('cooperation.start.electrical.point1')}</li>
 									<li>{t('cooperation.start.electrical.point2')}</li>
 									<li>{t('cooperation.start.electrical.point3')}</li>
@@ -73,7 +73,7 @@ export default function Cooperation() {
 							{/* Газовая инфраструктура */}
 							<li className={styles.subSection}>
 								<h4 className={styles.subSectionTitle}>{t('cooperation.start.gas.title')}</h4>
-								<ul className={styles.subList}>
+								<ul className={styles.infoList}>
 									<li>{t('cooperation.start.gas.point1')}</li>
 									<li>{t('cooperation.start.gas.point2')}</li>
 									<li>{t('cooperation.start.gas.point3')}</li>
@@ -84,7 +84,7 @@ export default function Cooperation() {
 							{/* Потребность в тепле */}
 							<li className={styles.subSection}>
 								<h4 className={styles.subSectionTitle}>{t('cooperation.start.heat.title')}</h4>
-								<ul className={styles.subList}>
+								<ul className={styles.infoList}>
 									<li>{t('cooperation.start.heat.point1')}</li>
 									<li>{t('cooperation.start.heat.point2')}</li>
 									<li>{t('cooperation.start.heat.point3')}</li>

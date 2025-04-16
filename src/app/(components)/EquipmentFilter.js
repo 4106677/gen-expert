@@ -90,8 +90,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="minPower"
-									defaultValue={filters.powerRange.min}
-									key={`min-${filters.powerRange.min}`}
+									defaultValue={filters.filterPower.min}
+									key={`min-${filters.filterPower.min}`}
 									placeholder="Min power"
 								/>
 								<span className={styles.inputFilters_span}>-</span>
@@ -99,8 +99,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="maxPower"
-									defaultValue={filters.powerRange.max}
-									key={`max-${filters.powerRange.max}`}
+									defaultValue={filters.filterPower.max}
+									key={`max-${filters.filterPower.max}`}
 									placeholder="Max power"
 								/>
 								<button type="submit" className={styles.inputFilters_button}>OK</button>
@@ -229,8 +229,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="minVoltage"
-									defaultValue={filters.voltageRange.min}
-									key={`min-${filters.voltageRange.min}`}
+									defaultValue={filters.filterVoltage.min}
+									key={`min-${filters.filterVoltage.min}`}
 									placeholder="Min voltage"
 								/>
 								<span className={styles.inputFilters_span}>-</span>
@@ -238,8 +238,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="maxVoltage"
-									defaultValue={filters.voltageRange.max}
-									key={`max-${filters.voltageRange.max}`}
+									defaultValue={filters.filterVoltage.max}
+									key={`max-${filters.filterVoltage.max}`}
 									placeholder="Max voltage"
 								/>
 								<button type="submit" className={styles.inputFilters_button}>OK</button>
@@ -404,8 +404,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="minYear"
-									defaultValue={filters.yearRange.min}
-									key={`min-${filters.yearRange.min}`}
+									defaultValue={filters.filterYear.min}
+									key={`min-${filters.filterYear.min}`}
 									placeholder="Min year"
 								/>
 								<span className={styles.inputFilters_span}>-</span>
@@ -413,8 +413,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="maxYear"
-									defaultValue={filters.yearRange.max}
-									key={`max-${filters.yearRange.max}`}
+									defaultValue={filters.filterYear.max}
+									key={`max-${filters.filterYear.max}`}
 									placeholder="Max year"
 								/>
 								<button type="submit" className={styles.inputFilters_button}>OK</button>
@@ -471,8 +471,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="minPrice"
-									defaultValue={filters.priceRange.min}
-									key={`min-${filters.priceRange.min}`}
+									defaultValue={filters.filterPrice.min}
+									key={`min-${filters.filterPrice.min}`}
 									placeholder="Min price"
 								/>
 								<span className={styles.inputFilters_span}>-</span>
@@ -480,8 +480,8 @@ export default function EquipmentFilter({
 									className={styles.inputFilters_input}
 									type="number"
 									name="maxPrice"
-									defaultValue={filters.priceRange.max}
-									key={`max-${filters.priceRange.max}`}
+									defaultValue={filters.filterPrice.max}
+									key={`max-${filters.filterPrice.max}`}
 									placeholder="Max price"
 								/>
 								<button type="submit" className={styles.inputFilters_button}>OK</button>
