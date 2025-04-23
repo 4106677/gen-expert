@@ -25,6 +25,7 @@
 
     .description_h4 {
         font-weight: normal;
+        margin-bottom: 20px;
     }
 }
 
@@ -38,6 +39,12 @@
     width: max-content;
     font-size: 20px;
     line-height: 1;
+}
+
+.link {
+    background-color: transparent;
+    color: #85e28f;
+    text-decoration: underline;
 }
 
 @media (max-width: 950px) {

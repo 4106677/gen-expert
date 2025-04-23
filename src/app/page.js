@@ -12,6 +12,7 @@ import {useEffect, useState} from "react";
 import {useLanguage} from "@/app/context";
 import {useModal} from "@/context/ModalContext";
 import {useRouter} from "next/navigation";
+import Industries from "@/app/(components)/Industries/industries";
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -151,6 +152,7 @@ export default function Home() {
                     </div>
                 ))}
             </Carousel>
+            <Industries />
             <Why/>
             <About/>
         </div>

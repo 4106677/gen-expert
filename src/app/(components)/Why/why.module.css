@@ -1,7 +1,7 @@
 .why {
     padding: 50px 0;
     /*max-width: 900px;*/
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     width: 100vw;
     display: flex;
     align-items: center;
@@ -24,6 +24,11 @@
 
     .listItem_span {
         font-weight: bold;
+    }
+
+    .listItem_span__link {
+        color: #85e28f;
+        text-decoration: underline;
     }
 }
 

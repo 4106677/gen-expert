@@ -8,10 +8,198 @@
     "useful": "Useful",
     "cooperation": "Cooperation"
   },
+  "industries": {
+    "benefitLabel": "GPU/CHP Benefits:",
+    "advantagesLabel": "Advantages:",
+    "greenhouse": {
+      "icon": "🌿",
+      "title": "Greenhouse Agriculture",
+      "description": "Cheap energy and CO₂ for greenhouses that increase yield.",
+      "subsectors": [
+        "Greenhouse complex",
+        "Plant farm",
+        "Garden center"
+      ],
+      "benefit": "CO₂ from GPU fertilizes plants, increasing yield by 20%.",
+      "advantages": "Energy 30-50% cheaper, avoiding network tariffs, stability."
+    },
+    "food": {
+      "icon": "🍴",
+      "title": "Food Industry",
+      "description": "Heat, electricity, and steam for energy-intensive productions.",
+      "subsectors": [
+        "Confectionery factory",
+        "Meat processing",
+        "Breweries",
+        "Cheese factory"
+      ],
+      "benefit": "Cogeneration reduces costs for steam and heat without transmission fees.",
+      "advantages": "Reduction of kW cost by up to 50%, stable tariffs, uninterrupted supply."
+    },
+    "agriculture": {
+      "icon": "🌾",
+      "title": "Livestock and Agriculture",
+      "description": "Energy and biogas for farms and agricultural complexes.",
+      "subsectors": [
+        "Pig farm",
+        "Poultry farm",
+        "Dairy farm",
+        "Vegetable farming"
+      ],
+      "benefit": "Cogeneration provides cheap energy without network tariffs.",
+      "advantages": "Savings up to 60%, energy independence, increased yields."
+    },
+    "industrial": {
+      "icon": "🏭",
+      "title": "Industrial Production",
+      "description": "Energy for heavy industrial processes.",
+      "subsectors": [
+        "Cardboard and paper factories",
+        "Metallurgy",
+        "Textiles",
+        "Ceramics"
+      ],
+      "benefit": "Cogeneration provides efficiency up to 95% (electricity + heat), without energy transmission costs.",
+      "advantages": "Cheaper energy by 30-50%, stability, efficiency."
+    },
+    "waste": {
+      "icon": "♻️",
+      "title": "Waste Processing",
+      "description": "Energy from biogas to reduce costs.",
+      "subsectors": [
+        "Landfill site",
+        "Wastewater treatment plants",
+        "Food waste"
+      ],
+      "benefit": "Converts waste to energy, eliminating network fees.",
+      "advantages": "Cost reduction up to 60%, additional income, competitiveness."
+    },
+    "chemical": {
+      "icon": "⚗️",
+      "title": "Chemical and Pharmaceutical Industry",
+      "description": "Reliable energy for complex processes.",
+      "subsectors": [
+        "Chemical plant",
+        "Pharmaceutical enterprise",
+        "Petrochemicals"
+      ],
+      "benefit": "Cogeneration provides stable heat without network tariffs.",
+      "advantages": "Savings up to 50%, uninterrupted operation, flexibility."
+    },
+    "energy": {
+      "icon": "⚡",
+      "title": "Energy Infrastructure",
+      "description": "Flexible energy for large facilities.",
+      "subsectors": [
+        "Industrial park",
+        "District network",
+        "Biogas station"
+      ],
+      "benefit": "Microgrids from GPU reduce energy transmission costs.",
+      "advantages": "Revenue from energy sales, savings up to 40%, flexibility."
+    },
+    "datacenter": {
+      "icon": "💻",
+      "title": "Data Centers",
+      "description": "Electricity and cooling for data centers.",
+      "subsectors": [
+        "Data center",
+        "Server farm",
+        "Cloud computing"
+      ],
+      "benefit": "Trigeneration provides affordable energy with 99.995% reliability.",
+      "advantages": "Reduced kW cost, avoided tariffs, stability."
+    },
+    "logistics": {
+      "icon": "🚚",
+      "title": "Logistics and Commercial Real Estate",
+      "description": "Energy for warehouses and shopping centers.",
+      "subsectors": [
+        "Logistics warehouse",
+        "Shopping center",
+        "Residential complex"
+      ],
+      "benefit": "Cogeneration reduces heating costs without network fees.",
+      "advantages": "Savings up to 30%, stable tariffs, comfort."
+    },
+    "healthcare": {
+      "icon": "🏥",
+      "title": "Healthcare and Education",
+      "description": "Energy for critical facilities.",
+      "subsectors": [
+        "Hospital",
+        "University",
+        "Medical facility"
+      ],
+      "benefit": "GPU provides backup power, bypassing network tariffs.",
+      "advantages": "Uninterrupted operation, savings up to 50%, safety."
+    },
+    "hotel": {
+      "icon": "🏨",
+      "title": "Hotel and Tourism Sector",
+      "description": "Energy for guest comfort.",
+      "subsectors": [
+        "Hotel",
+        "Resort",
+        "Restaurant"
+      ],
+      "benefit": "Cogeneration provides heat for hotel infrastructure without transmission fees.",
+      "advantages": "Cost reduction, stability, attractive image."
+    },
+    "transport": {
+      "icon": "✈️",
+      "title": "Transport and Aviation Infrastructure",
+      "description": "Energy for airports and hubs.",
+      "subsectors": [
+        "Airport",
+        "Logistics hub",
+        "Railway station"
+      ],
+      "benefit": "GPU supports critical systems without network costs.",
+      "advantages": "Savings up to 40%, reliability, stability."
+    },
+    "mining": {
+      "icon": "⛏️",
+      "title": "Mining and Oil & Gas Industry",
+      "description": "Energy for remote operations.",
+      "subsectors": [
+        "Mining enterprise",
+        "Oil and gas platform",
+        "Quarry"
+      ],
+      "benefit": "GPU provides autonomy, savings, eliminating network fees.",
+      "advantages": "Cost reduction, flexibility, reliability."
+    },
+    "other": {
+      "icon": "🛠️",
+      "title": "Other Industrial Sectors",
+      "description": "Energy for equipment manufacturing.",
+      "subsectors": [
+        "Engineering company",
+        "Equipment manufacturing"
+      ],
+      "benefit": "GPU reduces energy costs for machines without tariff charges.",
+      "advantages": "Savings up to 50%, uninterrupted operation, efficiency."
+    },
+    "commercial": {
+      "icon": "🏬",
+      "title": "Commercial and Residential Real Estate",
+      "description": "Energy for comfort and savings.",
+      "subsectors": [
+        "Business center",
+        "Residential complex",
+        "Shopping and entertainment center"
+      ],
+      "benefit": "Trigeneration provides heat and electricity without transmission fees.",
+      "advantages": "Reduced kW cost, stable tariffs, comfort."
+    }
+  },
   "about_main_page": {
     "header": "About Us",
-    "title": "We offer businesses in Ukraine access to new and proven gas piston units from leading global manufacturers.",
-    "subtitle": "Analytics, international expertise, and attention to detail - this is how we select solutions for your needs."
+    "title": "Analytics, international experience, energy project expertise, and attention to your needs — the key to the perfect solution.",
+    "subtitle": "We provide Ukrainian businesses with new and proven gas piston units from world leaders.",
+    "link": "Partnership with GenExpert",
+    "desc": " — the energy future for your business. We offer new and proven gas piston units, covering selection, logistics, design, installation, commissioning, and co-financing. Our solutions are the key to your savings and success."
   },
   "why_main_page": {
     "title": "Why is a gas piston unit the best solution for your business?",
@@ -51,7 +239,13 @@
         "title": "\uD83D\uDE80 Turnkey solutions",
         "text": "— new and used units with a warranty, fully equipped to meet your needs",
         "icon": ""
+      },
+      {
+        "id": 7,
+        "title": "Partnership with Genexpert",
+        "text": " — from selecting a gas piston unit to logistics, installation, commissioning, and joint financing — a full cycle for your energy independence."
       }
+
     ]
   },
   "equipment": {
