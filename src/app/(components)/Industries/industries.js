@@ -7,30 +7,19 @@ const Industries = () => {
 	const [activeMobileRow, setActiveMobileRow] = useState(0);
 	const [isMobile, setIsMobile] = useState(false);
 
-	// Update isMobile state based on window width
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth < 768);
 		};
-
-		// Set initial value
 		handleResize();
-
-		// Add event listener
 		window.addEventListener('resize', handleResize);
-
-		// Cleanup
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
-	// Get industry keys (excluding labels)
 	const industryKeys = Object.keys(t('industries', { returnObjects: true }))
 		.filter(key => key !== 'benefitLabel' && key !== 'advantagesLabel');
-
-	// Calculate rows (5 rows of 3 items)
 	const rowCount = 5;
 
-	// Helper function to render a single industry card
 	const renderIndustryCard = (industryKey) => {
 		const industry = t(`industries.${industryKey}`, { returnObjects: true });
 
@@ -110,6 +99,7 @@ const Industries = () => {
 			)}
 
 			<div className={styles.content}>
+				<h2>{t("menu.industries_title")}</h2>
 				{renderContent()}
 			</div>
 		</div>

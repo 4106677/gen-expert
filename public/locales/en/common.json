@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Gen Expert",
+    "description": "New and used gas-powered generators turnkey."
+  },
   "menu": {
     "equipment": "Equipment",
     "why": "Why GPU",
@@ -6,7 +10,8 @@
     "calculator": "Calculator",
     "contacts": "Contacts",
     "useful": "Useful",
-    "cooperation": "Cooperation"
+    "cooperation": "Cooperation",
+    "industries_title": "Energy Solutions for Industries"
   },
   "industries": {
     "benefitLabel": "GPU/CHP Benefits:",

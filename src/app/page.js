@@ -152,8 +152,8 @@ export default function Home() {
                     </div>
                 ))}
             </Carousel>
-            <Industries />
             <Why/>
+            <Industries />
             <About/>
         </div>
     );
