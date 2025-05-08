@@ -32,18 +32,36 @@
 .purpose {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .purpose_button {
         width: max-content;
         padding: 10px 20px;
         font-size: 16px;
-        /*background: #007bff;*/
         background-color: #85e28f;
         color: white;
         border: none;
         position: relative;
         cursor: pointer;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+
+        &:hover {
+            clip-path: none;
+        }
+    }
+
+    .purpose_link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-left: 30px;
+        border: 1px solid #85e28f;
+        background-color: #85e28f;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        height: 38px;
+        padding: 5px 20px;
+        border-radius: 3px;
+        color: white;
 
         &:hover {
             clip-path: none;

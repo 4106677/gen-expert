@@ -87,10 +87,26 @@ export default function Modal() {
 				))}
 			</Carousel>
 			<div className={styles.purpose}>
-				<button onClick={onPurposeClick} className={styles.purpose_button} type="button">{t("equipment.modal.purpose")}</button>
+				<button onClick={onPurposeClick} className={styles.purpose_button}
+				        type="button">{t("equipment.modal.purpose")}</button>
+				<a
+					href="https://t.me/genexpert_ua"
+					target="_blank"
+					rel="noopener noreferrer"
+					className={styles.purpose_link}
+				>
+					<Image
+						aria-hidden
+						src="/telegram_white.svg"
+						alt="telegram icon"
+						width={22}
+						height={22}
+					/>
+					Telegram
+				</a>
 			</div>
 			<div className={styles.filesWrapper}>
-				{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2> }
+				{files?.length > 0 && <h2 className={styles.filesWrapper_h2}>{t("equipment.modal.files")}</h2>}
 				{files?.map((file, index) => (
 					<div key={index} className={styles.file}>
 						<a href={gdLink(file)} target='_blank' className={styles.file_a}>

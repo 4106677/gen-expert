@@ -12,19 +12,6 @@ export const ContactsModal = () => {
 	const { showContactsModal, setContactsShowModal } = useContactsModal();
 	const [submitStatus, setSubmitStatus] = useState(null);
 
-	// const FORM_ID = '1FAIpQLScq8MMPpoL1vulWaJo6Nd8fBM4fnPebUkuWA0zit8EBg75E3w';
-	//
-	//
-	// // const FORM_ID = process.env.FORM_ID || '';
-	// const FIELD_IDS = {
-	// 	fullName: 'entry.1283254910',    // ФИО
-	// 	companyName: 'entry.1701837133',  // Название компании
-	// 	contactPhone: 'entry.255713489', // Контактный номер
-	// 	workEmail: 'entry.1448260147',    // Рабочий email
-	// 	comment: 'entry.1675151971',      // Комментарий
-	// 	model: 'entry.2077737950'        // Модель
-	// };
-
 	const FORM_ID = '1FAIpQLSdRdjEpfyMI_kIvkYpQ0xNrp1K_NAH5lTcDyxO-c-Xm10m7iA';
 	const FIELD_IDS = {
 		fullName: 'entry.1068065394',    // ФИО
@@ -34,10 +21,6 @@ export const ContactsModal = () => {
 		comment: 'entry.682639409',      // Комментарий
 		model: 'entry.1720971177'        // Модель
 	};
-
-
-
-
 
 		const initialValues = {
 		fullName: '',
@@ -60,6 +43,16 @@ export const ContactsModal = () => {
 		try {
 			setSubmitStatus(null);
 			console.log('Отправка формы:', values);
+
+			// Отправка события для аналитики/SEO
+			if (typeof window !== 'undefined' && window.dataLayer) {
+				window.dataLayer.push({
+					'event': 'form_submit',
+					'formName': 'contact_form',
+					'formModel': values.model || ''
+				});
+			}
+
 			const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
 			const formData = new FormData();
 			Object.keys(FIELD_IDS).forEach(key => {
