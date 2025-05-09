@@ -90,7 +90,7 @@ export default function Modal() {
 				<button onClick={onPurposeClick} className={styles.purpose_button}
 				        type="button">{t("equipment.modal.purpose")}</button>
 				<a
-					href="https://t.me/genexpert_ua"
+					href="https://t.me/GenExpertUA"
 					target="_blank"
 					rel="noopener noreferrer"
 					className={styles.purpose_link}
